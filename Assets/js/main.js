@@ -269,58 +269,78 @@ function initDoctoralia() {
     }
   }
 
-  const anchor = document.getElementById('zl-url-book');
-  const fallback = document.getElementById('book-widget-static');
-  const wrapper = document.querySelector('.book-widget-wrap');
-  if (!anchor || !fallback || !wrapper) return;
+  const bindFallbackSync = ({ container, anchor, fallback, maxTries = 30, tickMs = 250, readyClass = '' }) => {
+    if (!container || !anchor || !fallback) return;
 
-  const hasLiveWidget = () => {
-    if (anchor.children.length > 0) return true;
-    if (wrapper.querySelector('iframe')) return true;
-    if (wrapper.querySelector('[class*="docplanner"], [class*="zlw"], [id*="zlw"], [id*="doctoralia"]')) return true;
+    const hasLiveWidget = () => {
+      if (anchor.children.length > 0) return true;
+      if (container.querySelector('iframe')) return true;
+      if (container.querySelector('[class*="docplanner"], [class*="zlw"], [id*="zlw"], [id*="doctoralia"]')) return true;
 
-    return Array.from(wrapper.children).some(node => {
-      const el = node;
-      return el.id !== 'zl-url-book' && !el.classList.contains('book-widget-static') && !el.classList.contains('zl-url');
-    });
-  };
+      return Array.from(container.children).some(node => {
+        const el = node;
+        return el !== anchor && el !== fallback && !el.classList.contains('zl-url');
+      });
+    };
 
-  const revealLiveWidget = () => {
-    if (fallback.style.display !== 'none') {
-      fallback.style.display = 'none';
-      wrapper.classList.add('has-live-widget');
-    }
-  };
+    const revealLiveWidget = () => {
+      if (fallback.style.display !== 'none') {
+        fallback.style.display = 'none';
+      }
+      if (readyClass) container.classList.add(readyClass);
+    };
 
-  if (hasLiveWidget()) {
-    revealLiveWidget();
-    return;
-  }
-
-  const observer = new MutationObserver(() => {
     if (hasLiveWidget()) {
-      revealLiveWidget();
-      observer.disconnect();
-    }
-  });
-
-  observer.observe(wrapper, { childList: true, subtree: true });
-
-  // Fallback polling for widgets that mutate late or outside observer timing.
-  let tries = 0;
-  const timer = setInterval(() => {
-    if (hasLiveWidget()) {
-      clearInterval(timer);
-      observer.disconnect();
       revealLiveWidget();
       return;
     }
-    if (tries > 30) {
-      clearInterval(timer);
-      observer.disconnect();
-    }
-    tries += 1;
-  }, 250);
+
+    const observer = new MutationObserver(() => {
+      if (hasLiveWidget()) {
+        revealLiveWidget();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(container, { childList: true, subtree: true });
+
+    let tries = 0;
+    const timer = setInterval(() => {
+      if (hasLiveWidget()) {
+        clearInterval(timer);
+        observer.disconnect();
+        revealLiveWidget();
+        return;
+      }
+      if (tries > maxTries) {
+        clearInterval(timer);
+        observer.disconnect();
+      }
+      tries += 1;
+    }, tickMs);
+  };
+
+  const anchor = document.getElementById('zl-url-book');
+  const fallback = document.getElementById('book-widget-static');
+  const wrapper = document.querySelector('.book-widget-wrap');
+  bindFallbackSync({
+    container: wrapper,
+    anchor,
+    fallback,
+    readyClass: 'has-live-widget'
+  });
+
+  const heroContainer = document.querySelector('.hero-doc-cert');
+  const heroAnchor = document.getElementById('zl-url-hero') || document.getElementById('zl-url');
+  const heroFallback = document.getElementById('hero-cert-fallback');
+
+  bindFallbackSync({
+    container: heroContainer,
+    anchor: heroAnchor,
+    fallback: heroFallback,
+    maxTries: 24,
+    tickMs: 250
+  });
 }
 
 // ── Count-up animation for stats strip ─────────────────────────────
