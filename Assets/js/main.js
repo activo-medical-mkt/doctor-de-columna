@@ -271,16 +271,56 @@ function initDoctoralia() {
 
   const anchor = document.getElementById('zl-url-book');
   const fallback = document.getElementById('book-widget-static');
-  if (!anchor || !fallback) return;
+  const wrapper = document.querySelector('.book-widget-wrap');
+  if (!anchor || !fallback || !wrapper) return;
 
+  const hasLiveWidget = () => {
+    if (anchor.children.length > 0) return true;
+    if (wrapper.querySelector('iframe')) return true;
+    if (wrapper.querySelector('[class*="docplanner"], [class*="zlw"], [id*="zlw"], [id*="doctoralia"]')) return true;
+
+    return Array.from(wrapper.children).some(node => {
+      const el = node;
+      return el.id !== 'zl-url-book' && !el.classList.contains('book-widget-static') && !el.classList.contains('zl-url');
+    });
+  };
+
+  const revealLiveWidget = () => {
+    if (fallback.style.display !== 'none') {
+      fallback.style.display = 'none';
+      wrapper.classList.add('has-live-widget');
+    }
+  };
+
+  if (hasLiveWidget()) {
+    revealLiveWidget();
+    return;
+  }
+
+  const observer = new MutationObserver(() => {
+    if (hasLiveWidget()) {
+      revealLiveWidget();
+      observer.disconnect();
+    }
+  });
+
+  observer.observe(wrapper, { childList: true, subtree: true });
+
+  // Fallback polling for widgets that mutate late or outside observer timing.
   let tries = 0;
   const timer = setInterval(() => {
-    if ((anchor && anchor.children.length > 0) || tries > 20) {
+    if (hasLiveWidget()) {
       clearInterval(timer);
-      fallback.style.display = 'none';
+      observer.disconnect();
+      revealLiveWidget();
+      return;
+    }
+    if (tries > 30) {
+      clearInterval(timer);
+      observer.disconnect();
     }
     tries += 1;
-  }, 300);
+  }, 250);
 }
 
 // ── Count-up animation for stats strip ─────────────────────────────
