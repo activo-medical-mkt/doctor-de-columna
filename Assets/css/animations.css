@@ -1,0 +1,137 @@
+/* =============================================================================
+   ANIMATIONS.CSS — Keyframes, Scroll Reveal, Motion Preferences
+   Traumatólogo GDL · Design System v1.2
+   Load order: 3 of 4
+   Requires: base.css
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------
+   KEYFRAMES
+   ----------------------------------------------------------------------- */
+
+/* Hero section entrance — CSS-only, no JS required */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-enter {
+  animation: hero-fade-up 0.65s ease both;
+}
+.hero-enter-1 { animation-delay: 0.10s; }
+.hero-enter-2 { animation-delay: 0.20s; }
+.hero-enter-3 { animation-delay: 0.32s; }
+.hero-enter-4 { animation-delay: 0.44s; }
+.hero-enter-5 { animation-delay: 0.56s; }
+
+/* Pulsing green dot on the hero badge */
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(99,255,132,0.30); }
+  50%       { box-shadow: 0 0 0 7px rgba(99,255,132,0.08); }
+}
+
+/* Gentle vertical float for stat cards */
+@keyframes float-card {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* -----------------------------------------------------------------------
+   APPLIED ANIMATION RULES
+   These piggyback on component selectors to attach the keyframes.
+   ----------------------------------------------------------------------- */
+
+.hero-badge-dot {
+  animation: pulse-dot 2.2s ease-in-out infinite;
+}
+
+/* Stat cards float — async offsets create organic movement */
+.stat-card {
+  animation: float-card 4s ease-in-out infinite;
+}
+
+.stat-card:nth-child(2) { animation-delay: -1.3s; }
+.stat-card:nth-child(3) { animation-delay: -2.6s; }
+.stat-card:nth-child(4) { animation-delay: -0.7s; }
+
+.stat-big {
+  animation: float-card 4s ease-in-out infinite;
+  animation-delay: -0.5s;
+}
+
+/* -----------------------------------------------------------------------
+   SCROLL REVEAL — TRANSFORM ONLY, opacity never touched
+   
+   .reveal = always opacity:1, always visible.
+   JS adds .will-animate to below-fold elements (shifts them down).
+   JS adds .visible when they scroll into view (slides them up).
+   In-viewport elements get .visible directly — no shift, no flash.
+   ----------------------------------------------------------------------- */
+
+@keyframes reveal-slide-up {
+  from { transform: translateY(20px); }
+  to   { transform: translateY(0);    }
+}
+
+/* Guaranteed baseline — NEVER hidden */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Below-fold only: shift down, ready to slide in (still visible) */
+.reveal.will-animate {
+  transform: translateY(20px);
+}
+
+/* Slide into place */
+.reveal.will-animate.visible {
+  animation: reveal-slide-up 0.5s ease forwards;
+}
+
+/* In-view elements skip will-animate entirely — no animation needed */
+.reveal.visible:not(.will-animate) {
+  transform: none;
+}
+
+/* Staggered delays — only apply if animating */
+.reveal-delay-1.will-animate { animation-delay: 0.08s; }
+.reveal-delay-2.will-animate { animation-delay: 0.16s; }
+.reveal-delay-3.will-animate { animation-delay: 0.24s; }
+.reveal-delay-4.will-animate { animation-delay: 0.32s; }
+.reveal-delay-5.will-animate { animation-delay: 0.40s; }
+.reveal-delay-6.will-animate { animation-delay: 0.48s; }
+
+/* -----------------------------------------------------------------------
+   REDUCED MOTION — WCAG 2.1 SC 2.3.3
+   Disable all animation for users who prefer it.
+   ----------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Explicitly zero out named animations */
+  .hero-badge-dot { animation: none; }
+  .stat-card      { animation: none; }
+  .stat-big       { animation: none; }
+
+  /* Reveal elements — cancel animation, keep visible */
+  .reveal,
+  .reveal.visible {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
