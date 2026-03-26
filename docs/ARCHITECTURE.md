@@ -133,37 +133,23 @@ color: #183F66;
 
 ## 4. JavaScript Architecture
 
-### Module Pattern
+### Runtime Pattern (Current)
 
-Each `.js` file exports one default function that is called once the DOM is ready.
-
-```js
-// assets/js/core.js
-export function initCore() {
-  initNavbar();
-  initScrollProgress();
-}
-```
-
-```js
-// assets/js/animations.js
-export function initAnimations() {
-  initReveal();
-}
-```
+The homepage currently uses two runtime files loaded with `defer`:
 
 ```html
 <!-- index.html — bottom of <body> -->
-<script type="module">
-  import { initCore }       from './assets/js/core.js';
-  import { initAnimations } from './assets/js/animations.js';
-  import { initHome }       from './assets/js/pages/home.js';
-
-  initCore();
-  initAnimations();
-  initHome();
-</script>
+<script defer src="Assets/js/loader.js"></script>
+<script defer src="Assets/js/main.js"></script>
 ```
+
+- `Assets/js/loader.js`: fetches and injects all `[data-include]` partial sections.
+- `Assets/js/main.js`: initializes navbar behavior, reveals, FAQ, reviews, Doctoralia sync, and counters.
+- `Assets/js/main.js` waits for the custom `partials-ready` event when includes are present.
+
+### Legacy Split Modules
+
+`Assets/js/core.js` and `Assets/js/animations.js` remain in the repository for reference only and are **not** loaded by `index.html` at runtime.
 
 ### Rules
 
@@ -213,7 +199,7 @@ The current `index.html` contains all CSS and JS inline. Migrate in this order:
 2. **Extract component CSS → `assets/css/components.css`**
 3. **Extract animations → `assets/css/animations.css`**
 4. **Extract hero + section styles → `assets/css/pages/home.css`**
-5. **Extract JS → `assets/js/core.js` + `assets/js/animations.js`**
+5. **Consolidate JS runtime in `assets/js/main.js` (current production path)**
 6. **Replace `<style>` and `<script>` in index.html with `<link>` and `<script type="module">`**
 7. Validate: run Lighthouse before and after — score must not drop.
 

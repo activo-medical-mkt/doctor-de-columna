@@ -30,7 +30,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  height: 72px;
+  height: 76px;
   display: flex;
   align-items: center;
   padding: 0 clamp(16px, 3.2vw, 48px);
@@ -38,19 +38,28 @@
   border-bottom: 1px solid transparent;
   transition:
     background 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-    backdrop-filter 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition:
+    background 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    backdrop-filter 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-backdrop-filter 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Liquid-glass state — hero-morphism tint */
 .navbar.scrolled {
-  background:
-    radial-gradient(ellipse 60% 160% at 8% 50%, rgba(255,255,255,0.55) 0%, transparent 65%),
-    radial-gradient(ellipse 45% 120% at 92% 50%, rgba(173,205,226,0.30) 0%, transparent 65%),
-    rgba(210, 228, 246, 0.74);
-  backdrop-filter: blur(28px) saturate(180%) brightness(1.05);
-  -webkit-backdrop-filter: blur(28px) saturate(180%) brightness(1.05);
+  background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.68);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.92) inset,
@@ -58,10 +67,21 @@
     0 2px 8px rgba(24, 63, 102, 0.06);
 }
 
+.navbar.scrolled::before {
+  background:
+    radial-gradient(ellipse 60% 160% at 8% 50%, rgba(255,255,255,0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 120% at 92% 50%, rgba(173,205,226,0.30) 0%, transparent 65%),
+    rgba(210, 228, 246, 0.74);
+  backdrop-filter: blur(28px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(28px) saturate(180%) brightness(1.05);
+}
+
 .navbar-inner {
   width: 100%;
   max-width: 1360px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(220px, auto) 1fr auto;
   gap: clamp(16px, 2vw, 32px);
@@ -98,11 +118,11 @@
 }
 
 .logo-icon {
-  height: 60px;
+  height: 66px;
   width: auto;
   object-fit: contain;
   flex-shrink: 0;
-  transition: opacity var(--transition-fast), filter var(--transition-fast);
+  transition: opacity var(--transition-fast);
 }
 
 .navbar.scrolled .logo-icon {
@@ -213,15 +233,19 @@
 
 /* Dark glass when scrolled over a dark section */
 .navbar--on-dark.scrolled {
+  background: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.10);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 8px 40px rgba(0, 0, 0, 0.32);
+}
+
+.navbar--on-dark.scrolled::before {
   background:
     radial-gradient(ellipse 60% 160% at 8% 50%, rgba(255,255,255,0.07) 0%, transparent 65%),
     rgba(8, 20, 40, 0.78);
   backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
-  border-bottom-color: rgba(255, 255, 255, 0.10);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.08) inset,
-    0 8px 40px rgba(0, 0, 0, 0.32);
 }
 .navbar--on-dark.scrolled .logo {
   color: #fff;
@@ -927,13 +951,45 @@
     gap: 12px;
   }
 
-  .navbar { height: 64px; }
+  .navbar { height: 84px; }
+
+  /* Permanent compositor layer for the fixed navbar on mobile.
+     Without this, iOS Safari can pull the fixed bar into whatever
+     compositor layer the scrolling content creates (e.g. backdrop-filter
+     elements), rasterizing the logo blurry during scroll. */
+  .navbar {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+  }
 
   /* Shrink logo text slightly */
-  .logo { font-size: 18px; gap: 8px; }
-  .logo-icon { height: 50px; width: auto; }
+  .logo { font-size: 20px; gap: 8px; }
+  .logo-icon { height: 72px; width: auto; }
 
-  .mobile-menu { top: 64px; }
+  /* Kill ::before entirely on mobile.
+     Even backdrop-filter:none with a CSS transition on that property causes
+     the browser to allocate a compositor layer for the pseudo-element,
+     trapping the logo SVG in the same rasterized texture → blurry on scroll.
+     Solution: remove the element from layout completely, apply bg directly. */
+  .navbar::before { display: none; }
+
+  .navbar.scrolled {
+    background: rgba(210, 228, 246, 0.94);
+  }
+  .navbar--on-dark.scrolled {
+    background: rgba(8, 20, 40, 0.90);
+    border-bottom-color: rgba(255, 255, 255, 0.10);
+  }
+
+  /* Promote logo to its own GPU compositing layer so it rasterizes at
+     native resolution independently of the navbar background. */
+  .logo-icon {
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  .mobile-menu { top: 84px; }
 }
 
 /* ── Tablet breakpoint (769px – 1023px) ─────────────────────────────── */

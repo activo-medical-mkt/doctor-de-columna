@@ -1351,8 +1351,9 @@
   .hero-inner {
     grid-template-columns: 1fr;
     padding: 0 20px;
-    padding-top: 80px;
-    gap: 0;
+    padding-top: 100px;      /* 84px navbar + 16px breathing room above badge */
+    gap: 16px;               /* controlled gap between text block and photo */
+    align-content: start;    /* stop rows from stretching to fill viewport height */
     text-align: center;
   }
 
@@ -1360,13 +1361,24 @@
     order: 1 !important;
     align-items: center;
     padding-right: 0;
-    padding-bottom: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .hero-visual {
     order: 2 !important;
-    height: clamp(480px, 130vw, 580px);
+    height: auto;
+    min-height: 0;
+    align-items: flex-start;
     margin-bottom: 0;
+  }
+
+  /* Hero badge: drop backdrop-filter on mobile — it creates a compositor
+     layer in the scroll content that can interfere with the fixed navbar. */
+  .hero-badge {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.82);
   }
 
   /* BIG photo — nearly full-bleed like Nuvica */
@@ -1459,7 +1471,11 @@
 
 @media (max-width: 600px) {
   .hero-photo-frame { width: min(90vw, 340px); }
-  .hero-visual { height: clamp(460px, 126vw, 540px); }
+  .hero-visual {
+    height: auto;
+    min-height: 0;
+    align-items: flex-start;
+  }
   .stat-num { font-size: 1.1rem; }
 
   .hero-stats-bar { padding: 0 20px 32px; }

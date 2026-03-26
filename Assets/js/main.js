@@ -2,10 +2,36 @@
 // Boots after partial injection when [data-include] slots are present.
 
 // ── Navbar scroll + progress bar ────────────────────────────────────
+let darkSections = [];
+
+function refreshDarkSections() {
+  darkSections = Array.from(document.querySelectorAll('[data-nav-dark]'));
+}
+
+function applyNavbarThemeBySection(navbar) {
+  if (!navbar) return;
+  if (!darkSections.length) {
+    navbar.classList.remove('navbar--on-dark');
+    return;
+  }
+
+  const navBandTop = 0;
+  const navBandBottom = navbar.offsetHeight || 68;
+  const onDark = darkSections.some(section => {
+    const rect = section.getBoundingClientRect();
+    return rect.top < navBandBottom && rect.bottom > navBandTop;
+  });
+
+  navbar.classList.toggle('navbar--on-dark', onDark);
+}
+
 function initCore() {
   const navbar   = document.getElementById('navbar');
   const progress = document.getElementById('scrollProgress');
   if (!navbar && !progress) return;
+
+  // Safety reset in case browser restores a previous menu-open state.
+  document.body.style.overflow = '';
 
   let ticking = false;
   function onScroll() {
@@ -14,6 +40,7 @@ function initCore() {
         const scrollY = window.scrollY;
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         if (navbar)   navbar.classList.toggle('scrolled', scrollY > 60);
+        if (navbar)   applyNavbarThemeBySection(navbar);
         if (progress) progress.style.width = (maxScroll > 0 ? (scrollY / maxScroll) * 100 : 0) + '%';
         ticking = false;
       });
@@ -21,12 +48,19 @@ function initCore() {
     }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
+  refreshDarkSections();
+  // Apply correct scroll-dependent navbar state immediately on first paint.
+  onScroll();
 
   // ── Mobile hamburger menu ──────────────────────────────────────────
   const hamburger  = document.getElementById('nav-hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
 
   if (hamburger && mobileMenu) {
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    mobileMenu.classList.remove('open');
+
     hamburger.addEventListener('click', () => {
       const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', String(!isOpen));
@@ -56,27 +90,10 @@ function initCore() {
     }, { passive: true });
   }
 
-  // Detect when navbar is over a dark section
-  if (navbar) {
-    const darkSections = document.querySelectorAll('[data-nav-dark]');
-    if (darkSections.length) {
-      const navH = navbar.offsetHeight || 68;
-      // rootMargin must be plain px/% — calc() is NOT supported by IntersectionObserver
-      const bottomMargin = -(window.innerHeight - navH);
-      const active = new Set();
-      const darkObserver = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) active.add(e.target);
-          else active.delete(e.target);
-        });
-        navbar.classList.toggle('navbar--on-dark', active.size > 0);
-      }, {
-        rootMargin: `0px 0px ${bottomMargin}px 0px`,
-        threshold: 0
-      });
-      darkSections.forEach(s => darkObserver.observe(s));
-    }
-  }
+  window.addEventListener('resize', () => {
+    refreshDarkSections();
+    onScroll();
+  }, { passive: true });
 }
 
 function initOnVisible(selector, callback, rootMargin = '0px') {
@@ -252,7 +269,7 @@ function initReviews() {
 
 // ── Third-party Doctoralia widget + fallback sync ───────────────────
 function initDoctoralia() {
-  const hasAnchor = document.querySelector('.zl-url');
+  const hasAnchor = document.getElementById('zl-url-book');
   if (!hasAnchor) return;
 
   // Skip widget on localhost — it's domain-locked and always returns 403
@@ -329,18 +346,6 @@ function initDoctoralia() {
     fallback,
     readyClass: 'has-live-widget'
   });
-
-  const heroContainer = document.querySelector('.hero-doc-cert');
-  const heroAnchor = document.getElementById('zl-url-hero') || document.getElementById('zl-url');
-  const heroFallback = document.getElementById('hero-cert-fallback');
-
-  bindFallbackSync({
-    container: heroContainer,
-    anchor: heroAnchor,
-    fallback: heroFallback,
-    maxTries: 24,
-    tickMs: 250
-  });
 }
 
 // ── Count-up animation for stats strip ─────────────────────────────
@@ -410,6 +415,11 @@ if (document.readyState === 'loading') {
 if (hasIncludes) {
   document.addEventListener('partials-ready', () => {
     bootCore();
+    refreshDarkSections();
+    window.requestAnimationFrame(() => {
+      const navbar = document.getElementById('navbar');
+      applyNavbarThemeBySection(navbar);
+    });
     bootContent();
   }, { once: true });
 } else if (document.readyState === 'loading') {

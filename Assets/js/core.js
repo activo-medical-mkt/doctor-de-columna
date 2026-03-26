@@ -1,4 +1,8 @@
 /**
+ * LEGACY NOTE:
+ * This file is retained for reference and is not loaded by index.html at runtime.
+ * Active production behavior is in Assets/js/main.js.
+ *
  * core.js — Navbar scroll effect + scroll progress bar
  * Traumatólogo GDL
  *
