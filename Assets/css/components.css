@@ -927,13 +927,13 @@
     gap: 12px;
   }
 
-  .navbar { height: 56px; }
+  .navbar { height: 64px; }
 
   /* Shrink logo text slightly */
-  .logo { font-size: 17px; gap: 8px; }
-  .logo-icon { height: 42px; width: auto; }
+  .logo { font-size: 18px; gap: 8px; }
+  .logo-icon { height: 50px; width: auto; }
 
-  .mobile-menu { top: 56px; }
+  .mobile-menu { top: 64px; }
 }
 
 /* ── Tablet breakpoint (769px – 1023px) ─────────────────────────────── */

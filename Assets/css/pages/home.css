@@ -235,24 +235,11 @@
   gap: 6px;
 }
 
-.doc-cert-pill-icon {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
-
 .doc-cert-pill-logo {
   height: 16px;
   width: auto;
   flex-shrink: 0;
   display: block;
-}
-
-.doc-cert-pill-brand {
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #00B5AD;
 }
 
 .doc-cert-pill-verified {
@@ -2616,12 +2603,6 @@
   flex-wrap: wrap;
 }
 
-.bws-check {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
-
 .bws-specialty {
   font-size: 0.85rem;
   color: #7A9AB8;
@@ -2665,9 +2646,16 @@
 .bws-brand {
   border-top: 1px solid #EEF2F7;
   padding-top: 12px;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.bws-logo { height: 22px; width: auto; display: block; }
+.bws-logo {
+  height: 24px;
+  width: auto;
+  display: block;
+  opacity: 0.96;
+}
 
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 1023px) {
