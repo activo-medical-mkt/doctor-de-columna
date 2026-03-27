@@ -143,12 +143,51 @@
 }
 
 .hero-badge-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--color-green);
+  width: 12px;
+  height: 12px;
+  position: relative;
+  background: #3FD39A;
   border-radius: 50%;
-  box-shadow: 0 0 0 3px rgba(99,255,132,0.3);
+  box-shadow: 0 0 0 2px rgba(63, 211, 154, 0.25);
   flex-shrink: 0;
+}
+
+.hero-badge-dot::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1.5px solid rgba(63, 211, 154, 0.45);
+  border-radius: 50%;
+  animation: hero-badge-pulse 2s ease-out infinite;
+}
+
+.hero-badge-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  transform: translate(-50%, -50%);
+  background:
+    linear-gradient(#fff, #fff) center / 1.5px 6px no-repeat,
+    linear-gradient(#fff, #fff) center / 6px 1.5px no-repeat;
+  border-radius: 2px;
+}
+
+@keyframes hero-badge-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.65;
+  }
+  70% {
+    transform: scale(1.15);
+    opacity: 0.18;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
 }
 
 .hero-headline {
@@ -319,6 +358,7 @@
 }
 
 .hero-photo-capsule img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -606,6 +646,11 @@
   flex-direction: column;
   gap: clamp(48px, 6vw, 80px);
 }
+
+/* Show doctor profile section before trust header/pillars */
+.section-trust-inner .trust-doctor { order: 1 !important; }
+.section-trust-inner .trust-header { order: 2 !important; }
+.section-trust-inner .trust-pillars { order: 3 !important; }
 
 /* ── Section header ── */
 .trust-header {
@@ -1351,6 +1396,10 @@
 
 /* ── Mobile ≤768px: h1 above photo, big portrait, hide clutter ─────────── */
 @media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+  }
+
   /* Stack: text first, photo second */
   .hero-inner {
     grid-template-columns: 1fr;
@@ -1395,7 +1444,8 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 14px;
+    /* Keep CTA clear of mobile browser bottom bars (Safari/Chrome UI) */
+    bottom: max(56px, calc(env(safe-area-inset-bottom) + 16px));
     transform: none;
     margin-left: auto;
     margin-right: auto;
@@ -1468,7 +1518,13 @@
   .loc-map-wrap { display: none; }
 
   /* 3. Stats strip: halve the padding */
-  .section-stats-strip { padding-top: 32px; padding-bottom: 32px; }
+  .section-stats-strip {
+    margin-top: -18px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    position: relative;
+    z-index: 2;
+  }
   .stats-strip-inner   { flex-wrap: wrap; gap: 20px 0; }
   .stats-strip-divider { display: none; }
 
@@ -1524,9 +1580,13 @@
 }
 
 @media (max-width: 600px) {
+  .section-stats-strip {
+    margin-top: -16px;
+  }
+
   .hero-cta-group--mobile {
     width: min(90vw, 320px);
-    bottom: 12px;
+    bottom: max(52px, calc(env(safe-area-inset-bottom) + 14px));
     padding: 7px;
   }
 
@@ -2747,7 +2807,6 @@
     gap: 40px;
   }
   .book-sub { max-width: 100%; }
-  .book-widget-wrap { }
 }
 
 @media (max-width: 600px) {
