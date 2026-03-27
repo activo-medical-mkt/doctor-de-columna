@@ -201,6 +201,10 @@
   flex-wrap: wrap;
 }
 
+.hero-cta-group--mobile {
+  display: none;
+}
+
 /* Doctoralia certificate embed in hero */
 .hero-doc-cert {
   margin-top: 4px;
@@ -1371,6 +1375,46 @@
     min-height: 0;
     align-items: flex-start;
     margin-bottom: 0;
+    padding-bottom: 0;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .hero-cta-group--desktop {
+    display: none;
+  }
+
+  .hero-cta-group--mobile {
+    display: flex;
+    width: min(88vw, 336px);
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 14px;
+    transform: none;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 6;
+    padding: 8px;
+    border-radius: 999px;
+    background: rgba(244, 249, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 12px 30px rgba(24, 63, 102, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .hero-cta-group--mobile .btn-primary {
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   /* Hero badge: drop backdrop-filter on mobile — it creates a compositor
@@ -1383,7 +1427,17 @@
 
   /* BIG photo — nearly full-bleed like Nuvica */
   .hero-photo-frame {
-    width: min(86vw, 360px);
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 3 / 4;
+  }
+
+  .hero-photo-capsule {
+    border-radius: 52vw 52vw 0 0;
+  }
+
+  .hero-photo-capsule img {
+    object-position: center top;
   }
 
   /* Hide all floating stat cards */
@@ -1470,7 +1524,13 @@
 }
 
 @media (max-width: 600px) {
-  .hero-photo-frame { width: min(90vw, 340px); }
+  .hero-cta-group--mobile {
+    width: min(90vw, 320px);
+    bottom: 12px;
+    padding: 7px;
+  }
+
+  .hero-photo-frame { width: 100%; }
   .hero-visual {
     height: auto;
     min-height: 0;
