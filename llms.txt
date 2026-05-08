@@ -1,0 +1,60 @@
+# llms.txt — Machine-readable site summary for AI assistants
+# https://llmstxt.org
+# Canonical: https://www.doctordecolumna.com/
+
+# Dr. Francisco Cisneros Oliva — Especialista en Cirugía de Columna Vertebral
+
+> Dr. Francisco Javier Cisneros Oliva es cirujano de columna vertebral con
+> subespecialidad en cirugía mínimamente invasiva. Atiende en Guadalajara
+> (Jalisco), Tijuana y Rosarito (Baja California). Consultas, diagnóstico
+> y tratamiento de hernias de disco, estenosis espinal, escoliosis, ciática
+> y más. Citas vía WhatsApp: +52 664 159 6633.
+
+## Páginas principales
+
+- [Inicio](https://www.doctordecolumna.com/): Página principal con presentación del doctor, padecimientos tratados, servicios, ubicaciones y testimonios.
+- [Blog](https://www.doctordecolumna.com/blog/): Artículos educativos sobre salud de la columna vertebral.
+
+## Guadalajara
+
+- [Guadalajara — Inicio](https://www.doctordecolumna.com/guadalajara/): Especialista en columna en Guadalajara y Zapopan, Jalisco.
+- [Condiciones — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/): Índice de padecimientos tratados en Guadalajara.
+- [Hernia de Disco Lumbar — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/hernia-de-disco-lumbar/): Síntomas, diagnóstico y tratamiento de hernia discal lumbar en Guadalajara.
+- [Hernia de Disco Cervical — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/hernia-de-disco-cervical/): Hernia cervical en Guadalajara.
+- [Hernia Discal Cervical — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/hernia-discal-cervical/): Hernia discal cervical en Guadalajara.
+- [Dolor Lumbar — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/dolor-lumbar/): Tratamiento de dolor lumbar en Guadalajara.
+- [Ciática — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/dolor-ciatica/): Dolor ciático en Guadalajara.
+- [Dolor Cervical y Radiculopatía — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/dolor-cervical-radiculopatia/): Radiculopatía cervical en Guadalajara.
+- [Escoliosis en Adulto — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/escoliosis-adulto/): Escoliosis en adultos en Guadalajara.
+- [Espondilolistesis — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/espondilolistesis/): Espondilolistesis en Guadalajara.
+- [Estenosis Espinal — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/estenosis-espinal/): Estenosis espinal en Guadalajara.
+- [Servicios — Guadalajara](https://www.doctordecolumna.com/guadalajara/servicios/): Índice de servicios en Guadalajara.
+- [Microdiscectomía — Guadalajara](https://www.doctordecolumna.com/guadalajara/servicios/microdiscectomia/): Microdiscectomía en Guadalajara.
+- [Cirugía Descompresión Lumbar — Guadalajara](https://www.doctordecolumna.com/guadalajara/servicios/cirugia-descompresion-lumbar/): Descompresión lumbar en Guadalajara.
+- [Cirugía de Columna Vertebral — Guadalajara](https://www.doctordecolumna.com/guadalajara/servicios/cirugia-de-columna-vertebral/): Cirugía de columna en Guadalajara.
+- [Endoscopia de Columna — Guadalajara](https://www.doctordecolumna.com/guadalajara/servicios/endoscopia-de-columna/): Endoscopia espinal en Guadalajara.
+- [Fusión Vertebral — Guadalajara](https://www.doctordecolumna.com/guadalajara/servicios/fusion-vertebral/): Fusión vertebral en Guadalajara.
+- [Bloqueos Epidurales — Guadalajara](https://www.doctordecolumna.com/guadalajara/servicios/bloqueos-epidurales/): Bloqueos epidurales en Guadalajara.
+- [Consulta Especialista — Guadalajara](https://www.doctordecolumna.com/guadalajara/servicios/consulta-especialista/): Primera consulta con especialista en Guadalajara.
+- [Rehabilitación — Guadalajara](https://www.doctordecolumna.com/guadalajara/servicios/rehabilitacion/): Rehabilitación de columna en Guadalajara.
+
+## Tijuana
+
+- [Tijuana — Inicio](https://www.doctordecolumna.com/tijuana/): Especialista en columna en Tijuana, Baja California.
+- [Condiciones — Tijuana](https://www.doctordecolumna.com/tijuana/condiciones/): Índice de padecimientos tratados en Tijuana.
+- [Hernia de Disco Lumbar — Tijuana](https://www.doctordecolumna.com/tijuana/condiciones/hernia-de-disco-lumbar/): Hernia discal lumbar en Tijuana.
+- [Hernia de Disco Cervical — Tijuana](https://www.doctordecolumna.com/tijuana/condiciones/hernia-de-disco-cervical/): Hernia cervical en Tijuana.
+- [Ciática — Tijuana](https://www.doctordecolumna.com/tijuana/condiciones/dolor-ciatica/): Ciática en Tijuana.
+- [Servicios — Tijuana](https://www.doctordecolumna.com/tijuana/servicios/): Índice de servicios en Tijuana.
+- [Cirugía de Columna Vertebral — Tijuana](https://www.doctordecolumna.com/tijuana/servicios/cirugia-de-columna-vertebral/): Cirugía de columna en Tijuana.
+
+## Rosarito
+
+- [Rosarito — Inicio](https://www.doctordecolumna.com/rosarito/): Especialista en columna en Rosarito, Baja California.
+
+## Contacto y citas
+
+- WhatsApp (todas las ubicaciones): https://wa.me/526641596633
+- Guadalajara: https://api.whatsapp.com/send?phone=526641596633&text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Guadalajara%2C%20Jalisco
+- Tijuana: https://api.whatsapp.com/send?phone=526641596633&text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Tijuana%2C%20B.C.
+- Rosarito: https://api.whatsapp.com/send?phone=526641596633&text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Rosarito%2C%20B.C.

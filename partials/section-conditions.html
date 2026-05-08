@@ -1,155 +1,168 @@
   <!-- ══════════════════════════════════════════════════════════════════
-       SECCIÓN 4 · CONDICIONES / PADECIMIENTOS
-       Layout: intro left + specialty-grouped condition list right
+       SECCIÓN 4 · CONDICIONES / PADECIMIENTOS — Tab layout
        ══════════════════════════════════════════════════════════════════ -->
   <section id="padecimientos" class="section-cond" aria-labelledby="cond-h2">
     <div class="section-cond-inner">
 
-      <!-- Left: sticky intro -->
-      <div class="cond-intro reveal">
+      <!-- Header -->
+      <div class="cond-header reveal">
         <span class="section-eyebrow">Padecimientos que Tratamos</span>
-        <h2 class="cond-h2" id="cond-h2">Condiciones del Sistema <span class="cond-accent">Musculoesquelético</span></h2>
-        <p class="cond-sub">Diagnóstico y tratamiento especializado para lesiones de columna, rodilla y fracturas. Con tecnología de mínima invasión y protocolos de recuperación acelerada.</p>
-        <a href="https://wa.me/5213312345678?text=Hola%2C%20tengo%20una%20consulta%20sobre%20mi%20padecimiento"
-           target="_blank" rel="noopener noreferrer" class="btn-primary cond-cta">
-          Consultar mi Caso
-        </a>
+        <h2 class="cond-h2" id="cond-h2">Condiciones de <span class="cond-accent">Columna</span></h2>
+        <p class="cond-subtext">Tratamos las causas más comunes de dolor de columna con diagnóstico preciso y opciones mínimamente invasivas. Selecciona tu padecimiento para conocer el tratamiento.</p>
+        <div class="cond-city-switch" id="cond-city-switch" role="group" aria-label="Seleccionar ciudad para ver condiciones">
+          <button type="button" class="cond-city-chip is-active" data-cond-city="guadalajara" aria-pressed="true">Guadalajara</button>
+          <button type="button" class="cond-city-chip" data-cond-city="tijuana" aria-pressed="false">Tijuana</button>
+          <button type="button" class="cond-city-chip" data-cond-city="rosarito" aria-pressed="false">Rosarito</button>
+        </div>
+        <p class="cond-city-note" id="cond-city-note">Mostrando páginas de condición para Guadalajara.</p>
       </div>
 
-      <!-- Right: conditions by specialty group -->
-      <div class="cond-groups">
+      <!-- Tab layout: list left, image+content right -->
+      <div class="cond-tabs-layout" id="condTabsWidget">
 
-        <!-- ── Columna Vertebral (featured) ── -->
-        <div class="cond-group cond-group--featured reveal reveal-delay-1">
-          <div class="cond-group-head">
-            <div class="cond-group-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/>
-              </svg>
+        <!-- Left: tab buttons -->
+        <div class="cond-tab-list" role="tablist" aria-label="Condiciones de columna">
+
+          <button class="cond-tab cond-tab--active" role="tab" aria-selected="true" aria-controls="cond-panel-0" id="cond-tab-0" data-cond-tab="0">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+            Ciática y Dolor Radicular
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-1" id="cond-tab-1" data-cond-tab="1">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg></span>
+            Hernia de Disco Lumbar
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-2" id="cond-tab-2" data-cond-tab="2">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12H2"/><path d="M5 5H2v14h3"/><path d="M19 5h3v14h-3"/><path d="M9 5v14"/><path d="M15 5v14"/></svg></span>
+            Estenosis Espinal
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-3" id="cond-tab-3" data-cond-tab="3">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="9" height="6" rx="1"/><rect x="13" y="9" width="9" height="6" rx="1"/><rect x="2" y="15" width="9" height="6" rx="1"/></svg></span>
+            Espondilolistesis
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-4" id="cond-tab-4" data-cond-tab="4">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M8 6a4 4 0 0 0 0 8"/><path d="M16 6a4 4 0 0 1 0 8"/><path d="M9 14h6"/></svg></span>
+            Hernia Discal Cervical
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-5" id="cond-tab-5" data-cond-tab="5">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><path d="M4 10h2"/><path d="M18 10h2"/></svg></span>
+            Radiculopatía Cervical
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-6" id="cond-tab-6" data-cond-tab="6">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+            Dolor Lumbar Crónico
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-7" id="cond-tab-7" data-cond-tab="7">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 4 4 5 4 8a4 4 0 0 1-8 0c0-3 2-4 4-8z"/><path d="M12 14v8"/><path d="M9 18h6"/></svg></span>
+            Escoliosis del Adulto
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+        </div><!-- /cond-tab-list -->
+
+        <!-- Right: content panels -->
+        <div class="cond-panels">
+
+          <div class="cond-panel cond-panel--active" role="tabpanel" id="cond-panel-0" aria-labelledby="cond-tab-0">
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/dolor%20de%20ciatica%20en%20tijuana.jpg" alt="Ciática y dolor radicular lumbar" loading="lazy" width="760" height="480">
             </div>
-            <div>
-              <span class="cond-group-label">Especialidad Principal</span>
-              <h3 class="cond-group-h3">Columna Vertebral</h3>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/condiciones/dolor-ciatica-guadalajara/" class="cond-panel-title-link" data-cond-slug="dolor-ciatica" data-cond-name="Ciática y Dolor Radicular">Ciática y Dolor Radicular</a></h3>
+              <p class="cond-panel-desc">¿El dolor baja desde el glúteo por la parte trasera de la pierna hasta el pie? Ese trayecto eléctrico es la firma del nervio ciático comprimido. En la mayoría de los casos mejora con tratamiento conservador en 6–12 semanas, sin necesidad de cirugía.</p>
             </div>
           </div>
-          <ul class="cond-items" role="list">
-            <li class="cond-item">
-              <svg class="cond-item-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-              <div>
-                <strong>Ciática y Dolor Radicular</strong>
-                <span>Compresión del nervio ciático — dolor irradiado a glúteo y pierna</span>
-              </div>
-            </li>
-            <li class="cond-item">
-              <svg class="cond-item-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-              <div>
-                <strong>Hernia de Disco Lumbar y Cervical</strong>
-                <span>Tratamiento conservador o quirúrgico según el grado de la lesión</span>
-              </div>
-            </li>
-            <li class="cond-item">
-              <svg class="cond-item-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-              <div>
-                <strong>Estenosis Espinal</strong>
-                <span>Estrechamiento del canal vertebral que comprime nervios y causa dolor crónico</span>
-              </div>
-            </li>
-            <li class="cond-item">
-              <svg class="cond-item-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-              <div>
-                <strong>Espondilolistesis</strong>
-                <span>Desplazamiento de una vértebra sobre otra — inestabilidad lumbar y dolor irradiado</span>
-              </div>
-            </li>
-          </ul>
-        </div>
 
-        <!-- ── Secondary: Rodilla + Fracturas + Cadera ── -->
-        <div class="cond-secondary">
-
-          <div class="cond-group cond-group--secondary reveal reveal-delay-2">
-            <div class="cond-group-head">
-              <div class="cond-group-icon cond-group-icon--green">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/>
-                </svg>
-              </div>
-              <div>
-                <span class="cond-group-label">Articulaciones</span>
-                <h3 class="cond-group-h3">Rodilla</h3>
-              </div>
+          <div class="cond-panel" role="tabpanel" id="cond-panel-1" aria-labelledby="cond-tab-1" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/hernia%20de%20disco%20en%20tijuana.jpg" alt="Hernia de disco lumbar" loading="lazy" width="760" height="480">
             </div>
-            <ul class="cond-items cond-items--compact" role="list">
-              <li class="cond-item">
-                <svg class="cond-item-icon cond-item-icon--green" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                <div><strong>Lesiones Ligamentarias</strong><span>LCA, LCP, meniscos y cartílago articular</span></div>
-              </li>
-              <li class="cond-item">
-                <svg class="cond-item-icon cond-item-icon--green" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                <div><strong>Gonartrosis y Artroplastia</strong><span>Reemplazo total y parcial de rodilla</span></div>
-              </li>
-            </ul>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/condiciones/hernia-de-disco-lumbar-guadalajara/" class="cond-panel-title-link" data-cond-slug="hernia-de-disco-lumbar" data-cond-name="Hernia de Disco Lumbar">Hernia de Disco Lumbar</a></h3>
+              <p class="cond-panel-desc">El núcleo del disco intervertebral presiona una raíz nerviosa y genera dolor lumbar que irradia a la pierna. El 80% de los pacientes se recupera sin cirugía; cuando es necesaria, la endoscopia de columna acorta la recuperación a 2–3 semanas.</p>
+            </div>
           </div>
 
-          <div class="cond-group cond-group--secondary reveal reveal-delay-3">
-            <div class="cond-group-head">
-              <div class="cond-group-icon cond-group-icon--red">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>
-                </svg>
-              </div>
-              <div>
-                <span class="cond-group-label">Traumatología</span>
-                <h3 class="cond-group-h3">Fracturas</h3>
-              </div>
+          <div class="cond-panel" role="tabpanel" id="cond-panel-2" aria-labelledby="cond-tab-2" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/estonosis%20lumbar%20tijuana.jpg" alt="Estenosis espinal" loading="lazy" width="760" height="480">
             </div>
-            <ul class="cond-items cond-items--compact" role="list">
-              <li class="cond-item">
-                <svg class="cond-item-icon cond-item-icon--red" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                <div><strong>Fracturas de Alta Energía</strong><span>Accidentes, caídas y trauma de extremidades</span></div>
-              </li>
-              <li class="cond-item">
-                <svg class="cond-item-icon cond-item-icon--red" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                <div><strong>Osteosíntesis y Fijación</strong><span>Placas, tornillos, clavos intramedulares</span></div>
-              </li>
-            </ul>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/condiciones/estenosis-espinal-guadalajara/" class="cond-panel-title-link" data-cond-slug="estenosis-espinal" data-cond-name="Estenosis Espinal">Estenosis Espinal</a></h3>
+              <p class="cond-panel-desc">Estrechamiento del canal vertebral que comprime los nervios. El síntoma clave es pesadez y dolor en piernas al caminar una o dos cuadras, que mejora al sentarse. La descompresión endoscópica restaura el espacio sin necesidad de fusión vertebral.</p>
+            </div>
           </div>
 
-          <div class="cond-group cond-group--secondary reveal reveal-delay-4">
-            <div class="cond-group-head">
-              <div class="cond-group-icon cond-group-icon--amber">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 11v4"/><path d="M14 13h-4"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M18 6v14"/><path d="M6 6v14"/><rect width="20" height="14" x="2" y="6" rx="2"/>
-                </svg>
-              </div>
-              <div>
-                <span class="cond-group-label">Articulaciones</span>
-                <h3 class="cond-group-h3">Cadera</h3>
-              </div>
+          <div class="cond-panel" role="tabpanel" id="cond-panel-3" aria-labelledby="cond-tab-3" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/Espondilolistesis%20tijuana.jpg" alt="Espondilolistesis lumbar" loading="lazy" width="760" height="480">
             </div>
-            <ul class="cond-items cond-items--compact" role="list">
-              <li class="cond-item">
-                <svg class="cond-item-icon cond-item-icon--amber" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                <div><strong>Coxartrosis</strong><span>Desgaste articular de cadera — dolor inguinal y limitación de movimiento</span></div>
-              </li>
-              <li class="cond-item">
-                <svg class="cond-item-icon cond-item-icon--amber" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                <div><strong>Fractura de Cadera</strong><span>Prótesis total y parcial — rehabilitación temprana para recuperar la marcha</span></div>
-              </li>
-            </ul>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/condiciones/espondilolistesis-guadalajara/" class="cond-panel-title-link" data-cond-slug="espondilolistesis" data-cond-name="Espondilolistesis">Espondilolistesis</a></h3>
+              <p class="cond-panel-desc">Una vértebra se desliza sobre la inferior generando inestabilidad lumbar con dolor al estar de pie o caminar. Los grados I–II se estabilizan con fisioterapia dirigida; los grados III–IV requieren fusión vertebral para recuperar la alineación y la función.</p>
+            </div>
           </div>
 
-        </div><!-- /cond-secondary -->
+          <div class="cond-panel" role="tabpanel" id="cond-panel-4" aria-labelledby="cond-tab-4" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/Tratamiento%20de%20Hernias%20de%20Disco%20en%20Tijuana.jpg" alt="Hernia discal cervical" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/condiciones/hernia-discal-cervical-guadalajara/" class="cond-panel-title-link" data-cond-slug="hernia-discal-cervical" data-cond-name="Hernia Discal Cervical">Hernia Discal Cervical</a></h3>
+              <p class="cond-panel-desc">Dolor de cuello que irradia a hombro, brazo o mano con adormecimiento y pérdida de fuerza. Los niveles C5-C6 y C6-C7 son los más frecuentes. La técnica endoscópica cervical permite recuperación en 2–4 semanas sin cicatriz anterior visible.</p>
+            </div>
+          </div>
 
-        <!-- More conditions CTA -->
-        <div class="cond-more reveal">
-          <p class="cond-more-text">¿Tu padecimiento no aparece aquí? También atendemos <strong>hombro, tobillo, pie, muñeca</strong> y otras condiciones del sistema musculoesquelético.</p>
-          <a href="https://wa.me/5213312345678?text=Hola%2C%20tengo%20una%20duda%20sobre%20mi%20padecimiento" target="_blank" rel="noopener noreferrer" class="cond-more-link">
-            Consultar otro padecimiento
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg>
-          </a>
-        </div>
+          <div class="cond-panel" role="tabpanel" id="cond-panel-5" aria-labelledby="cond-tab-5" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/Radiculopat%C3%ADa%20dolor%20irradiado%20en%20tijuana.jpg" alt="Radiculopatía cervical" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/condiciones/dolor-cervical-radiculopatia-guadalajara/" class="cond-panel-title-link" data-cond-slug="dolor-cervical-radiculopatia" data-cond-name="Radiculopatía Cervical">Radiculopatía Cervical</a></h3>
+              <p class="cond-panel-desc">Compresión de la raíz nerviosa cervical que genera hormigueo, quemadura o debilidad recorriendo el brazo hasta los dedos. Se distingue del dolor muscular por ser eléctrico y constante. Responde bien a bloqueos epidurales cervicales guiados por imagen.</p>
+            </div>
+          </div>
 
-      </div><!-- /cond-groups -->
+          <div class="cond-panel" role="tabpanel" id="cond-panel-6" aria-labelledby="cond-tab-6" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/Dolor%20de%20Columna%20al%20Moverse.jpg" alt="Dolor lumbar crónico" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/condiciones/dolor-lumbar-guadalajara/" class="cond-panel-title-link" data-cond-slug="dolor-lumbar" data-cond-name="Dolor Lumbar Crónico">Dolor Lumbar Crónico</a></h3>
+              <p class="cond-panel-desc">Dolor en la zona baja de la espalda que persiste más de 3 meses. Puede tener múltiples causas estructurales tratables — artrosis facetaria, degeneración discal o inestabilidad segmentaria — que se identifican con resonancia magnética y diagnóstico funcional preciso.</p>
+            </div>
+          </div>
+
+          <div class="cond-panel" role="tabpanel" id="cond-panel-7" aria-labelledby="cond-tab-7" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/escoliosis.jpg" alt="Escoliosis del adulto" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/condiciones/escoliosis-adulto-guadalajara/" class="cond-panel-title-link" data-cond-slug="escoliosis-adulto" data-cond-name="Escoliosis del Adulto">Escoliosis del Adulto</a></h3>
+              <p class="cond-panel-desc">Desviación lateral de la columna que genera dolor crónico, asimetría postural y deterioro progresivo de la calidad de vida. El tratamiento en adultos se enfoca en aliviar el dolor y detener la progresión; los casos severos se corrigen quirúrgicamente con instrumentación.</p>
+            </div>
+          </div>
+
+        </div><!-- /cond-panels -->
+      </div><!-- /cond-tabs-layout -->
+
+      <a href="/condiciones/" class="cond-all-link reveal">
+        Ver todas las condiciones de columna en Guadalajara
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg>
+      </a>
+
     </div><!-- /section-cond-inner -->
   </section><!-- /section-cond -->

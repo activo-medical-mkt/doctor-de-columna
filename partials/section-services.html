@@ -1,112 +1,82 @@
   <!-- ══════════════════════════════════════════════════════════════════
        SECCIÓN 5 · SERVICIOS / PROCEDIMIENTOS
-       Layout: centered header + 4-col numbered procedure cards
+       Layout: centered header + 3-col glassmorphism cards (spine only)
        ══════════════════════════════════════════════════════════════════ -->
   <section id="servicios" class="section-serv" aria-labelledby="serv-h2" data-nav-dark>
     <div class="section-serv-inner">
 
       <header class="serv-header reveal">
         <span class="section-eyebrow">Tratamientos &amp; Procedimientos</span>
-        <h2 class="serv-h2" id="serv-h2">Servicios <span class="serv-accent">Especializados</span></h2>
+        <h2 class="serv-h2" id="serv-h2">Procedimientos de <span class="serv-accent">Cirujano de Columna</span></h2>
         <p class="serv-sub">Procedimientos con tecnología de vanguardia, anestesia personalizada y protocolos de cirugía de corta estancia para que vuelvas a tu vida en el menor tiempo posible.</p>
+        <div class="serv-city-switch" id="serv-city-switch" role="group" aria-label="Seleccionar ciudad para ver servicios">
+          <button type="button" class="serv-city-chip is-active" data-serv-city="guadalajara" aria-pressed="true">Guadalajara</button>
+          <button type="button" class="serv-city-chip" data-serv-city="tijuana" aria-pressed="false">Tijuana</button>
+          <button type="button" class="serv-city-chip" data-serv-city="rosarito" aria-pressed="false">Rosarito</button>
+        </div>
+        <p class="serv-city-note" id="serv-city-note">Mostrando páginas de servicio para Guadalajara.</p>
       </header>
 
       <div class="serv-grid">
 
         <div class="serv-card reveal reveal-delay-1">
-          <div class="serv-card-num" aria-hidden="true">01</div>
           <div class="serv-card-icon serv-card-icon--blue">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/>
             </svg>
           </div>
-          <h3 class="serv-card-h3">Endoscopia de Columna</h3>
-          <p class="serv-card-desc">Cirugía de mínima invasión para hernia discal y estenosis espinal. Incisión menor a 1 cm, anestesia local y alta el mismo día.</p>
-          <a href="#faq" class="serv-card-link">Más información <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg></a>
+          <h3 class="serv-card-h3"><a href="/servicios/endoscopia-de-columna-guadalajara/" data-serv-slug="endoscopia-de-columna" data-serv-name="Endoscopia de Columna">Endoscopia de Columna</a></h3>
+          <p class="serv-card-desc">Cirugía de mínima invasión para hernia discal y estenosis espinal. Incisión menor a 1&nbsp;cm, anestesia local y alta el mismo día.</p>
         </div>
 
         <div class="serv-card reveal reveal-delay-2">
-          <div class="serv-card-num" aria-hidden="true">02</div>
           <div class="serv-card-icon serv-card-icon--green">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/>
+              <path d="M11 12H3"/><path d="M16 6H3"/><path d="M16 18H3"/><path d="M19 10v4"/><circle cx="21" cy="12" r="2"/>
             </svg>
           </div>
-          <h3 class="serv-card-h3">Cirugía de Rodilla</h3>
-          <p class="serv-card-desc">Artroscopia, reconstrucción de LCA y reemplazo total de rodilla. Seguimiento desde el preoperatorio hasta la rehabilitación completa.</p>
-          <a href="#faq" class="serv-card-link">Más información <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg></a>
+          <h3 class="serv-card-h3"><a href="/servicios/microdiscectomia-guadalajara/" data-serv-slug="microdiscectomia" data-serv-name="Microdiscectomía">Microdiscectomía</a></h3>
+          <p class="serv-card-desc">Extirpación del fragmento discal herniado con microscopio quirúrgico. Recuperación en 2–3 semanas y alivio inmediato del dolor radicular.</p>
         </div>
 
         <div class="serv-card reveal reveal-delay-3">
-          <div class="serv-card-num" aria-hidden="true">03</div>
-          <div class="serv-card-icon serv-card-icon--navy">
+          <div class="serv-card-icon serv-card-icon--teal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>
+              <path d="M22 12H2"/><path d="M5 5H2v14h3"/><path d="M19 5h3v14h-3"/><path d="M9 5v14"/><path d="M15 5v14"/>
             </svg>
           </div>
-          <h3 class="serv-card-h3">Tratamiento de Fracturas</h3>
-          <p class="serv-card-desc">Reducción y fijación quirúrgica con implantes de titanio. Osteosíntesis adaptada a cada tipo de fractura y estilo de vida del paciente.</p>
-          <a href="#faq" class="serv-card-link">Más información <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg></a>
+          <h3 class="serv-card-h3"><a href="/servicios/cirugia-descompresion-lumbar-guadalajara/" data-serv-slug="cirugia-descompresion-lumbar" data-serv-name="Descompresión Lumbar">Descompresión Lumbar</a></h3>
+          <p class="serv-card-desc">Laminectomía y foraminotomía para liberar el canal vertebral estrecho. Indicada en estenosis espinal con claudicación o déficit neurológico.</p>
         </div>
 
         <div class="serv-card reveal reveal-delay-4">
-          <div class="serv-card-num" aria-hidden="true">04</div>
           <div class="serv-card-icon serv-card-icon--purple">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/>
+              <rect x="2" y="3" width="9" height="6" rx="1"/><rect x="13" y="9" width="9" height="6" rx="1"/><rect x="2" y="15" width="9" height="6" rx="1"/>
             </svg>
           </div>
-          <h3 class="serv-card-h3">Consulta &amp; Diagnóstico</h3>
-          <p class="serv-card-desc">Valoración ortopédica integral con interpretación de imagen. Segunda opinión disponible para casos complejos o candidatos a cirugía.</p>
-          <a href="#faq" class="serv-card-link">Más información <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg></a>
+          <h3 class="serv-card-h3"><a href="/servicios/fusion-vertebral-guadalajara/" data-serv-slug="fusion-vertebral" data-serv-name="Fusión Vertebral">Fusión Vertebral</a></h3>
+          <p class="serv-card-desc">Estabilización de vértebras inestables con implantes de titanio. Solución definitiva para espondilolistesis y deformidades de columna.</p>
         </div>
 
         <div class="serv-card reveal reveal-delay-1">
-          <div class="serv-card-num" aria-hidden="true">05</div>
-          <div class="serv-card-icon serv-card-icon--amber">
+          <div class="serv-card-icon serv-card-icon--rose">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+              <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/>
             </svg>
           </div>
-          <h3 class="serv-card-h3">Cirugía de Hombro</h3>
-          <p class="serv-card-desc">Artroscopia para lesiones del manguito rotador, SLAP y luxaciones recurrentes. Recuperación funcional con protocolo de rehabilitación guiado.</p>
-          <a href="#faq" class="serv-card-link">Más información <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg></a>
+          <h3 class="serv-card-h3"><a href="/servicios/bloqueos-epidurales-columna-guadalajara/" data-serv-slug="bloqueos-epidurales-columna" data-serv-name="Bloqueos Epidurales">Bloqueos Epidurales</a></h3>
+          <p class="serv-card-desc">Inyección guiada por imagen de corticoide o anestésico en el espacio epidural. Alivio rápido del dolor radicular sin necesidad de cirugía.</p>
         </div>
 
         <div class="serv-card reveal reveal-delay-2">
-          <div class="serv-card-num" aria-hidden="true">06</div>
-          <div class="serv-card-icon serv-card-icon--teal">
+          <div class="serv-card-icon serv-card-icon--amber">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 11v4"/><path d="M14 13h-4"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M18 6v14"/><path d="M6 6v14"/><rect width="20" height="14" x="2" y="6" rx="2"/>
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
             </svg>
           </div>
-          <h3 class="serv-card-h3">Reemplazo de Cadera</h3>
-          <p class="serv-card-desc">Prótesis total y parcial de cadera para coxartrosis y fracturas. Técnica de mínima invasión con movilización temprana a las 24 horas.</p>
-          <a href="#faq" class="serv-card-link">Más información <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg></a>
-        </div>
-
-        <div class="serv-card reveal reveal-delay-3">
-          <div class="serv-card-num" aria-hidden="true">07</div>
-          <div class="serv-card-icon serv-card-icon--rose">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>
-            </svg>
-          </div>
-          <h3 class="serv-card-h3">Infiltraciones &amp; Dolor Articular</h3>
-          <p class="serv-card-desc">Infiltraciones con corticoide, ácido hialurónico o PRP para rodilla, hombro y cadera. Alivio del dolor sin cirugía en casos seleccionados.</p>
-          <a href="#faq" class="serv-card-link">Más información <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg></a>
-        </div>
-
-        <div class="serv-card reveal reveal-delay-4">
-          <div class="serv-card-num" aria-hidden="true">08</div>
-          <div class="serv-card-icon serv-card-icon--indigo">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>
-            </svg>
-          </div>
-          <h3 class="serv-card-h3">Seguimiento Post-Quirúrgico</h3>
-          <p class="serv-card-desc">Control de herida, retiro de material de síntesis y protocolo de rehabilitación coordinado. Citas de seguimiento hasta la recuperación total.</p>
-          <a href="#faq" class="serv-card-link">Más información <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg></a>
+          <h3 class="serv-card-h3"><a href="/servicios/rehabilitacion-columna-guadalajara/" data-serv-slug="rehabilitacion-columna" data-serv-name="Rehabilitación de Columna">Rehabilitación de Columna</a></h3>
+          <p class="serv-card-desc">Programa postoperatorio y conservador para recuperar fuerza, movilidad y estabilidad lumbar. Coordinado con el equipo quirúrgico desde el día 1.</p>
         </div>
 
       </div><!-- /serv-grid -->

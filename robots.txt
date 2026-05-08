@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Block dev/preview files
+Disallow: /hero-compare.html
+Disallow: /hero-v2-preview.html
+Disallow: /index.html.bak
+Disallow: /_blog-post/
+
+# Block assets that don't need indexing
+Disallow: /Assets/
+Disallow: /partials/
+Disallow: /scripts/
+Disallow: /docs/
+Disallow: /Inspiration/
+
+Sitemap: https://www.doctordecolumna.com/sitemap.xml

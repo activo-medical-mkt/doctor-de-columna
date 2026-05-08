@@ -56,7 +56,7 @@ Rules:
 ### Meta Description
 
 ```html
-<meta name="description" content="Médico Traumatólogo y Ortopedista en Guadalajara y Zapopan. Cirugía artroscópica, fracturas, columna vertebral y lesiones deportivas. Cita en 24 h." />
+<meta name="description" content="Médico Traumatólogo y Ortopedista en Guadalajara y Zapopan. Cirugía artroscópica, fracturas, columna vertebral y lesiones deportivas. Cita programada." />
 ```
 
 Rules:
@@ -180,7 +180,7 @@ Add to every page `<head>`:
 <meta property="og:type"        content="website" />
 <meta property="og:url"         content="https://yourdomain.com/" />
 <meta property="og:title"       content="Traumatólogo y Ortopedista en Guadalajara" />
-<meta property="og:description" content="Atención traumatológica integral. Cita en 24 h." />
+<meta property="og:description" content="Atención traumatológica integral. Cita programada." />
 <meta property="og:image"       content="https://yourdomain.com/Assets/Images/og-home.jpg" />
 <meta property="og:locale"      content="es_MX" />
 <meta name="twitter:card"       content="summary_large_image" />
@@ -201,7 +201,7 @@ Critical for "near me" and map pack visibility.
 - [ ] Upload minimum 10 photos (exterior, interior, doctor, equipment)
 - [ ] Add services with descriptions and prices if possible
 - [ ] Enable messaging and respond within 1 hour
-- [ ] Respond to every review (positive and negative) within 24 hours
+- [ ] Respond to every review (positive and negative) promptly
 
 ### NAP Consistency
 

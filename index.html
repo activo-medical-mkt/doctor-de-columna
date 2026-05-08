@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <!-- ① charset + viewport MUST be the first two tags -->
@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ② Primary meta -->
-  <title>Traumatólogo y Ortopedista en Guadalajara | Dr. Especialista en Huesos y Articulaciones</title>
-  <meta name="description" content="Médico Traumatólogo y Ortopedista en Guadalajara y Zapopan. Cirugía artroscópica, fracturas, columna y lesiones deportivas. Diagnóstico preciso y tratamientos de vanguardia." />
-  <link rel="canonical" href="https://traumatologoengdl.com/" />
+  <title>Especialista en Columna Vertebral | Dr. Francisco Cisneros</title>
+  <meta name="description" content="Especialista en columna vertebral. Diagnóstico y tratamiento de hernia de disco, ciática y estenosis espinal. Atención en México con consulta en." />
+  <link rel="canonical" href="https://www.doctordecolumna.com/" />
 
   <!-- ③ Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://traumatologoengdl.com/" />
-  <meta property="og:title" content="Traumatólogo y Ortopedista en Guadalajara" />
-  <meta property="og:description" content="Atención traumatológica integral en Guadalajara y Zapopan. Cirugía artroscópica, fracuras, columna y lesiones deportivas." />
-  <meta property="og:image" content="https://traumatologoengdl.com/Assets/Images/og-home.jpg" />
+  <meta property="og:url" content="https://www.doctordecolumna.com/" />
+  <meta property="og:title" content="Especialista en Columna Vertebral &mdash; Dr. Francisco Cisneros" />
+  <meta property="og:description" content="Especialista en columna vertebral con atención en México y consulta en Guadalajara, Tijuana y Rosarito. Diagnóstico y tratamiento de hernia de disco, ciática y estenosis espinal." />
+  <meta property="og:image" content="https://www.doctordecolumna.com/Assets/Images/og-home.jpg" />
   <meta property="og:locale" content="es_MX" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -28,11 +28,16 @@
 
   <!-- ④c Theme color (Best Practices audit) -->
   <meta name="theme-color" content="#183F66" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/Assets/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/Assets/favicons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/Assets/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
   <!-- ⑤ Stylesheets -->
   <link rel="stylesheet" href="Assets/css/base.css?v=20260325r" />
-  <link rel="stylesheet" href="Assets/css/components.css?v=20260325w" />
-  <link rel="stylesheet" href="Assets/css/pages/home.css?v=20260326a" />
+  <link rel="stylesheet" href="Assets/css/components.css?v=20260507r" />
+  <link rel="stylesheet" href="Assets/css/pages/home.css?v=20260507p" />
   <link rel="preload" as="style" href="Assets/css/animations.css?v=20260325r" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="Assets/css/animations.css?v=20260325r" /></noscript>
 
@@ -41,20 +46,23 @@
   {
     "@context": "https://schema.org",
     "@type": ["Physician", "LocalBusiness"],
-    "name": "Dr. Especialista — Traumatólogo y Ortopedista en Guadalajara",
-    "description": "Médico Traumatólogo y Ortopedista en Guadalajara y Zapopan. Especialista en cirugía artroscópica, columna vertebral y lesiones deportivas.",
-    "url": "https://traumatologoengdl.com",
+    "name": "Dr. Francisco Javier Cisneros Oliva",
+    "description": "Traumatólogo y cirujano de columna vertebral. Especialista en hernia de disco lumbar, ciática, estenosis espinal y cirugía mínimamente invasiva. Cédula 12294474, certificado CMTO.",
+    "url": "https://www.doctordecolumna.com",
     "telephone": "+52-33-XXXX-XXXX",
-    "image": "https://traumatologoengdl.com/Assets/Images/hero.jpg",
+    "image": "https://www.doctordecolumna.com/Assets/Images/hero.jpg",
     "priceRange": "$$",
     "currenciesAccepted": "MXN",
     "paymentAccepted": "Cash, Credit Card",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Guadalajara",
-      "addressRegion": "Jalisco",
       "addressCountry": "MX"
     },
+    "areaServed": [
+      {"@type": "City", "name": "Guadalajara", "addressRegion": "Jalisco"},
+      {"@type": "City", "name": "Tijuana", "addressRegion": "Baja California"},
+      {"@type": "City", "name": "Rosarito", "addressRegion": "Baja California"}
+    ],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -69,12 +77,21 @@
         "closes": "14:00"
       }
     ],
-    "medicalSpecialty": "Orthopedic Surgery",
+    "medicalSpecialty": "Spine Surgery",
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "board certification",
+      "recognizedBy": {"@type": "Organization", "name": "Consejo Mexicano de Traumatología y Ortopedia (CMTO)"}
+    },
+    "identifier": {"@type": "PropertyValue", "name": "Cédula Profesional", "value": "12294474"},
     "availableService": [
-      {"@type": "MedicalProcedure", "name": "Artroscopia de Rodilla"},
-      {"@type": "MedicalProcedure", "name": "Cirugía de Columna Vertebral"},
-      {"@type": "MedicalProcedure", "name": "Fijación de Fracturas"},
-      {"@type": "MedicalProcedure", "name": "Tratamiento de Lesiones Deportivas"}
+      {"@type": "MedicalProcedure", "name": "Endoscopia de Columna"},
+      {"@type": "MedicalProcedure", "name": "Microdiscectomía"},
+      {"@type": "MedicalProcedure", "name": "Cirugía de Descompresión Lumbar"},
+      {"@type": "MedicalProcedure", "name": "Fusión Vertebral"},
+      {"@type": "MedicalProcedure", "name": "Bloqueos Epidurales de Columna"},
+      {"@type": "MedicalProcedure", "name": "Rehabilitación de Columna Vertebral"},
+      {"@type": "MedicalProcedure", "name": "Consulta Especialista de Columna"}
     ]
   }
   </script>
@@ -88,13 +105,46 @@
   <nav class="navbar" id="navbar" aria-label="Navegación principal">
     <div class="navbar-inner">
 
-      <a href="/" class="logo" aria-label="Traumatólogo GDL - Inicio">
-        <img src="Assets/dr-logo.svg" alt="Traumatólogo GDL" class="logo-icon">
+      <a href="/" class="logo" aria-label="Doctor de Columna - Inicio">
+        <img src="Assets/dr-logo.svg" alt="Doctor de Columna" class="logo-icon">
       </a>
 
       <ul class="nav-links" role="list">
         <li><a href="/" class="active" aria-current="page">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
+
+        <!-- Ubicaciones dropdown -->
+        <li class="nav-item-drop" id="nav-drop-loc">
+          <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-drop-loc-panel">
+            Ubicaciones
+            <svg class="nav-drop-chevron" width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="2 3.5 5.5 7.5 9 3.5"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown nav-dropdown--cities" id="nav-drop-loc-panel" role="region" aria-label="Ubicaciones">
+            <div class="nav-dropdown-inner">
+              <div class="nav-dropdown-col">
+                <p class="nav-dropdown-group">Selecciona tu Ciudad</p>
+                <a href="/guadalajara/" class="nav-dropdown-item nav-dropdown-item--city">
+                  <span class="nav-dropdown-item-title">Guadalajara</span>
+                  <span class="nav-dropdown-item-desc">Hospitales y consulta presencial</span>
+                </a>
+                <a href="/tijuana/" class="nav-dropdown-item nav-dropdown-item--city">
+                  <span class="nav-dropdown-item-title">Tijuana</span>
+                  <span class="nav-dropdown-item-desc">Atención especializada en Baja California</span>
+                </a>
+                <a href="/rosarito/" class="nav-dropdown-item nav-dropdown-item--city">
+                  <span class="nav-dropdown-item-title">Rosarito</span>
+                  <span class="nav-dropdown-item-desc">Agenda rápida y seguimiento cercano</span>
+                </a>
+              </div>
+            </div>
+            <a href="/#ubicaciones" class="nav-dropdown-footer">
+              Ver todas las ubicaciones
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+            </a>
+          </div>
+        </li>
+
         <li><a href="#doctor">El Doctor</a></li>
         <li><a href="#resenas">Pacientes</a></li>
         <li><a href="#agendar">Contacto</a></li>
@@ -124,7 +174,23 @@
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav aria-label="Navegación móvil">
       <a href="/" class="mobile-menu-link active">Inicio</a>
-      <a href="#servicios" class="mobile-menu-link">Servicios</a>
+
+      <!-- Ubicaciones accordion -->
+      <div class="mobile-nav-group">
+        <button class="mobile-nav-group-btn" aria-expanded="false" aria-controls="mob-loc-sub">
+          Ubicaciones
+          <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="4 6 8 10 12 6"/>
+          </svg>
+        </button>
+        <div class="mobile-nav-sub" id="mob-loc-sub">
+          <a href="/guadalajara/" class="mobile-menu-link mobile-menu-link--sub">Guadalajara</a>
+          <a href="/tijuana/" class="mobile-menu-link mobile-menu-link--sub">Tijuana</a>
+          <a href="/rosarito/" class="mobile-menu-link mobile-menu-link--sub">Rosarito</a>
+          <a href="/#ubicaciones" class="mobile-menu-link mobile-menu-link--sub mobile-menu-link--all">Ver todas las ubicaciones →</a>
+        </div>
+      </div>
+
       <a href="#doctor" class="mobile-menu-link">El Doctor</a>
       <a href="#resenas" class="mobile-menu-link">Pacientes</a>
       <a href="#agendar" class="mobile-menu-link">Contacto</a>
@@ -146,21 +212,19 @@
 
           <div class="hero-badge hero-enter">
             <span class="hero-badge-dot" aria-hidden="true"></span>
-            Atención humana, técnica y precisa
+            Dr. Francisco Cisneros Oliva
           </div>
 
           <h1 class="hero-headline hero-enter hero-enter-1" id="hero-h1">
-            <span class="line-accent">MÉDICO</span>
-            TRAUMATÓLOGO<br>
-            <span class="hero-headline-sub">
-              Guadalajara y Zapopan
-            </span>
+            <span class="line-accent">ESPECIALISTA</span>
+            EN COLUMNA<br>
+            <span class="hero-headline-sub">Vertebral</span>
           </h1>
 
           <p class="hero-subtext hero-enter hero-enter-2">
-            <strong>Atención traumatológica integral</strong> para recuperar tu movilidad
-            sin dolor. Diagnóstico preciso y tratamientos de vanguardia para el
-            <strong>sistema musculoesquelético</strong>.
+            <strong>Especialista de columna vertebral</strong> para recuperar tu movilidad
+            sin dolor. Diagnóstico preciso y tratamiento de
+            <strong>hernia de disco, ciática y estenosis espinal</strong> con técnicas mínimamente invasivas.
           </p>
 
           <div class="hero-cta-group hero-cta-group--desktop hero-enter hero-enter-3">
@@ -192,7 +256,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
               </svg>
-              Urgencias Ortopédicas
+              Urgencias de Columna
             </a>
           </div>
 
@@ -205,7 +269,7 @@
               <div class="doc-cert-pill-top">
                 <picture>
                   <source type="image/webp" srcset="Assets/Logo_secundario_doctoralia.webp" />
-                  <img src="Assets/Logo_secundario_doctoralia.png" alt="Doctoralia" class="doc-cert-pill-logo" width="88" height="16" loading="lazy">
+                  <img src="Assets/Logo_secundario_doctoralia.png" alt="Doctoralia" class="doc-cert-pill-logo" width="88" height="16" loading="eager">
                 </picture>
                 <span class="doc-cert-pill-verified" aria-hidden="true">Verificado</span>
               </div>
@@ -236,12 +300,12 @@
           <div class="stat-card hv-card hv-card--ml" aria-hidden="true">
             <div class="stat-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
               </svg>
             </div>
             <div>
-              <div class="stat-num">22 h</div>
-              <div class="stat-label">Tiempo de<br>Respuesta</div>
+              <div class="stat-num">Alta</div>
+              <div class="stat-label">Especialidad<br>en Columna</div>
             </div>
           </div>
 
@@ -250,7 +314,7 @@
               <picture>
                 <source type="image/webp" srcset="Assets/Images/hero.webp" />
                 <img src="Assets/Images/hero.jpg"
-                     alt="Médico Traumatólogo y Ortopedista en Guadalajara"
+                     alt="Médico Traumátologo y Especialista en Columna Vertebral"
                      width="460" height="620"
                      loading="eager"
                      fetchpriority="high"
@@ -262,24 +326,24 @@
           <div class="stat-card hv-card hv-card--tr" aria-hidden="true">
             <div class="stat-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/>
               </svg>
             </div>
             <div>
-              <div class="stat-num">2 Sedes</div>
-              <div class="stat-label">GDL &amp;<br>Zapopan</div>
+              <div class="stat-num">Mínima</div>
+              <div class="stat-label">Invasión</div>
             </div>
           </div>
 
           <div class="stat-card hv-card hv-card--br" aria-hidden="true">
             <div class="stat-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 16 11 18 15 14"/>
+                <path d="M17.5 19H9a7 7 0 110-14h8.5a3.5 3.5 0 110 7h-8.5a.5.5 0 110-1H17"/>
               </svg>
             </div>
             <div>
-              <div class="stat-num">&lt; 48 h</div>
-              <div class="stat-label">Primera<br>Cita</div>
+              <div class="stat-num">Práctica</div>
+              <div class="stat-label">Actualizada</div>
             </div>
           </div>
 
@@ -307,22 +371,23 @@
 
     </section>
 
-    <div data-include="partials/stats.html?v=20260325r"></div>
-    <div data-include="partials/section-pain.html?v=20260325r"></div>
-    <div data-include="partials/section-trust.html?v=20260326a"></div>
-    <div data-include="partials/section-reviews.html?v=20260325r"></div>
-    <div data-include="partials/section-book.html?v=20260325r"></div>
-    <div data-include="partials/section-conditions.html?v=20260325r"></div>
-    <div data-include="partials/section-services.html?v=20260325r"></div>
+    <div data-include="partials/stats-brand.html?v=20260504c"></div>
+    <div data-include="partials/section-pain-brand.html?v=20260504c"></div>
+    <div data-include="partials/section-trust-brand.html?v=20260507a"></div>
+    <div data-include="partials/section-reviews.html?v=20260507s"></div>
+    <div data-include="partials/section-book-brand.html?v=20260504c"></div>
+    <div data-include="partials/section-conditions.html?v=20260507j"></div>
+    <div data-include="partials/section-services.html?v=20260506o"></div>
     <div data-include="partials/section-blog.html?v=20260325r"></div>
-    <div data-include="partials/section-locations.html?v=20260325r"></div>
-    <div data-include="partials/section-faq.html?v=20260325r"></div>
+    <div data-include="partials/section-locations-brand.html?v=20260507u"></div>
+    <div data-include="partials/section-faq.html?v=20260507k"></div>
   </main>
 
-  <div data-include="partials/footer.html?v=20260325r"></div>
+  <div data-include="partials/footer.html?v=20260507n"></div>
 
   <script defer src="Assets/js/loader.js?v=20260325r"></script>
-  <script defer src="Assets/js/main.js?v=20260325r"></script>
+  <script defer src="Assets/js/main.js?v=20260507o"></script>
 
 </body>
 </html>
+

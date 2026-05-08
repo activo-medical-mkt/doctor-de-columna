@@ -604,7 +604,7 @@ pointer-events: none;
   - Capsule box-shadow: `0 24px 64px rgba(24,63,102,0.14), 0 0 80px 20px rgba(255,255,255,0.15)`
   - **4 stat cards flotantes** (glassmorphism) orbitando el capsule con animación `float-card`:
     - TL: Certificado CMTO
-    - ML: Tiempo de Respuesta
+    - ML: Atención Especializada
     - TR: 2 Sedes
     - BR: Primera Cita
   - Cards: `rgba(255,255,255,0.55)` + `backdrop-filter: blur(14px)` + borde `rgba(255,255,255,0.60)`

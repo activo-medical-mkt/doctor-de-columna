@@ -1,0 +1,2020 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ① charset + viewport MUST be the first two tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ② Primary meta -->
+  <title>Columna Vertebral en Guadalajara | Dr. Francisco Cisneros</title>
+  <meta name="description" content="Especialista en columna vertebral en Guadalajara. Diagnóstico y tratamiento de hernia discal, ciática y estenosis espinal. Consulta con cita programada." />
+  <link rel="canonical" href="https://www.doctordecolumna.com/guadalajara/" />
+
+  <!-- ③ Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.doctordecolumna.com/guadalajara/" />
+  <meta property="og:title" content="Especialista en Columna Vertebral en Guadalajara &mdash; Dr. Francisco Cisneros" />
+  <meta property="og:description" content="Especialista en columna vertebral en Guadalajara. Diagnóstico y tratamiento de hernia discal, ciática y estenosis espinal. Consulta con cita programada." />
+  <meta property="og:image" content="https://www.doctordecolumna.com/Assets/Images/og-home.jpg" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ④ LCP image preload &mdash; WebP for supporting browsers, JPG fallback via <picture> -->
+  <link rel="preload" as="image" href="../Assets/Images/hero.webp" type="image/webp" />
+
+  <!-- ④b Font preloads &mdash; prevent FOUT on heading/body fonts -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../Assets/Fonts/Inter/InterVariable.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../Assets/Fonts/Work%20Sans/WorkSansVariable.woff2" />
+
+  <!-- ④c Theme color (Best Practices audit) -->
+  <meta name="theme-color" content="#183F66" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/Assets/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/Assets/favicons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/Assets/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- ⑤ Stylesheets -->
+  <link rel="stylesheet" href="../Assets/css/base.css?v=20260506r" />
+  <link rel="stylesheet" href="../Assets/css/components.css?v=20260507r" />
+  <link rel="stylesheet" href="../Assets/css/pages/home.css?v=20260507e" />
+  <link rel="preload" as="style" href="../Assets/css/animations.css?v=20260506r" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="../Assets/css/animations.css?v=20260506r" /></noscript>
+
+  <!-- ⑥ Structured data &mdash; Physician + LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Physician", "LocalBusiness"],
+    "name": "Dr. Francisco Cisneros Oliva",
+    "description": "Traumatólogo especialista en columna vertebral en Guadalajara. Diagnóstico y tratamiento de hernia discal, ciática y estenosis espinal con cirugía mínimamente invasiva.",
+    "url": "https://www.doctordecolumna.com",
+    "telephone": "+52-33-XXXX-XXXX",
+    "image": "https://www.doctordecolumna.com/Assets/Images/hero.jpg",
+    "priceRange": "$$",
+    "currenciesAccepted": "MXN",
+    "paymentAccepted": "Cash, Credit Card",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Patria 1355, Piso 12, Consultorio 1240",
+      "addressLocality": "Zapopan",
+      "addressRegion": "Jalisco",
+      "postalCode": "45116",
+      "addressCountry": "MX"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "14:00"
+      }
+    ],
+    "medicalSpecialty": "Spine Surgery",
+    "availableService": [
+      {"@type": "MedicalProcedure", "name": "Endoscopia de Columna"},
+      {"@type": "MedicalProcedure", "name": "Microdiscectomía"},
+      {"@type": "MedicalProcedure", "name": "Cirugía de Descompresión Lumbar"},
+      {"@type": "MedicalProcedure", "name": "Fusión Vertebral"},
+      {"@type": "MedicalProcedure", "name": "Bloqueos Epidurales de Columna"},
+      {"@type": "MedicalProcedure", "name": "Rehabilitación de Columna Vertebral"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Source of truth: navbar is intentionally inlined for faster above-the-fold render. -->
+  <nav class="navbar" id="navbar" aria-label="Navegación principal">
+    <div class="navbar-inner">
+
+      <a href="/" class="logo" aria-label="Doctor de Columna - Inicio">
+        <img src="/Assets/dr-logo.svg" alt="Traumatólogo GDL" class="logo-icon">
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/guadalajara/" class="active" aria-current="page">Inicio</a></li>
+
+        <!-- Ubicaciones dropdown -->
+        <li class="nav-item-drop" id="nav-drop-loc">
+          <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-drop-loc-panel">
+            Ubicaciones
+            <svg class="nav-drop-chevron" width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="2 3.5 5.5 7.5 9 3.5"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown nav-dropdown--cities" id="nav-drop-loc-panel" role="region" aria-label="Ubicaciones">
+            <div class="nav-dropdown-inner">
+              <div class="nav-dropdown-col">
+                <p class="nav-dropdown-group">Cambiar Ciudad</p>
+                <a href="/guadalajara/" class="nav-dropdown-item nav-dropdown-item--city is-current">
+                  <span class="nav-dropdown-item-title">Guadalajara <span class="nav-dropdown-badge">Actual</span></span>
+                  <span class="nav-dropdown-item-desc">Hospitales y consulta presencial</span>
+                </a>
+                <a href="/tijuana/" class="nav-dropdown-item nav-dropdown-item--city">
+                  <span class="nav-dropdown-item-title">Tijuana</span>
+                  <span class="nav-dropdown-item-desc">Atención especializada en Baja California</span>
+                </a>
+                <a href="/rosarito/" class="nav-dropdown-item nav-dropdown-item--city">
+                  <span class="nav-dropdown-item-title">Rosarito</span>
+                  <span class="nav-dropdown-item-desc">Agenda rápida y seguimiento cercano</span>
+                </a>
+              </div>
+            </div>
+            <a href="/guadalajara/#ubicaciones" class="nav-dropdown-footer">
+              Ver todas las ubicaciones
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+            </a>
+          </div>
+        </li>
+
+        <!-- Condiciones dropdown -->
+        <li class="nav-item-drop" id="nav-drop-cond">
+          <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-drop-cond-panel">
+            Condiciones
+            <svg class="nav-drop-chevron" width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="2 3.5 5.5 7.5 9 3.5"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown" id="nav-drop-cond-panel" role="region" aria-label="Condiciones de columna">
+            <div class="nav-dropdown-inner">
+              <div class="nav-dropdown-col">
+                <p class="nav-dropdown-group">Columna Lumbar</p>
+                <a href="/guadalajara/condiciones/hernia-de-disco-lumbar/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Hernia de Disco Lumbar</span>
+                  <span class="nav-dropdown-item-desc">L4·L5 · Tratamiento mínimamente invasivo</span>
+                </a>
+                <a href="/guadalajara/condiciones/dolor-ciatica/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Ciática y Dolor Radicular</span>
+                  <span class="nav-dropdown-item-desc">Dolor irradiado a pierna o glúteo</span>
+                </a>
+                <a href="/guadalajara/condiciones/estenosis-espinal/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Estenosis Espinal</span>
+                  <span class="nav-dropdown-item-desc">Estrechamiento del canal vertebral</span>
+                </a>
+                <a href="/guadalajara/condiciones/espondilolistesis/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Espondilolistesis</span>
+                  <span class="nav-dropdown-item-desc">Inestabilidad vertebral lumbar</span>
+                </a>
+                <a href="/guadalajara/condiciones/dolor-lumbar/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Dolor Lumbar Crónico</span>
+                  <span class="nav-dropdown-item-desc">Diagnóstico preciso y tratamiento</span>
+                </a>
+              </div>
+              <div class="nav-dropdown-col">
+                <p class="nav-dropdown-group">Columna Cervical</p>
+                <a href="/guadalajara/condiciones/hernia-de-disco-cervical/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Hernia Discal Cervical</span>
+                  <span class="nav-dropdown-item-desc">C5·C6 · Técnica endoscópica</span>
+                </a>
+                <a href="/guadalajara/condiciones/dolor-cervical-radiculopatia/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Radiculopatía Cervical</span>
+                  <span class="nav-dropdown-item-desc">Dolor irradiado a brazo o mano</span>
+                </a>
+                <a href="/guadalajara/condiciones/escoliosis-adulto/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Escoliosis del Adulto</span>
+                  <span class="nav-dropdown-item-desc">Deformidad y dolor espinal</span>
+                </a>
+              </div>
+            </div>
+            <a href="/guadalajara/condiciones/" class="nav-dropdown-footer">
+              Ver todas las condiciones
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+            </a>
+          </div>
+        </li>
+
+        <!-- Servicios dropdown -->
+        <li class="nav-item-drop" id="nav-drop-srv">
+          <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-drop-srv-panel">
+            Servicios
+            <svg class="nav-drop-chevron" width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="2 3.5 5.5 7.5 9 3.5"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown" id="nav-drop-srv-panel" role="region" aria-label="Servicios de columna">
+            <div class="nav-dropdown-inner">
+              <div class="nav-dropdown-col">
+                <p class="nav-dropdown-group">Procedimientos Quirúrgicos</p>
+                <a href="/guadalajara/servicios/cirugia-de-columna-vertebral/" class="nav-dropdown-item nav-dropdown-item--featured">
+                  <span class="nav-dropdown-item-title">Cirugía de Columna Vertebral</span>
+                  <span class="nav-dropdown-item-desc">Microdiscectomía, artrodesis y endoscopia</span>
+                </a>
+                <a href="/guadalajara/servicios/endoscopia-de-columna/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Endoscopia de Columna</span>
+                  <span class="nav-dropdown-item-desc">Técnica mínimamente invasiva · Alta el mismo día</span>
+                </a>
+                <a href="/guadalajara/servicios/microdiscectomia/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Microdiscectomía</span>
+                  <span class="nav-dropdown-item-desc">Extirpación del disco herniado con microscopio</span>
+                </a>
+                <a href="/guadalajara/servicios/cirugia-descompresion-lumbar/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Descompresión Lumbar</span>
+                  <span class="nav-dropdown-item-desc">Laminectomía y foraminotomía lumbar</span>
+                </a>
+                <a href="/guadalajara/servicios/fusion-vertebral/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Fusión Vertebral</span>
+                  <span class="nav-dropdown-item-desc">Estabilización de vértebras inestables</span>
+                </a>
+              </div>
+              <div class="nav-dropdown-col">
+                <p class="nav-dropdown-group">Tratamiento &amp; Consulta</p>
+                <a href="/guadalajara/servicios/bloqueos-epidurales/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Bloqueos Epidurales</span>
+                  <span class="nav-dropdown-item-desc">Inyección guiada para alivio del dolor</span>
+                </a>
+                <a href="/guadalajara/servicios/rehabilitacion/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Rehabilitación de Columna</span>
+                  <span class="nav-dropdown-item-desc">Programa postoperatorio y conservador</span>
+                </a>
+                <a href="/guadalajara/servicios/consulta-especialista/" class="nav-dropdown-item">
+                  <span class="nav-dropdown-item-title">Consulta de Especialista</span>
+                  <span class="nav-dropdown-item-desc">Consulta con cita programada</span>
+                </a>
+              </div>
+            </div>
+            <a href="/guadalajara/servicios/" class="nav-dropdown-footer">
+              Ver todos los servicios
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+            </a>
+          </div>
+        </li>
+        <li><a href="#agendar">Contacto</a></li>
+      </ul>
+
+      <a href="https://wa.me/5213312345678?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
+         class="navbar-cta"
+         target="_blank" rel="noopener"
+         aria-label="Agendar consulta por WhatsApp">
+        Agendar Cita
+        <span class="navbar-cta-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+          </svg>
+        </span>
+      </a>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-expanded="false" aria-label="Abrir menú" aria-controls="mobile-menu">
+        <span class="nav-hamburger-bar"></span>
+        <span class="nav-hamburger-bar"></span>
+        <span class="nav-hamburger-bar"></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Navegación móvil">
+      <a href="/guadalajara/" class="mobile-menu-link active">Inicio</a>
+
+      <!-- Ubicaciones accordion -->
+      <div class="mobile-nav-group">
+        <button class="mobile-nav-group-btn" aria-expanded="false" aria-controls="mob-loc-sub">
+          Ubicaciones
+          <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="4 6 8 10 12 6"/>
+          </svg>
+        </button>
+        <div class="mobile-nav-sub" id="mob-loc-sub">
+          <a href="/guadalajara/" class="mobile-menu-link mobile-menu-link--sub">Guadalajara (Actual)</a>
+          <a href="/tijuana/" class="mobile-menu-link mobile-menu-link--sub">Tijuana</a>
+          <a href="/rosarito/" class="mobile-menu-link mobile-menu-link--sub">Rosarito</a>
+          <a href="/guadalajara/#ubicaciones" class="mobile-menu-link mobile-menu-link--sub mobile-menu-link--all">Ver todas las ubicaciones →</a>
+        </div>
+      </div>
+
+      <!-- Condiciones accordion -->
+      <div class="mobile-nav-group">
+        <button class="mobile-nav-group-btn" aria-expanded="false" aria-controls="mob-cond-sub">
+          Condiciones
+          <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="4 6 8 10 12 6"/>
+          </svg>
+        </button>
+        <div class="mobile-nav-sub" id="mob-cond-sub">
+          <a href="/guadalajara/condiciones/hernia-de-disco-lumbar/" class="mobile-menu-link mobile-menu-link--sub">Hernia de Disco Lumbar</a>
+          <a href="/guadalajara/condiciones/dolor-ciatica/" class="mobile-menu-link mobile-menu-link--sub">Ciática y Dolor Radicular</a>
+          <a href="/guadalajara/condiciones/estenosis-espinal/" class="mobile-menu-link mobile-menu-link--sub">Estenosis Espinal</a>
+          <a href="/guadalajara/condiciones/espondilolistesis/" class="mobile-menu-link mobile-menu-link--sub">Espondilolistesis</a>
+          <a href="/guadalajara/condiciones/dolor-lumbar/" class="mobile-menu-link mobile-menu-link--sub">Dolor Lumbar Crónico</a>
+          <a href="/guadalajara/condiciones/hernia-de-disco-cervical/" class="mobile-menu-link mobile-menu-link--sub">Hernia Discal Cervical</a>
+          <a href="/guadalajara/condiciones/dolor-cervical-radiculopatia/" class="mobile-menu-link mobile-menu-link--sub">Radiculopatía Cervical</a>
+          <a href="/guadalajara/condiciones/escoliosis-adulto/" class="mobile-menu-link mobile-menu-link--sub">Escoliosis del Adulto</a>
+          <a href="/guadalajara/condiciones/" class="mobile-menu-link mobile-menu-link--sub mobile-menu-link--all">Ver todas las condiciones →</a>
+        </div>
+      </div>
+
+      <!-- Servicios accordion -->
+      <div class="mobile-nav-group">
+        <button class="mobile-nav-group-btn" aria-expanded="false" aria-controls="mob-srv-sub">
+          Servicios
+          <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="4 6 8 10 12 6"/>
+          </svg>
+        </button>
+        <div class="mobile-nav-sub" id="mob-srv-sub">
+          <a href="/guadalajara/servicios/cirugia-de-columna-vertebral/" class="mobile-menu-link mobile-menu-link--sub">Cirugía de Columna Vertebral</a>
+          <a href="/guadalajara/servicios/endoscopia-de-columna/" class="mobile-menu-link mobile-menu-link--sub">Endoscopia de Columna</a>
+          <a href="/guadalajara/servicios/microdiscectomia/" class="mobile-menu-link mobile-menu-link--sub">Microdiscectomía</a>
+          <a href="/guadalajara/servicios/cirugia-descompresion-lumbar/" class="mobile-menu-link mobile-menu-link--sub">Descompresión Lumbar</a>
+          <a href="/guadalajara/servicios/fusion-vertebral/" class="mobile-menu-link mobile-menu-link--sub">Fusión Vertebral</a>
+          <a href="/guadalajara/servicios/bloqueos-epidurales/" class="mobile-menu-link mobile-menu-link--sub">Bloqueos Epidurales</a>
+          <a href="/guadalajara/servicios/rehabilitacion/" class="mobile-menu-link mobile-menu-link--sub">Rehabilitación de Columna</a>
+          <a href="/guadalajara/servicios/consulta-especialista/" class="mobile-menu-link mobile-menu-link--sub">Consulta de Especialista</a>
+          <a href="/guadalajara/servicios/" class="mobile-menu-link mobile-menu-link--sub mobile-menu-link--all">Ver todos los servicios →</a>
+        </div>
+      </div>
+      <a href="#agendar" class="mobile-menu-link">Contacto</a>
+    </nav>
+    <a href="https://wa.me/5213312345678?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
+       class="mobile-menu-cta" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar Cita por WhatsApp
+    </a>
+  </div>
+
+  <main id="main-content">
+    <!-- Source of truth: hero is intentionally inlined for faster above-the-fold render. -->
+    <section class="hero" aria-labelledby="hero-h1" id="hero">
+
+      <div class="hero-inner">
+
+        <div class="hero-content">
+
+          <div class="hero-badge hero-enter">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            Atención humana, técnica y precisa
+          </div>
+
+          <h1 class="hero-headline hero-enter hero-enter-1" id="hero-h1">
+            ESPECIALISTA<br>
+            <span class="line-accent">DE COLUMNA</span>
+            <span class="hero-headline-sub">Guadalajara</span>
+          </h1>
+
+          <p class="hero-subtext hero-enter hero-enter-2">
+            Atención de <strong>alta especialidad en columna</strong> para pacientes de Guadalajara y Zapopan.
+            Valoración precisa de hernia discal, ciática y estenosis, con un plan claro desde la primera consulta.
+            <strong>Citas programadas segun disponibilidad.</strong>
+          </p>
+
+          <div class="hero-cta-group hero-cta-group--desktop hero-enter hero-enter-3">
+            <a href="https://wa.me/5213312345678?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
+               class="btn-primary"
+               target="_blank" rel="noopener"
+               aria-label="Agendar consulta por WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Agendar Consulta
+            </a>
+
+            <a href="tel:+523312345678" class="btn-arrow-circle" aria-label="Llamar ahora">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero-urgency hero-enter hero-enter-4">
+            <span class="urgency-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+              Urgencias
+            </span>
+            <a href="tel:+523312345678" aria-label="Llamar a urgencias de columna">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              Urgencias de Columna
+            </a>
+          </div>
+
+          <div class="hero-doc-cert hero-enter hero-enter-4">
+            <a href="https://www.doctoralia.com.mx/francisco-javier-cisneros-oliva/ortopedista-traumatologo/tijuana"
+               id="hero-cert-fallback"
+               class="doc-cert-pill"
+               target="_blank" rel="nofollow noopener"
+               aria-label="Ver opiniones verificadas en Doctoralia">
+              <div class="doc-cert-pill-top">
+                <picture>
+                  <source type="image/webp" srcset="../Assets/Logo_secundario_doctoralia.webp" />
+                  <img src="../Assets/Logo_secundario_doctoralia.png" alt="Doctoralia" class="doc-cert-pill-logo" width="88" height="16" loading="eager">
+                </picture>
+                <span class="doc-cert-pill-verified" aria-hidden="true">Verificado</span>
+              </div>
+              <div class="doc-cert-pill-bottom">
+                <span class="doc-cert-pill-stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <strong class="doc-cert-pill-pct">100%</strong>
+                <span class="doc-cert-pill-label">satisfechos</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="hero-visual" aria-label="Visual del médico traumatólogo">
+
+          <div class="stat-card hv-card hv-card--tl" aria-hidden="true">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-num">CMTO</div>
+              <div class="stat-label">Certificado<br>Vigente</div>
+            </div>
+          </div>
+
+          <div class="stat-card hv-card hv-card--ml" aria-hidden="true">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-num">Alta</div>
+              <div class="stat-label">Especialidad<br>en Columna</div>
+            </div>
+          </div>
+
+          <div class="hero-photo-frame hero-enter hero-enter-3">
+            <div class="hero-photo-capsule">
+              <picture>
+                <source type="image/webp" srcset="../Assets/Images/hero.webp" />
+                <img src="../Assets/Images/hero.jpg"
+                     alt="Médico Traumatólogo y Ortopedista en Guadalajara"
+                     width="460" height="620"
+                     loading="eager"
+                     fetchpriority="high"
+                     decoding="async" />
+              </picture>
+            </div>
+          </div>
+
+          <div class="stat-card hv-card hv-card--tr" aria-hidden="true">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-num">Mínima</div>
+              <div class="stat-label">Invasión</div>
+            </div>
+          </div>
+
+          <div class="stat-card hv-card hv-card--br" aria-hidden="true">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.5 19H9a7 7 0 110-14h8.5a3.5 3.5 0 110 7h-8.5a.5.5 0 110-1H17"/>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-num">Práctica</div>
+              <div class="stat-label">Actualizada</div>
+            </div>
+          </div>
+
+          <div class="hero-cta-group hero-cta-group--mobile hero-enter hero-enter-3" aria-label="Acciones rápidas">
+            <a href="https://wa.me/5213312345678?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
+               class="btn-primary"
+               target="_blank" rel="noopener"
+               aria-label="Agendar consulta por WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Agendar Consulta
+            </a>
+
+            <a href="tel:+523312345678" class="btn-arrow-circle" aria-label="Llamar ahora">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+       STATS STRIP &mdash; Full-bleed dark credibility bar
+       ══════════════════════════════════════════════════════════════════ -->
+  <div class="section-stats-strip" role="region" aria-label="Estadísticas del consultorio" data-nav-dark>
+
+    <div class="stats-loc-bar">
+      <div class="stats-loc-inner">
+        <span class="stats-loc-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+          Atendemos en
+        </span>
+        <div class="stats-loc-chips">
+          <a href="#ubicaciones" class="stats-loc-chip">
+            <span class="stats-loc-chip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle fill="white" cx="12" cy="9" r="2.5"/></svg>
+            </span>
+            Zapopan
+          </a>
+        </div>
+        <a href="#ubicaciones" class="stats-loc-link" aria-label="Ver ubicación">
+          Ver ubicación
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="stats-strip-inner">
+
+      <div class="stats-strip-item reveal">
+        <div class="stats-strip-num" data-target="500" data-prefix="+">+500</div>
+        <div class="stats-strip-label">Cirugías<br>Realizadas</div>
+      </div>
+
+      <div class="stats-strip-divider" aria-hidden="true"></div>
+
+      <div class="stats-strip-item reveal reveal-delay-1">
+        <div class="stats-strip-num" data-target="15" data-prefix="+">+15</div>
+        <div class="stats-strip-label">Años de<br>Experiencia</div>
+      </div>
+
+      <div class="stats-strip-divider" aria-hidden="true"></div>
+
+      <div class="stats-strip-item reveal reveal-delay-2">
+        <div class="stats-strip-num" data-target="100" data-suffix="%">100%</div>
+        <div class="stats-strip-label">Satisfacción de<br>Pacientes</div>
+      </div>
+
+      <div class="stats-strip-divider" aria-hidden="true"></div>
+
+      <div class="stats-strip-item reveal reveal-delay-3">
+        <div class="stats-strip-num" data-target="120" data-suffix="+">120+</div>
+        <div class="stats-strip-label">Pacientes<br>por Mes</div>
+      </div>
+
+    </div>
+
+  </div>
+
+      <!-- ============================================================
+       SECCIÓN 2 &mdash; AGITACIÓN DEL PROBLEMA Y EMPATÍA
+  ============================================================ -->
+  <section class="section-pain" id="problema" aria-labelledby="pain-h2">
+    <div class="section-pain-inner">
+
+      <div class="pain-content">
+
+        <span class="section-eyebrow">Columna Vertebral · Guadalajara y Zapopan</span>
+
+        <h2 class="pain-h2" id="pain-h2">
+          Recupera tu movilidad<br>
+          sin <em>dolor lumbar</em><br>
+          ni ciática incapacitante
+        </h2>
+
+        <p class="pain-body">
+          El dolor de espalda no solo molesta: te quita energía, concentración y calidad de vida.
+          Si en Guadalajara pasas el día entre traslados, oficina o actividad física,
+          una lesión de columna puede limitarte rápidamente.
+        </p>
+
+        <p class="pain-body">
+          Por eso trabajamos con diagnóstico dirigido y tratamientos escalonados:
+          desde rehabilitación y bloqueos, hasta <strong>cirugía de mínima invasión</strong>
+          cuando realmente se necesita. Nuestro enfoque es que mejores más rápido,
+          con seguridad y seguimiento cercano en <strong>Zapopan</strong>.
+        </p>
+
+        <ul class="pain-list" aria-label="Qué tratamos">
+          <li>Dolor lumbar crónico y dolor cervical</li>
+          <li>Hernia de disco lumbar y cervical</li>
+          <li>Ciática y dolor radicular en pierna</li>
+          <li>Estenosis espinal y compresión nerviosa</li>
+          <li>Espondilolistesis y escoliosis del adulto</li>
+        </ul>
+
+        <div class="pain-cta-strip">
+          <a href="https://wa.me/5213312345678?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
+             class="btn-pain-primary"
+             target="_blank" rel="noopener"
+             aria-label="Agendar primera consulta por WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16">
+              <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+            </svg>
+            Primera Consulta
+          </a>
+          <div class="pain-cta-note">
+            <strong>Sin lista de espera</strong>
+            Consulta presencial en Guadalajara y Zapopan.<br>
+            También valoración por videollamada.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pain-cards" role="list" aria-label="Áreas de especialidad en columna">
+
+        <div class="pain-card" role="listitem">
+          <div class="pain-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/>
+            </svg>
+          </div>
+          <div class="pain-card-title">Hernia de Disco</div>
+          <div class="pain-card-desc">Diagnóstico y tratamiento de hernia lumbar y cervical con enfoque conservador y quirúrgico.</div>
+        </div>
+
+        <div class="pain-card" role="listitem">
+          <div class="pain-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/>
+              <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/>
+              <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>
+            </svg>
+          </div>
+          <div class="pain-card-title">Columna Vertebral</div>
+          <div class="pain-card-desc">Hernia de disco, ciática, estenosis lumbar y corrección de escoliosis con técnicas endoscópicas.</div>
+        </div>
+
+        <div class="pain-card" role="listitem">
+          <div class="pain-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+              <path d="M9 12h6"/>
+              <path d="M12 9v6"/>
+            </svg>
+          </div>
+          <div class="pain-card-title">Estenosis Espinal</div>
+          <div class="pain-card-desc">Manejo integral del canal lumbar estrecho para mejorar marcha, fuerza y calidad de vida.</div>
+        </div>
+
+        <div class="pain-card" role="listitem">
+          <div class="pain-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.596 12.768a2 2 0 1 0 2.829-2.829l-1.768-1.767a2 2 0 0 0 2.828-2.829l-2.828-2.828a2 2 0 0 0-2.829 2.828l-1.767-1.768a2 2 0 1 0-2.829 2.829z"/>
+              <path d="m2.5 21.5 1.4-1.4"/>
+              <path d="m20.1 3.9 1.4-1.4"/>
+              <path d="M5.343 21.485a2 2 0 1 0 2.829-2.828l1.767 1.768a2 2 0 1 0 2.829-2.829l-6.364-6.364a2 2 0 1 0-2.829 2.829l1.768 1.767a2 2 0 0 0-2.828 2.829z"/>
+              <path d="m9.6 14.4 4.8-4.8"/>
+            </svg>
+          </div>
+          <div class="pain-card-title">Cirugía de Columna</div>
+          <div class="pain-card-desc">Endoscopia, microdiscectomía, descompresión y fusión vertebral según cada caso clínico.</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+      <!-- ============================================================
+       SECCIÓN 3 &mdash; AUTORIDAD Y CONFIANZA (E-E-A-T)
+  ============================================================ -->
+  <section class="section-trust" id="doctor" aria-labelledby="trust-h2">
+    <div class="section-trust-inner">
+
+      <!-- ── Section header ── -->
+      <div class="trust-header">
+        <span class="section-eyebrow reveal">Equipo de Columna · Sede Guadalajara</span>
+        <h2 class="trust-h2 reveal reveal-delay-1" id="trust-h2">
+          Razones para atenderte con un<br>
+          <span class="trust-h2-accent">especialista de columna en Jalisco</span>
+        </h2>
+        <p class="trust-subtext reveal reveal-delay-2">
+          Integramos experiencia quirúrgica, protocolos actuales y trato humano para tomar
+          decisiones correctas en cada caso. Menos incertidumbre, mejor información y un plan
+          terapéutico realista para volver a tu rutina con confianza.
+        </p>
+      </div>
+
+      <!-- ── 4 pillars ── -->
+      <div class="trust-pillars" role="list" aria-label="Razones para elegirnos">
+
+        <div class="trust-pillar reveal reveal-delay-1" role="listitem">
+          <div class="trust-pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="trust-pillar-title">Certificado CMTO</div>
+          <div class="trust-pillar-desc">Certificación vigente por el Consejo Mexicano de Ortopedia y Traumatología, A.C.</div>
+        </div>
+
+        <div class="trust-pillar reveal reveal-delay-2" role="listitem">
+          <div class="trust-pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <div class="trust-pillar-title">Alta Especialidad</div>
+          <div class="trust-pillar-desc">Adiestramiento formal y práctica enfocada exclusivamente en cirugía de columna vertebral.</div>
+        </div>
+
+        <div class="trust-pillar reveal reveal-delay-3" role="listitem">
+          <div class="trust-pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/>
+            </svg>
+          </div>
+          <div class="trust-pillar-title">Mínima Invasión</div>
+          <div class="trust-pillar-desc">Uso de técnicas endoscópicas y microquirúrgicas para una recuperación más rápida.</div>
+        </div>
+
+        <div class="trust-pillar reveal reveal-delay-4" role="listitem">
+          <div class="trust-pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.5 19H9a7 7 0 110-14h8.5a3.5 3.5 0 110 7h-8.5a.5.5 0 110-1H17"/>
+            </svg>
+          </div>
+          <div class="trust-pillar-title">Práctica Actualizada</div>
+          <div class="trust-pillar-desc">Miembro de sociedades médicas nacionales e internacionales para una práctica de vanguardia.</div>
+        </div>
+
+      </div><!-- /trust-pillars -->
+
+      <!-- ── Doctor profile ── -->
+      <div class="trust-doctor">
+
+        <!-- LEFT: photo + credential badges -->
+        <div class="trust-photo-col reveal">
+          <div class="trust-photo-frame">
+            <picture>
+              <img src="../Assets/Images/doctor-gdl.jpg"
+                   alt="Dr. Francisco Cisneros &mdash; Especialista en Columna Vertebral, Guadalajara"
+                   width="420" height="540"
+                   loading="lazy" decoding="async" />
+            </picture>
+          </div>
+
+          <div class="trust-specialty-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Especialista en Columna
+          </div>
+
+          <div class="trust-cedula-badge" aria-label="Cédula profesional 12294474">
+            <div class="trust-cedula-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-cedula-label">Cédula Profesional</div>
+              <div class="trust-cedula-num">12294474</div>
+            </div>
+          </div>
+        </div><!-- /trust-photo-col -->
+
+        <!-- RIGHT: bio + timeline -->
+        <div class="trust-bio-col">
+
+          <h3 class="trust-h3 reveal">
+            Conoce a tu Médico<br>
+            <span class="trust-h3-accent">Especialista en Columna</span>
+          </h3>
+
+          <p class="trust-bio-tagline reveal reveal-delay-1">Especialista en Columna · Guadalajara &amp; Zapopan</p>
+
+          <p class="trust-subtext reveal reveal-delay-1">
+            El Dr. Francisco Cisneros es <strong>traumatólogo especialista en columna vertebral</strong>, con práctica enfocada en cirugía de mínima invasión y consulta como <strong>traumatólogo en Guadalajara</strong> para diagnóstico y tratamiento integral del dolor espinal.
+          </p>
+
+          <blockquote class="trust-quote reveal reveal-delay-2">
+            "Desde el inicio de mi carrera, he tenido una meta fija: enfocarme en la
+            recuperación de mis pacientes. Cada uno de ellos tiene mi compromiso,
+            expertise, empatía y profesionalismo."
+          </blockquote>
+
+          <div class="trust-timeline-group reveal reveal-delay-3">
+            <div class="trust-tg-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+              Capacitación y Experiencia
+            </div>
+            <ul class="trust-timeline" aria-label="Formación académica">
+              <li class="trust-tl-item">
+                <div class="trust-tl-dot" aria-hidden="true"></div>
+                <div class="trust-tl-content">
+                  <div class="trust-tl-title">Médico Cirujano</div>
+                  <div class="trust-tl-place">Universidad de Guadalajara</div>
+                </div>
+              </li>
+              <li class="trust-tl-item">
+                <div class="trust-tl-dot" aria-hidden="true"></div>
+                <div class="trust-tl-content">
+                  <div class="trust-tl-title">Especialidad en Ortopedia y Traumatología</div>
+                  <div class="trust-tl-place">Centro Médico Nacional de Occidente</div>
+                </div>
+              </li>
+              <li class="trust-tl-item">
+                <div class="trust-tl-dot" aria-hidden="true"></div>
+                <div class="trust-tl-content">
+                  <div class="trust-tl-title">Adiestramiento en Cirugía de Columna</div>
+                  <div class="trust-tl-place">Centro Médico Nacional de Occidente</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="trust-timeline-group reveal reveal-delay-4">
+            <div class="trust-tg-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+              </svg>
+              Residencia &amp; Experiencia Clínica
+            </div>
+            <ul class="trust-timeline" aria-label="Residencia y experiencia clínica">
+              <li class="trust-tl-item trust-tl-item--accent">
+                <div class="trust-tl-dot trust-tl-dot--accent" aria-hidden="true"></div>
+                <div class="trust-tl-content">
+                  <div class="trust-tl-title">Residencia Médica de Ortopedia</div>
+                  <div class="trust-tl-place">Centro Médico Nacional de Occidente · Guadalajara</div>
+                </div>
+              </li>
+              <li class="trust-tl-item trust-tl-item--accent">
+                <div class="trust-tl-dot trust-tl-dot--accent" aria-hidden="true"></div>
+                <div class="trust-tl-content">
+                  <div class="trust-tl-title">Estancia Internacional en Cirugía de Columna</div>
+                  <div class="trust-tl-place">Clínica CEMTRO · Madrid, España</div>
+                </div>
+              </li>
+              <li class="trust-tl-item trust-tl-item--accent">
+                <div class="trust-tl-dot trust-tl-dot--accent" aria-hidden="true"></div>
+                <div class="trust-tl-content">
+                  <div class="trust-tl-title">Médico Encargado del Módulo de Columna</div>
+                  <div class="trust-tl-place">Hospital General Regional No. 46, IMSS · Guadalajara</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="trust-bio-cta reveal reveal-delay-5">
+            <a href="https://wa.me/5213312345678?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
+               class="btn-primary"
+               target="_blank" rel="noopener"
+               aria-label="Agendar consulta con el especialista por WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Agendar con el Especialista
+            </a>
+            <div class="trust-bio-note">
+              Consulta presencial en GDL y Zapopan<br>
+              <strong>También videollamada disponible</strong>
+            </div>
+          </div>
+
+        </div><!-- /trust-bio-col -->
+      </div><!-- /trust-doctor -->
+
+    </div><!-- /section-trust-inner -->
+  </section><!-- /section-trust -->
+
+      <!-- ══════════════════════════════════════════════════════════════════
+       SECCIÓN 3B · RESEÑAS DE PACIENTES
+       Auto-carousel · 3 visible · 9 reviews · 3 pages
+       ══════════════════════════════════════════════════════════════════ -->
+  <section id="resenas" class="section-rev" aria-labelledby="rev-h2">
+    <div class="section-rev-inner">
+
+      <header class="rev-header reveal">
+        <span class="section-eyebrow">Testimonios</span>
+        <h2 class="rev-h2" id="rev-h2">Lo que dicen nuestros<br><span class="rev-h2-accent">pacientes</span></h2>
+        <p class="rev-sub">Historias reales de pacientes atendidos en Guadalajara y Zona Metropolitana.</p>
+
+        <div class="rev-aggregate reveal">
+          <div class="rev-aggregate-row">
+            <div class="rev-aggregate-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <div class="rev-aggregate-score">5.0</div>
+          </div>
+          <div class="rev-aggregate-note">Basado en <strong>100+ reseñas</strong> entre Doctoralia y perfil de Google</div>
+        </div>
+      </header>
+
+      <div class="rev-stage reveal reveal-delay-1">
+        <button class="rev-arrow rev-arrow--prev" id="rev-prev" aria-label="Reseña anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div class="rev-viewport">
+          <div class="rev-track" id="rev-track">
+
+            <!-- Shared star SVG (used inline per card for screen-reader labels) -->
+
+            <!-- Card 1 -->
+            <article class="rev-card">
+              <div class="rev-card-top">
+                <div class="rev-stars" aria-label="5 de 5 estrellas">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <svg class="rev-quote-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V12c0-1.84 1.493-3.333 3.333-3.333h1.334C11.507 8.667 13 10.16 13 12v9.333H9.333zm13.334 0C20.827 21.333 19.333 19.84 19.333 18V12c0-1.84 1.494-3.333 3.334-3.333h1.333C25.84 8.667 27.333 10.16 27.333 12v9.333H22.667z"/></svg>
+              </div>
+              <blockquote class="rev-text">
+                <p>Quiero expresar mi más sincero agradecimiento al Doctor Cisneros por la excelente atención médica que recibí bajo su cuidado. Su profesionalismo y experiencia fueron evidentes desde la primera consulta, lo que me generó una gran confianza. Gracias a sus habilidades y seguimiento, mi recuperación de la cirugía ha sido notablemente pronta y, lo que más agradezco, prácticamente sin dolor. Me siento muy satisfecha con el resultado y el proceso en general.</p>
+              </blockquote>
+              <footer class="rev-author">
+                <div class="rev-avatar" aria-hidden="true">JA</div>
+                <div>
+                  <strong class="rev-name">Jackeline Alzina</strong>
+                  <span class="rev-detail">Cirugía de columna</span>
+                </div>
+              </footer>
+            </article>
+            <!-- Card 2 -->
+            <article class="rev-card">
+              <div class="rev-card-top">
+                <div class="rev-stars" aria-label="5 de 5 estrellas">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <svg class="rev-quote-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V12c0-1.84 1.493-3.333 3.333-3.333h1.334C11.507 8.667 13 10.16 13 12v9.333H9.333zm13.334 0C20.827 21.333 19.333 19.84 19.333 18V12c0-1.84 1.494-3.333 3.334-3.333h1.333C25.84 8.667 27.333 10.16 27.333 12v9.333H22.667z"/></svg>
+              </div>
+              <blockquote class="rev-text">
+                <p>Excelente doctor y su equipo. Me realizó una operación endoscópica hace 7 días: no podía ni levantarme de la cama, tenía 2 hernias lumbares. El mismo día de mi operación salí caminando del hospital y se fue el dolor al 100%. Lo recomiendo ampliamente.</p>
+              </blockquote>
+              <footer class="rev-author">
+                <div class="rev-avatar" aria-hidden="true">CE</div>
+                <div>
+                  <strong class="rev-name">Carlos Escobosa</strong>
+                  <span class="rev-detail">Endoscopía lumbar</span>
+                </div>
+              </footer>
+            </article>
+            <!-- Card 3 -->
+            <article class="rev-card">
+              <div class="rev-card-top">
+                <div class="rev-stars" aria-label="5 de 5 estrellas">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <svg class="rev-quote-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V12c0-1.84 1.493-3.333 3.333-3.333h1.334C11.507 8.667 13 10.16 13 12v9.333H9.333zm13.334 0C20.827 21.333 19.333 19.84 19.333 18V12c0-1.84 1.494-3.333 3.334-3.333h1.333C25.84 8.667 27.333 10.16 27.333 12v9.333H22.667z"/></svg>
+              </div>
+              <blockquote class="rev-text">
+                <p>Estoy muy agradecido con el Dr. Cisneros, ya que me ha operado no una sino dos veces y desde el inicio me dio la confianza. Por recomendación de buenos amigos coincidí con él y espero que siga atendiendo a sus pacientes tal como lo hizo conmigo. Bendiciones para él.</p>
+              </blockquote>
+              <footer class="rev-author">
+                <div class="rev-avatar" aria-hidden="true">EV</div>
+                <div>
+                  <strong class="rev-name">Erik Valenzuela</strong>
+                  <span class="rev-detail">Dos cirugías de columna</span>
+                </div>
+              </footer>
+            </article>
+            <!-- Card 4 -->
+            <article class="rev-card">
+              <div class="rev-card-top">
+                <div class="rev-stars" aria-label="5 de 5 estrellas">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <svg class="rev-quote-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V12c0-1.84 1.493-3.333 3.333-3.333h1.334C11.507 8.667 13 10.16 13 12v9.333H9.333zm13.334 0C20.827 21.333 19.333 19.84 19.333 18V12c0-1.84 1.494-3.333 3.334-3.333h1.333C25.84 8.667 27.333 10.16 27.333 12v9.333H22.667z"/></svg>
+              </div>
+              <blockquote class="rev-text">
+                <p>Llegé con un dolor intenso del nervio ciático que se extendía desde la espalda hasta la pierna. Me costaba agacharme y sentarme; era un dolor muy fuerte y molesto. Con el tratamiento del Dr. Francisco mejoré muchísimo en solo día y medio. Lo recomiendo mucho, ya que la atención fue excelente en todo momento y se tomó el tiempo necesario durante toda la consulta y el seguimiento.</p>
+              </blockquote>
+              <footer class="rev-author">
+                <div class="rev-avatar" aria-hidden="true">LG</div>
+                <div>
+                  <strong class="rev-name">Lupita Galindo</strong>
+                  <span class="rev-detail">Nervio ciático</span>
+                </div>
+              </footer>
+            </article>
+            <!-- Card 5 -->
+            <article class="rev-card">
+              <div class="rev-card-top">
+                <div class="rev-stars" aria-label="5 de 5 estrellas">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <svg class="rev-quote-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V12c0-1.84 1.493-3.333 3.333-3.333h1.334C11.507 8.667 13 10.16 13 12v9.333H9.333zm13.334 0C20.827 21.333 19.333 19.84 19.333 18V12c0-1.84 1.494-3.333 3.334-3.333h1.333C25.84 8.667 27.333 10.16 27.333 12v9.333H22.667z"/></svg>
+              </div>
+              <blockquote class="rev-text">
+                <p>Excelente atención y profesionalismo. Me realicé una cirugía de hernia lumbar por endoscopía y desde la primera consulta el doctor me brindó confianza, explicando todo con claridad. Su experiencia es evidente, la recuperación ha sido muy buena y el trato siempre fue atento y humano. Muy recomendable.</p>
+              </blockquote>
+              <footer class="rev-author">
+                <div class="rev-avatar" aria-hidden="true">IM</div>
+                <div>
+                  <strong class="rev-name">Irving Miguel C.</strong>
+                  <span class="rev-detail">Cirugía de hernia lumbar por endoscopía</span>
+                </div>
+              </footer>
+            </article>
+            <!-- Card 6 -->
+            <article class="rev-card">
+              <div class="rev-card-top">
+                <div class="rev-stars" aria-label="5 de 5 estrellas">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <svg class="rev-quote-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V12c0-1.84 1.493-3.333 3.333-3.333h1.334C11.507 8.667 13 10.16 13 12v9.333H9.333zm13.334 0C20.827 21.333 19.333 19.84 19.333 18V12c0-1.84 1.494-3.333 3.334-3.333h1.333C25.84 8.667 27.333 10.16 27.333 12v9.333H22.667z"/></svg>
+              </div>
+              <blockquote class="rev-text">
+                <p>Recomiendo ampliamente al Dr. Francisco Cisneros: buena atención, buena comunicación, muy profesional y, lo más importante, le dio solución a mi problema de hernia discal L5-S1.</p>
+              </blockquote>
+              <footer class="rev-author">
+                <div class="rev-avatar" aria-hidden="true">JF</div>
+                <div>
+                  <strong class="rev-name">Juan José Fernández</strong>
+                  <span class="rev-detail">Hernia discal L5-S1</span>
+                </div>
+              </footer>
+            </article>
+            <!-- Card 7 -->
+            <article class="rev-card">
+              <div class="rev-card-top">
+                <div class="rev-stars" aria-label="5 de 5 estrellas">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <svg class="rev-quote-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V12c0-1.84 1.493-3.333 3.333-3.333h1.334C11.507 8.667 13 10.16 13 12v9.333H9.333zm13.334 0C20.827 21.333 19.333 19.84 19.333 18V12c0-1.84 1.494-3.333 3.334-3.333h1.333C25.84 8.667 27.333 10.16 27.333 12v9.333H22.667z"/></svg>
+              </div>
+              <blockquote class="rev-text">
+                <p>Me fue muy bien con el doctor. Lo visité por recomendación de un amigo. Tengo dos hernias lumbares y me habían recomendado operarme; sin embargo, el Dr. Francisco sugirió no operar y continuar con tratamiento de terapia. Después de mi visita me quedó claro mi padecimiento y lo que tengo que hacer para evitar la cirugía. Si algún día me tengo que operar, sin duda lo haría con él.</p>
+              </blockquote>
+              <footer class="rev-author">
+                <div class="rev-avatar" aria-hidden="true">SR</div>
+                <div>
+                  <strong class="rev-name">Salvador Rodríguez</strong>
+                  <span class="rev-detail">Consulta hernias lumbares</span>
+                </div>
+              </footer>
+            </article>
+            <!-- Card 8 -->
+            <article class="rev-card">
+              <div class="rev-card-top">
+                <div class="rev-stars" aria-label="5 de 5 estrellas">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <svg class="rev-quote-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V12c0-1.84 1.493-3.333 3.333-3.333h1.334C11.507 8.667 13 10.16 13 12v9.333H9.333zm13.334 0C20.827 21.333 19.333 19.84 19.333 18V12c0-1.84 1.494-3.333 3.334-3.333h1.333C25.84 8.667 27.333 10.16 27.333 12v9.333H22.667z"/></svg>
+              </div>
+              <blockquote class="rev-text">
+                <p>En febrero de 2022 me hicieron una cirugía de hernia de disco. El doctor Cisneros me escuchó siempre y comprendía mis temores de tal vez no caminar. Esa noche de la cirugía la pasé en el hospital y al día siguiente yo podía caminar; todos los malestares al pisar, caminar y para dormir desaparecieron. Es un excelente doctor, muy humano y muy profesional. Recomendado al cien por ciento.</p>
+              </blockquote>
+              <footer class="rev-author">
+                <div class="rev-avatar" aria-hidden="true">CH</div>
+                <div>
+                  <strong class="rev-name">Consuelo Hernández</strong>
+                  <span class="rev-detail">Cirugía de hernia de disco</span>
+                </div>
+              </footer>
+            </article>
+            <!-- Card 9 -->
+            <article class="rev-card">
+              <div class="rev-card-top">
+                <div class="rev-stars" aria-label="5 de 5 estrellas">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <svg class="rev-quote-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V12c0-1.84 1.493-3.333 3.333-3.333h1.334C11.507 8.667 13 10.16 13 12v9.333H9.333zm13.334 0C20.827 21.333 19.333 19.84 19.333 18V12c0-1.84 1.494-3.333 3.334-3.333h1.333C25.84 8.667 27.333 10.16 27.333 12v9.333H22.667z"/></svg>
+              </div>
+              <blockquote class="rev-text">
+                <p>He sido consultado y diagnosticado por el Doctor Cisneros en varias ocasiones por temas de dolor de espalda por la ciática. En todos los casos el trato personal y cordial siempre de primera. Los medicamentos recetados junto con la rehabilitación que recomendó me han ayudado a mejorar enormemente mi calidad de vida. Confío ampliamente en él, es un profesional.</p>
+              </blockquote>
+              <footer class="rev-author">
+                <div class="rev-avatar" aria-hidden="true">JH</div>
+                <div>
+                  <strong class="rev-name">Jose Luis Huerta Rizo</strong>
+                  <span class="rev-detail">Ciática y dolor de espalda</span>
+                </div>
+              </footer>
+            </article>
+            <!-- Card 10 -->
+            <article class="rev-card">
+              <div class="rev-card-top">
+                <div class="rev-stars" aria-label="5 de 5 estrellas">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <svg class="rev-quote-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V12c0-1.84 1.493-3.333 3.333-3.333h1.334C11.507 8.667 13 10.16 13 12v9.333H9.333zm13.334 0C20.827 21.333 19.333 19.84 19.333 18V12c0-1.84 1.494-3.333 3.334-3.333h1.333C25.84 8.667 27.333 10.16 27.333 12v9.333H22.667z"/></svg>
+              </div>
+              <blockquote class="rev-text">
+                <p>Dos meses atrás tuve una cirugía de hernia cervical C-6 con el doctor Francisco Cisneros. El proceso desde el principio fue muy claro; después de los estudios necesarios detectó la causa raíz de mi dolor crónico de cabeza, cuello y hombros. Me explicó el padecimiento y cómo se generó, y me dio las opciones para que yo pudiera decidir. El trato fue excelente con su equipo y todos estuvieron al pendiente de mi mejoría. Mis problemas de dolor ya no los tengo y es un gran alivio. Gracias Dr. Cisneros por su esfuerzo, trabajo y atención.</p>
+              </blockquote>
+              <footer class="rev-author">
+                <div class="rev-avatar" aria-hidden="true">VS</div>
+                <div>
+                  <strong class="rev-name">Victoria Sánchez</strong>
+                  <span class="rev-detail">Cirugía hernia cervical C-6</span>
+                </div>
+              </footer>
+            </article>
+          </div><!-- /rev-track -->
+        </div><!-- /rev-viewport -->
+
+        <button class="rev-arrow rev-arrow--next" id="rev-next" aria-label="Siguiente reseña">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div><!-- /rev-stage -->
+
+      <div class="rev-footer">
+        <div class="rev-dots" id="rev-dots" role="tablist" aria-label="Páginas de reseñas"></div>
+        <p class="rev-rating-summary">
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" style="width:16px;height:16px;color:#F59E0B"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <strong>5.0</strong>&nbsp;· Calificación promedio de más de 100+ pacientes
+        </p>
+      </div>
+
+    </div><!-- /section-rev-inner -->
+  </section><!-- /section-rev -->
+
+        <!-- ══════════════════════════════════════════════════════════════════
+      SECCIÓN 3C · RESERVA DE CITA &mdash; Doctoralia Widget
+      ══════════════════════════════════════════════════════════════════ -->
+    <section id="agendar" class="section-book" aria-labelledby="book-h2" data-nav-dark>
+    <div class="section-book-inner">
+
+      <div class="book-text reveal">
+        <span class="section-eyebrow">Agenda en Línea</span>
+        <h2 class="book-h2" id="book-h2">Reserva tu cita con<br><span class="book-h2-accent">el especialista</span></h2>
+        <p class="book-sub">Selecciona horario y recibe confirmación rápida. Atención presencial en Zapopan para pacientes de toda la ZMG.</p>
+        <ul class="book-trust-list" aria-label="Beneficios de agendar en línea">
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            Confirmación rápida por WhatsApp
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            Reserva sin anticipo
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            Acepta seguros GNP, AXA, BUPA, Metlife y más
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            Espacios de consulta según disponibilidad
+          </li>
+        </ul>
+      </div>
+
+      <div class="book-widget-wrap reveal reveal-delay-2">
+        <!-- Live Doctoralia widget (renders on hosted server) -->
+        <a id="zl-url-book" class="zl-url" href="https://www.doctoralia.com.mx/francisco-javier-cisneros-oliva/ortopedista-traumatologo/tijuana" rel="nofollow" data-zlw-doctor="francisco-javier-cisneros-oliva" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget de reserva de citas médicas" style="display:none">Reserve una cita</a>
+
+        <!-- Static fallback card &mdash; hidden once live widget injects content -->
+        <div class="book-widget-static" id="book-widget-static">
+          <div class="bws-profile">
+            <picture>
+              <source type="image/webp" srcset="Assets/Images/hero.webp" />
+              <img src="Assets/Images/hero.jpg" alt="Dr. Francisco Javier Cisneros Oliva" class="bws-avatar" width="72" height="72" loading="lazy" decoding="async">
+            </picture>
+            <div class="bws-info">
+              <div class="bws-name">Dr. Francisco Javier Cisneros Oliva</div>
+              <div class="bws-specialty">Ortopedista, Traumatólogo</div>
+              <div class="bws-stars">
+                <span aria-hidden="true">★★★★★</span>
+                <span class="bws-count">45 opiniones</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://www.doctoralia.com.mx/francisco-javier-cisneros-oliva/ortopedista-traumatologo/tijuana"
+             class="bws-btn" target="_blank" rel="nofollow noopener">
+            Agendar cita
+          </a>
+          <div class="bws-brand">
+            <picture>
+              <source type="image/webp" srcset="Assets/Logo_secundario_doctoralia.webp" />
+              <img src="Assets/Logo_secundario_doctoralia.png" alt="Doctoralia" class="bws-logo" width="121" height="22" loading="lazy">
+            </picture>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /section-book-inner -->
+  </section><!-- /section-book -->
+
+      <!-- ══════════════════════════════════════════════════════════════════
+       SECCIÓN 4 · CONDICIONES / PADECIMIENTOS &mdash; Tab layout
+       ══════════════════════════════════════════════════════════════════ -->
+  <section id="padecimientos" class="section-cond" aria-labelledby="cond-h2">
+    <div class="section-cond-inner">
+
+      <!-- Header -->
+      <div class="cond-header reveal">
+        <span class="section-eyebrow">Padecimientos que Atendemos en Jalisco</span>
+        <h2 class="cond-h2" id="cond-h2">Condiciones de Columna en <span class="cond-accent">Guadalajara</span></h2>
+        <p class="cond-subtext">En nuestra clínica en Zapopan diagnosticamos y tratamos las causas más comunes de dolor de columna con tecnología de imagen avanzada y opciones mínimamente invasivas. Selecciona tu padecimiento para conocer el tratamiento disponible en Guadalajara.</p>
+      </div>
+
+      <!-- Tab layout: list left, image+content right -->
+      <div class="cond-tabs-layout" id="condTabsWidget">
+
+        <!-- Left: tab buttons -->
+        <div class="cond-tab-list" role="tablist" aria-label="Condiciones de columna en Guadalajara">
+
+          <button class="cond-tab cond-tab--active" role="tab" aria-selected="true" aria-controls="cond-panel-0" id="cond-tab-0" data-cond-tab="0">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+            Ciática y Dolor Radicular
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-1" id="cond-tab-1" data-cond-tab="1">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg></span>
+            Hernia de Disco Lumbar
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-2" id="cond-tab-2" data-cond-tab="2">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12H2"/><path d="M5 5H2v14h3"/><path d="M19 5h3v14h-3"/><path d="M9 5v14"/><path d="M15 5v14"/></svg></span>
+            Estenosis Espinal
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-3" id="cond-tab-3" data-cond-tab="3">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="9" height="6" rx="1"/><rect x="13" y="9" width="9" height="6" rx="1"/><rect x="2" y="15" width="9" height="6" rx="1"/></svg></span>
+            Espondilolistesis
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-4" id="cond-tab-4" data-cond-tab="4">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M8 6a4 4 0 0 0 0 8"/><path d="M16 6a4 4 0 0 1 0 8"/><path d="M9 14h6"/></svg></span>
+            Hernia Discal Cervical
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-5" id="cond-tab-5" data-cond-tab="5">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><path d="M4 10h2"/><path d="M18 10h2"/></svg></span>
+            Radiculopatía Cervical
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-6" id="cond-tab-6" data-cond-tab="6">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+            Dolor Lumbar Crónico
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+          <button class="cond-tab" role="tab" aria-selected="false" aria-controls="cond-panel-7" id="cond-tab-7" data-cond-tab="7">
+            <span class="cond-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 4 4 5 4 8a4 4 0 0 1-8 0c0-3 2-4 4-8z"/><path d="M12 14v8"/><path d="M9 18h6"/></svg></span>
+            Escoliosis del Adulto
+            <span class="cond-tab-bar" aria-hidden="true"></span>
+          </button>
+
+        </div><!-- /cond-tab-list -->
+
+        <!-- Right: content panels -->
+        <div class="cond-panels">
+
+          <div class="cond-panel cond-panel--active" role="tabpanel" id="cond-panel-0" aria-labelledby="cond-tab-0">
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/dolor%20de%20ciatica%20en%20tijuana.jpg" alt="Tratamiento de ciática y dolor radicular lumbar en Guadalajara" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/guadalajara/condiciones/dolor-ciatica/" class="cond-panel-title-link">Ciática y Dolor Radicular</a></h3>
+              <p class="cond-panel-desc">Quemazón o descarga que recorre desde la zona lumbar hasta el pie siguiendo el nervio ciático. En Guadalajara confirmamos el nivel de compresión con electromiografía y resonancia antes de prescribir cualquier tratamiento; el 70% de nuestros pacientes evita la cirugía con bloqueos selectivos de raíz y rehabilitación dirigida.</p>
+            </div>
+          </div>
+
+          <div class="cond-panel" role="tabpanel" id="cond-panel-1" aria-labelledby="cond-tab-1" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/hernia%20de%20disco%20en%20tijuana.jpg" alt="Tratamiento de hernia de disco lumbar en Guadalajara" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/guadalajara/condiciones/hernia-de-disco-lumbar/" class="cond-panel-title-link">Hernia de Disco Lumbar</a></h3>
+              <p class="cond-panel-desc">Fragmento del núcleo pulposo que protruye y comprime una raíz nerviosa lumbar con adormecimiento que baja por la pierna. En Zapopan diseñamos un plan escalonado: terapia física y bloqueos primero, endoscopia de columna ambulatoria cuando la hernia no cede, con alta el mismo día y retorno laboral en 2&ndash;3 semanas.</p>
+            </div>
+          </div>
+
+          <div class="cond-panel" role="tabpanel" id="cond-panel-2" aria-labelledby="cond-tab-2" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/estonosis%20lumbar%20tijuana.jpg" alt="Tratamiento de estenosis espinal en Guadalajara" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/guadalajara/condiciones/estenosis-espinal/" class="cond-panel-title-link">Estenosis Espinal</a></h3>
+              <p class="cond-panel-desc">Canal vertebral estrecho que provoca claudicación neurógena: piernas que se entumecen al caminar y mejoran al inclinarse hacia adelante. Es la causa más frecuente de cirugía de columna en mayores de 60 años. Confirmamos con resonancia dinámica y tratamos mediante descompresión endoscópica en Hospital Ángeles Andares sin necesidad de fusión en la mayoría de los casos.</p>
+            </div>
+          </div>
+
+          <div class="cond-panel" role="tabpanel" id="cond-panel-3" aria-labelledby="cond-tab-3" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/Espondilolistesis%20tijuana.jpg" alt="Tratamiento de espondilolistesis lumbar en Guadalajara" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/guadalajara/condiciones/espondilolistesis/" class="cond-panel-title-link">Espondilolistesis</a></h3>
+              <p class="cond-panel-desc">Desplazamiento anterior de una vértebra que provoca dolor lumbar mecánico e inestabilidad al cargar peso. Frecuente en deportistas y trabajadores físicos en Jalisco. Clasificamos el grado con radiografía en carga y resonancia dinámica: los grados I&ndash;II responden a estabilización muscular y los grados III&ndash;IV se corrigen con fusión percutánea mínimamente invasiva.</p>
+            </div>
+          </div>
+
+          <div class="cond-panel" role="tabpanel" id="cond-panel-4" aria-labelledby="cond-tab-4" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/Tratamiento%20de%20Hernias%20de%20Disco%20en%20Tijuana.jpg" alt="Tratamiento de hernia discal cervical en Guadalajara" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/guadalajara/condiciones/hernia-discal-cervical/" class="cond-panel-title-link">Hernia Discal Cervical</a></h3>
+              <p class="cond-panel-desc">Disco cervical colapsado que comprime la médula o una raíz nerviosa, con irradiación a brazo y mano. Común en profesionales tapatíos con uso prolongado de pantallas. Lo diferenciamos del síndrome del túnel carpiano con estudio de conducción nerviosa antes de definir tratamiento; cuando se requiere cirugía, la técnica endoscópica cervical ofrece recuperación en 2&ndash;3 semanas sin cicatriz visible.</p>
+            </div>
+          </div>
+
+          <div class="cond-panel" role="tabpanel" id="cond-panel-5" aria-labelledby="cond-tab-5" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/Radiculopat%C3%ADa%20dolor%20irradiado%20en%20tijuana.jpg" alt="Tratamiento de radiculopatía cervical en Guadalajara" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/guadalajara/condiciones/dolor-cervical-radiculopatia/" class="cond-panel-title-link">Radiculopatía Cervical</a></h3>
+              <p class="cond-panel-desc">Irritación de la raíz C5, C6 o C7 que genera corriente, entumecimiento o debilidad desde el cuello hasta los dedos. Antes de cualquier procedimiento aplicamos bloqueo selectivo de raíz guiado por fluoroscopía en Guadalajara: además de aliviar el dolor, funciona como prueba diagnóstica confirmatoria con un 85% de precisión, evitando cirugías innecesarias.</p>
+            </div>
+          </div>
+
+          <div class="cond-panel" role="tabpanel" id="cond-panel-6" aria-labelledby="cond-tab-6" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/Dolor%20de%20Columna%20al%20Moverse.jpg" alt="Tratamiento de dolor lumbar crónico en Guadalajara" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/guadalajara/condiciones/dolor-lumbar/" class="cond-panel-title-link">Dolor Lumbar Crónico</a></h3>
+              <p class="cond-panel-desc">Dolor lumbar que supera los tres meses y no responde al tratamiento habitual. En nuestra clínica de Zapopan descartamos primero causas no mecánicas (fracturas por insuficiencia, infecciones, tumores) y luego aplicamos evaluación funcional con pruebas de carga para identificar el segmento responsable: disco, faceta articular o articulación sacroilíaca.</p>
+            </div>
+          </div>
+
+          <div class="cond-panel" role="tabpanel" id="cond-panel-7" aria-labelledby="cond-tab-7" hidden>
+            <div class="cond-panel-img">
+              <img src="/Assets/Images/Stock/escoliosis.jpg" alt="Tratamiento de escoliosis del adulto en Guadalajara" loading="lazy" width="760" height="480">
+            </div>
+            <div class="cond-panel-body">
+              <h3 class="cond-panel-title"><a href="/guadalajara/condiciones/escoliosis-adulto/" class="cond-panel-title-link">Escoliosis del Adulto</a></h3>
+              <p class="cond-panel-desc">Curvatura lateral mayor a 10° en adultos, ya sea progresión de escoliosis adolescente o degenerativa adquirida. En Guadalajara medimos el ángulo de Cobb en telerradiografía de columna completa en carga y evaluamos el balance coronal: corsé y fisioterapia en curvas menores de 40°, corrección quirúrgica con instrumentación en curvas progresivas o con dolor refractario.</p>
+            </div>
+          </div>
+
+        </div><!-- /cond-panels -->
+      </div><!-- /cond-tabs-layout -->
+
+      <a href="/guadalajara/condiciones/" class="cond-all-link reveal">
+        Ver todas las condiciones de columna en Guadalajara
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg>
+      </a>
+
+    </div><!-- /section-cond-inner -->
+  </section><!-- /section-cond -->
+
+      <!-- ══════════════════════════════════════════════════════════════════
+       SECCIÓN 5 · SERVICIOS / PROCEDIMIENTOS
+       Layout: centered header + 3-col glassmorphism cards (spine only)
+       ══════════════════════════════════════════════════════════════════ -->
+  <section id="servicios" class="section-serv" aria-labelledby="serv-h2" data-nav-dark>
+    <div class="section-serv-inner">
+
+      <header class="serv-header reveal">
+        <span class="section-eyebrow">Tratamientos &amp; Procedimientos en Guadalajara</span>
+        <h2 class="serv-h2" id="serv-h2">Cirugía de Columna en <span class="serv-accent">Guadalajara</span></h2>
+        <p class="serv-sub">Procedimientos realizados en Hospital Ángeles Andares, Zapopan, con tecnología de vanguardia, neuromonitoreo intraoperatorio y protocolos de cirugía de corta estancia para que vuelvas a tu vida en el menor tiempo posible.</p>
+      </header>
+
+      <div class="serv-grid">
+
+        <div class="serv-card reveal reveal-delay-1">
+          <div class="serv-card-icon serv-card-icon--blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/>
+            </svg>
+          </div>
+          <h3 class="serv-card-h3"><a href="/guadalajara/servicios/endoscopia-de-columna/">Endoscopia de Columna</a></h3>
+          <p class="serv-card-desc">Cirugía de mínima invasión disponible en Hospital Ángeles Andares, Zapopan. Incisión menor a 1&nbsp;cm, anestesia local o sedación leve, y alta el mismo día del procedimiento.</p>
+        </div>
+
+        <div class="serv-card reveal reveal-delay-2">
+          <div class="serv-card-icon serv-card-icon--green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M11 12H3"/><path d="M16 6H3"/><path d="M16 18H3"/><path d="M19 10v4"/><circle cx="21" cy="12" r="2"/>
+            </svg>
+          </div>
+          <h3 class="serv-card-h3"><a href="/guadalajara/servicios/microdiscectomia/">Microdiscectomía</a></h3>
+          <p class="serv-card-desc">Extirpación del fragmento discal herniado con microscopio quirúrgico de alta definición. Recuperación en 2&ndash;3 semanas con retorno laboral rápido para pacientes de Guadalajara y área metropolitana de Jalisco.</p>
+        </div>
+
+        <div class="serv-card reveal reveal-delay-3">
+          <div class="serv-card-icon serv-card-icon--teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 12H2"/><path d="M5 5H2v14h3"/><path d="M19 5h3v14h-3"/><path d="M9 5v14"/><path d="M15 5v14"/>
+            </svg>
+          </div>
+          <h3 class="serv-card-h3"><a href="/guadalajara/servicios/cirugia-descompresion-lumbar/">Descompresión Lumbar</a></h3>
+          <p class="serv-card-desc">Laminectomía y foraminotomía para liberar el canal vertebral estrecho. Realizada en quirófano con neuromonitoreo intraoperatorio en nuestro centro en Zapopan. Indicada en estenosis espinal con claudicación o déficit neurológico.</p>
+        </div>
+
+        <div class="serv-card reveal reveal-delay-4">
+          <div class="serv-card-icon serv-card-icon--purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="3" width="9" height="6" rx="1"/><rect x="13" y="9" width="9" height="6" rx="1"/><rect x="2" y="15" width="9" height="6" rx="1"/>
+            </svg>
+          </div>
+          <h3 class="serv-card-h3"><a href="/guadalajara/servicios/fusion-vertebral/">Fusión Vertebral</a></h3>
+          <p class="serv-card-desc">Estabilización de vértebras inestables con implantes de titanio de diseño anatómico. Solución definitiva para espondilolistesis grado III&ndash;IV y deformidades de columna en pacientes de Jalisco.</p>
+        </div>
+
+        <div class="serv-card reveal reveal-delay-1">
+          <div class="serv-card-icon serv-card-icon--rose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/>
+            </svg>
+          </div>
+          <h3 class="serv-card-h3"><a href="/guadalajara/servicios/bloqueos-epidurales/">Bloqueos Epidurales</a></h3>
+          <p class="serv-card-desc">Inyección guiada por fluoroscopía de corticoide o anestésico en el espacio epidural. Procedimiento ambulatorio en Guadalajara con alivio del dolor radicular desde la primera sesión, sin hospitalización.</p>
+        </div>
+
+        <div class="serv-card reveal reveal-delay-2">
+          <div class="serv-card-icon serv-card-icon--amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+            </svg>
+          </div>
+          <h3 class="serv-card-h3"><a href="/guadalajara/servicios/rehabilitacion/">Rehabilitación de Columna</a></h3>
+          <p class="serv-card-desc">Programa postoperatorio y conservador para recuperar fuerza, movilidad y estabilidad lumbar. Coordinado con el equipo quirúrgico de la clínica en Zapopan desde el primer día de recuperación.</p>
+        </div>
+
+      </div><!-- /serv-grid -->
+    </div><!-- /section-serv-inner -->
+  </section><!-- /section-serv -->
+      <!-- ══════════════════════════════════════════════════════════════════
+       SECCIÓN 7 · BLOG &mdash; Últimas Entradas
+       ══════════════════════════════════════════════════════════════════ -->
+  <section id="blog" class="section-blog" aria-labelledby="blog-h2">
+    <div class="section-blog-inner">
+
+      <header class="blog-header reveal">
+        <div class="blog-header-top">
+          <div>
+            <span class="section-eyebrow">Consejos &amp; Información Médica</span>
+            <h2 class="blog-h2" id="blog-h2">Últimas Entradas del <span class="blog-h2-accent">Blog</span></h2>
+          </div>
+          <a href="/blog" class="btn-outline blog-all-link" aria-label="Ver todas las entradas del blog">
+            Ver todos los artículos
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </header>
+
+      <div class="blog-grid">
+
+        <!-- Post 01 -->
+        <article class="blog-card reveal reveal-delay-1">
+          <a href="/blog/cuando-operar-hernia-discal" class="blog-card-img-wrap" aria-hidden="true" tabindex="-1">
+            <div class="blog-card-img blog-card-img--blue">
+              <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect x="20" y="5" width="24" height="9" rx="4.5" fill="currentColor" opacity=".85"/>
+                <rect x="22" y="17" width="20" height="9" rx="4.5" fill="currentColor" opacity=".7"/>
+                <ellipse cx="32" cy="30" rx="14" ry="5.5" fill="currentColor" opacity=".55"/>
+                <rect x="22" y="35" width="20" height="9" rx="4.5" fill="currentColor" opacity=".72"/>
+                <rect x="20" y="48" width="24" height="9" rx="4.5" fill="currentColor" opacity=".55"/>
+                <line x1="32" y1="5" x2="32" y2="57" stroke="currentColor" stroke-width="1.5" opacity=".22"/>
+              </svg>
+            </div>
+            <span class="blog-card-cat">Columna</span>
+          </a>
+          <div class="blog-card-body">
+            <time class="blog-card-date" datetime="2026-02-18">18 Feb 2026</time>
+            <h3 class="blog-card-h3">
+              <a href="/blog/cuando-operar-hernia-discal">¿Cuándo es necesario operar una hernia discal?</a>
+            </h3>
+            <p class="blog-card-excerpt">La mayoría de las hernias discales se resuelven con tratamiento conservador. Te explicamos cuáles son las señales de alarma que indican que la cirugía es la mejor opción.</p>
+            <a href="/blog/cuando-operar-hernia-discal" class="blog-card-read">
+              Leer artículo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Post 02 -->
+        <article class="blog-card reveal reveal-delay-2">
+          <a href="/blog/ciatica-sintomas-senales-de-alarma" class="blog-card-img-wrap" aria-hidden="true" tabindex="-1">
+            <div class="blog-card-img blog-card-img--green">
+              <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <path d="M28 5 Q28 18 28 28" stroke="currentColor" stroke-width="6" stroke-linecap="round" opacity=".75"/>
+                <circle cx="32" cy="32" r="13" fill="currentColor" opacity=".38"/>
+                <circle cx="32" cy="32" r="7.5" fill="currentColor" opacity=".78"/>
+                <circle cx="32" cy="32" r="3" fill="currentColor" opacity=".96"/>
+                <path d="M36 45 Q38 53 40 62" stroke="currentColor" stroke-width="6" stroke-linecap="round" opacity=".68"/>
+              </svg>
+            </div>
+            <span class="blog-card-cat blog-card-cat--green">Ciática</span>
+          </a>
+          <div class="blog-card-body">
+            <time class="blog-card-date" datetime="2026-01-30">30 Ene 2026</time>
+            <h3 class="blog-card-h3">
+              <a href="/blog/ciatica-sintomas-senales-de-alarma">Síntomas de ciática: señales de alarma que no debes ignorar</a>
+            </h3>
+            <p class="blog-card-excerpt">Aprende a reconocer cuándo el dolor del nervio ciático puede manejarse de forma conservadora y cuándo requiere valoración urgente por un especialista de columna.</p>
+            <a href="/blog/ciatica-sintomas-senales-de-alarma" class="blog-card-read">
+              Leer artículo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Post 03 -->
+        <article class="blog-card reveal reveal-delay-3">
+          <a href="/blog/estenosis-espinal-cuando-operar" class="blog-card-img-wrap" aria-hidden="true" tabindex="-1">
+            <div class="blog-card-img blog-card-img--navy">
+              <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <path d="M10 26 Q20 12 32 12 Q44 12 54 22 Q58 34 54 44 Q50 52 44 48 L36 36" fill="currentColor" opacity=".38"/>
+                <circle cx="36" cy="34" r="11" fill="currentColor" opacity=".7"/>
+                <circle cx="36" cy="34" r="5" fill="currentColor" opacity=".95"/>
+                <path d="M41 45 Q43 53 44 62" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" opacity=".65"/>
+              </svg>
+            </div>
+            <span class="blog-card-cat blog-card-cat--navy">Estenosis</span>
+          </a>
+          <div class="blog-card-body">
+            <time class="blog-card-date" datetime="2026-01-10">10 Ene 2026</time>
+            <h3 class="blog-card-h3">
+              <a href="/blog/estenosis-espinal-cuando-operar">Estenosis espinal: cuándo operar y qué esperar de la recuperación</a>
+            </h3>
+            <p class="blog-card-excerpt">Conoce las opciones de tratamiento para estenosis lumbar, desde manejo conservador hasta descompresión quirúrgica según tus síntomas y estudios de imagen.</p>
+            <a href="/blog/estenosis-espinal-cuando-operar" class="blog-card-read">
+              Leer artículo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /blog-grid -->
+    </div><!-- /section-blog-inner -->
+  </section><!-- /section-blog -->
+
+      <!-- ══════════════════════════════════════════════════════════════════
+       SECCIÓN · UBICACIÓN EN GUADALAJARA (EXCLUSIVA HOME GDL)
+       Layout: centered header → card + map
+       ══════════════════════════════════════════════════════════════════ -->
+  <section id="ubicaciones" class="section-loc section-loc--gdl" aria-labelledby="loc-h2">
+    <div class="section-loc-inner">
+
+      <header class="loc-header loc-header--center reveal">
+        <span class="section-eyebrow">Dónde Atendemos</span>
+        <h2 class="loc-h2" id="loc-h2">
+          Tu <span class="loc-h2-accent">Especialista de Columna</span> en Guadalajara
+        </h2>
+        <p class="loc-sub">Atención presencial en Guadalajara con agenda prioritaria para dolor lumbar, ciática y hernia de disco.</p>
+      </header>
+
+      <div class="loc-gdl-stage reveal">
+
+        <!-- info card: 1/3 left -->
+        <div class="loc-gdl-card">
+          <div class="loc-card-badge">
+            <span class="loc-badge-dot loc-badge-dot--green"></span>Guadalajara
+          </div>
+          <h3 class="loc-card-h3">Consulta de Columna<br>en Guadalajara</h3>
+          <address class="loc-address">
+            <ul class="loc-detail-list">
+              <li class="loc-detail-item">
+                <svg class="loc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 13-8 13S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Av. Patria 1355, Puerta de Hierro, 45116 Zapopan, Jal. · Piso 12, Consultorio 1240</span>
+              </li>
+              <li class="loc-detail-item">
+                <svg class="loc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.94a16 16 0 0 0 6 6l.38-.38a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92Z"/></svg>
+                <span><a href="tel:+523312345678" class="loc-tel">(33) 1234 5678</a></span>
+              </li>
+              <li class="loc-detail-item">
+                <svg class="loc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Horarios según disponibilidad de agenda</span>
+              </li>
+            </ul>
+          </address>
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Patria+1355%2C+Puerta+de+Hierro%2C+Zapopan%2C+Jalisco" target="_blank" rel="noopener noreferrer" class="loc-directions-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Cómo llegar &mdash; Guadalajara
+          </a>
+        </div>
+
+        <!-- map: 2/3 right -->
+        <div class="loc-gdl-map">
+          <iframe
+            title="Ubicación de consulta en Guadalajara"
+            src="https://www.google.com/maps?q=Av.+Patria+1355,+Puerta+de+Hierro,+Zapopan,+Jalisco&output=embed"
+            width="100%" height="100%" style="border:0;display:block;width:100%;height:100%;" allowfullscreen
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Mapa de la consulta en Guadalajara">
+          </iframe>
+        </div>
+
+      </div><!-- /loc-gdl-stage -->
+
+    </div><!-- /section-loc-inner -->
+  </section><!-- /section-loc -->
+      <!-- ══════════════════════════════════════════════════════════════════
+       SECCIÓN 6 · FAQ &mdash; Schema.org FAQPage JSON-LD + Accordion
+       ══════════════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo debo acudir con un especialista en columna vertebral?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Debes consultar a un especialista en columna vertebral si presentas dolor lumbar o cervical por más de dos semanas, dolor que corre hacia brazo o pierna, hormigueo, debilidad o dificultad para caminar. Si hay pérdida de fuerza súbita o problemas para controlar esfínteres, acude a urgencias de inmediato."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuáles son los síntomas más comunes de un problema de columna?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los síntomas más frecuentes son dolor lumbar o cervical persistente, dolor que baja a la pierna (ciática) o se irradia al brazo, hormigueo, adormecimiento, debilidad y limitación para caminar o estar sentado por tiempo prolongado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Aceptan seguros de gastos médicos mayores?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. El consultorio trabaja con los principales seguros de gastos médicos mayores del mercado mexicano. Te recomendamos confirmar cobertura con tu aseguradora antes de tu cita. También ofrecemos precios de consulta privada accesibles y planes de pago para procedimientos quirúrgicos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la endoscopia de columna y cuándo se recomienda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La endoscopia de columna es una técnica mínimamente invasiva en la que se introduce una cámara de pequeño diámetro para visualizar y tratar hernias de disco, estenosis del canal espinal u otras lesiones. Se recomienda cuando el dolor lumbar o cervical no responde al tratamiento conservador (reposo, fisioterapia, medicamentos) después de 6&ndash;12 semanas, o cuando hay compresión nerviosa confirmada por imagen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo dura la recuperación tras una cirugía de columna?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende del procedimiento. Con endoscopia de columna el paciente suele caminar el mismo día y retomar actividades ligeras en 1&ndash;2 semanas. Las cirugías abiertas o de fusión requieren 6&ndash;12 semanas para actividades cotidianas y hasta 6 meses para esfuerzo físico intenso. El plan de rehabilitación es personalizado según el tipo de cirugía y la condición del paciente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se recomienda cirugía de columna?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Se recomienda cuando el dolor no mejora tras tratamiento conservador por 6 a 12 semanas, cuando existe compresión nerviosa con debilidad progresiva, o cuando hay limitación funcional severa. La indicación final depende de la valoración clínica y de estudios de imagen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo sé si mi fractura necesita cirugía o solo inmovilización?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eso depende del tipo de fractura, su desplazamiento y la articulación involucrada. Las fracturas no desplazadas suelen tratarse con yeso o férula. Las fracturas desplazadas, intraarticulares o con fragmentos que comprometen nervios o vasos generalmente requieren cirugía (osteosíntesis con placas, tornillos o clavos intramedulares). El traumatólogo lo determina con radiografías o tomografía."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ofrecen segunda opinión médica?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Si ya tienes un diagnóstico previo o te han recomendado cirugía y deseas confirmar la indicación, puedes agendar una consulta de segunda opinión. Trae tus estudios de imagen más recientes (radiografías, resonancia magnética, tomografía) y el informe del médico anterior para que el especialista pueda hacer una evaluación completa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta una consulta de traumatología en Guadalajara?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El costo de la consulta particular es accesible y se informa al momento de agendar tu cita. Trabajamos con los principales seguros de gastos médicos mayores. Para procedimientos quirúrgicos ofrecemos opciones de financiamiento. Contáctanos por WhatsApp para obtener información actualizada de tarifas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Tienen disponibilidad de urgencias o citas el mismo día?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Contamos con espacios de atención prioritaria para lesiones agudas como fracturas, luxaciones y esguinces de alto grado. Escríbenos por WhatsApp indicando tu situación y te orientamos sobre los tiempos de espera disponibles o, de ser necesario, te referimos a urgencias hospitalarias de inmediato."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <section id="faq" class="section-faq" aria-labelledby="faq-h2">
+    <div class="section-faq-inner">
+
+      <header class="faq-header reveal">
+        <span class="section-eyebrow">Resuelve tus Dudas</span>
+        <h2 class="faq-h2" id="faq-h2">Preguntas Frecuentes sobre<br><span class="faq-h2-accent">Columna en Guadalajara</span></h2>
+      </header>
+
+      <div class="faq-lists">
+      <dl class="faq-list" id="faq-list-default">
+
+        <div class="faq-item reveal reveal-delay-1">
+          <dt>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-1" id="faq-q-1">
+              ¿Cuándo debo acudir con un especialista en columna vertebral?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </dt>
+          <dd class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1" hidden>
+            <p>Debes consultar a un especialista en columna vertebral si presentas <strong>dolor lumbar o cervical persistente</strong> por más de dos semanas, dolor que baja a la pierna o se irradia al brazo, hormigueo o debilidad.</p>
+            <p>Si hay pérdida de fuerza súbita, dificultad para caminar o alteraciones para controlar esfínteres, acude a urgencias de inmediato.</p>
+          </dd>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2">
+          <dt>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-2" id="faq-q-2">
+              ¿Cuáles son los síntomas más comunes de un problema de columna?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </dt>
+          <dd class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2" hidden>
+            <p>Los síntomas más comunes de un problema de columna incluyen <strong>dolor lumbar o cervical persistente</strong>, dolor que baja a la pierna (ciática) o se irradia al brazo, hormigueo, adormecimiento y debilidad.</p>
+            <p>Si estos síntomas afectan tu marcha, sueño o actividades diarias, conviene valoración temprana con un especialista de columna.</p>
+          </dd>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-3">
+          <dt>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-3" id="faq-q-3">
+              ¿Aceptan seguros de gastos médicos mayores?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </dt>
+          <dd class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3" hidden>
+            <p>Sí. El consultorio trabaja con los principales seguros de gastos médicos mayores del mercado mexicano (GNP, AXA, BUPA, Metlife, entre otros). Te recomendamos confirmar cobertura con tu aseguradora antes de tu cita.</p>
+            <p>También ofrecemos tarifas de consulta privada accesibles y opciones de pago para procedimientos quirúrgicos.</p>
+          </dd>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-4">
+          <dt>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-4" id="faq-q-4">
+              ¿Qué es la endoscopia de columna y cuándo se recomienda?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </dt>
+          <dd class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4" hidden>
+            <p>La endoscopia de columna es una técnica <strong>mínimamente invasiva</strong> en la que se introduce una cámara de pequeño diámetro para visualizar y tratar hernias de disco, estenosis del canal espinal u otras lesiones sin grandes incisiones.</p>
+            <p>Se recomienda cuando el dolor lumbar o cervical no responde al tratamiento conservador (reposo, fisioterapia, medicamentos) después de 6&ndash;12 semanas, o cuando existe compresión nerviosa confirmada por resonancia magnética.</p>
+          </dd>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-5">
+          <dt>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-5" id="faq-q-5">
+              ¿Cuánto tiempo dura la recuperación tras una cirugía de columna?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </dt>
+          <dd class="faq-a" id="faq-a-5" role="region" aria-labelledby="faq-q-5" hidden>
+            <p>Depende del procedimiento. Con endoscopia de columna el paciente suele caminar el <strong>mismo día</strong> y retomar actividades ligeras en 1&ndash;2 semanas. Las cirugías abiertas o de fusión requieren 6&ndash;12 semanas para actividades cotidianas y hasta 6 meses para esfuerzo físico intenso.</p>
+            <p>El plan de rehabilitación se personaliza según el tipo de cirugía y las condiciones de cada paciente.</p>
+          </dd>
+        </div>
+
+      </dl><!-- /faq-list-default -->
+
+      <dl class="faq-list" id="faq-list-extra" hidden>
+
+        <div class="faq-item">
+          <dt>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-6" id="faq-q-6">
+              ¿Cuándo se recomienda cirugía de columna?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </dt>
+          <dd class="faq-a" id="faq-a-6" role="region" aria-labelledby="faq-q-6" hidden>
+            <p>Se recomienda cuando el dolor no mejora tras tratamiento conservador por 6 a 12 semanas, cuando existe <strong>compresión nerviosa con debilidad progresiva</strong> o cuando hay limitación funcional severa.</p>
+            <p>La indicación final se define con valoración clínica y estudios de imagen, eligiendo la técnica más segura para cada caso.</p>
+          </dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-7" id="faq-q-7">
+              ¿Cómo sé si mi fractura necesita cirugía o solo inmovilización?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </dt>
+          <dd class="faq-a" id="faq-a-7" role="region" aria-labelledby="faq-q-7" hidden>
+            <p>Eso depende del tipo de fractura, su desplazamiento y la articulación involucrada. Las fracturas <strong>no desplazadas</strong> suelen tratarse con yeso o férula. Las fracturas desplazadas, intraarticulares o con fragmentos que comprometen nervios o vasos generalmente requieren <strong>cirugía</strong> (osteosíntesis con placas, tornillos o clavos intramedulares).</p>
+            <p>El traumatólogo lo determina con radiografías o tomografía en la primera consulta.</p>
+          </dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-8" id="faq-q-8">
+              ¿Ofrecen segunda opinión médica?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </dt>
+          <dd class="faq-a" id="faq-a-8" role="region" aria-labelledby="faq-q-8" hidden>
+            <p>Sí. Si ya tienes un diagnóstico previo o te han recomendado cirugía y deseas confirmar la indicación, puedes agendar una <strong>consulta de segunda opinión</strong>.</p>
+            <p>Trae tus estudios de imagen más recientes (radiografías, resonancia magnética, tomografía) y el informe del médico anterior para que el <strong>doctor de la columna</strong> pueda realizar una evaluación completa e independiente.</p>
+          </dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-9" id="faq-q-9">
+              ¿Cuánto cuesta una consulta de traumatología en Guadalajara?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </dt>
+          <dd class="faq-a" id="faq-a-9" role="region" aria-labelledby="faq-q-9" hidden>
+            <p>El costo de la consulta particular es accesible y se informa al momento de agendar tu cita. Trabajamos con los principales seguros de gastos médicos mayores del mercado mexicano.</p>
+            <p>Para procedimientos quirúrgicos ofrecemos <strong>opciones de financiamiento</strong>. Contáctanos por WhatsApp para obtener información actualizada de tarifas sin compromiso.</p>
+          </dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-10" id="faq-q-10">
+              ¿Tienen disponibilidad de urgencias o citas el mismo día?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </dt>
+          <dd class="faq-a" id="faq-a-10" role="region" aria-labelledby="faq-q-10" hidden>
+            <p>Contamos con espacios de <strong>atención prioritaria</strong> para lesiones agudas como fracturas, luxaciones y esguinces de alto grado.</p>
+            <p>Escríbenos por WhatsApp indicando tu situación y te orientamos sobre los tiempos de espera disponibles o, de ser necesario, te referimos a urgencias hospitalarias de inmediato.</p>
+          </dd>
+        </div>
+
+      </dl><!-- /faq-list-extra -->
+      </div><!-- /faq-lists -->
+
+      <!-- Ver más / Ver menos -->
+      <div class="faq-toggle-wrap">
+        <button class="faq-more-btn" id="faq-more-btn" aria-expanded="false" aria-controls="faq-list-extra">
+          <span class="faq-more-label">Ver más preguntas</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </div>
+    </div><!-- /section-faq-inner -->
+  </section><!-- /section-faq -->
+
+  </main>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+      FOOTER
+      ══════════════════════════════════════════════════════════════════ -->
+    <footer class="site-footer" role="contentinfo" data-nav-dark>
+    <div class="footer-inner">
+
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="Dr. Francisco Cisneros &mdash; Inicio">
+          <img src="/Assets/dr-logo.svg" alt="Dr. Francisco Cisneros Oliva" class="footer-logo-image">
+        </a>
+        <p class="footer-tagline">Especialista en Columna Vertebral certificado por el CMTO. Cirugía mínimamente invasiva en Tijuana y Rosarito, B.C.</p>
+        <p class="footer-cedula">Cédula Profesional: 12294474</p>
+        <a href="https://wa.me/526641596633?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20de%20columna"
+           target="_blank" rel="noopener noreferrer"
+           class="footer-wa-btn" aria-label="Agendar cita por WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Agendar Cita &mdash; WhatsApp
+        </a>
+      </div>
+
+      <!-- Nav column -->
+      <nav class="footer-nav" aria-label="Navegación footer">
+        <h4 class="footer-nav-title">Navegación</h4>
+        <ul class="footer-nav-list">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#condiciones">Padecimientos</a></li>
+          <li><a href="#ubicaciones">Dónde Atendemos</a></li>
+          <li><a href="#faq">Preguntas Frecuentes</a></li>
+        </ul>
+        <h4 class="footer-nav-title" style="margin-top:1.5rem;">Servicios</h4>
+        <ul class="footer-nav-list">
+          <li><a href="/servicios/endoscopia-de-columna-guadalajara/">Endoscopia de Columna</a></li>
+          <li><a href="/servicios/microdiscectomia-guadalajara/">Microdiscectomía</a></li>
+          <li><a href="/servicios/cirugia-descompresion-lumbar-guadalajara/">Descompresión Lumbar</a></li>
+          <li><a href="/servicios/fusion-vertebral-guadalajara/">Fusión Vertebral</a></li>
+          <li><a href="/servicios/bloqueos-epidurales-columna-guadalajara/">Bloqueos Epidurales</a></li>
+          <li><a href="/servicios/rehabilitacion-columna-guadalajara/">Rehabilitación de Columna</a></li>
+        </ul>
+      </nav>
+
+      <!-- Locations column -->
+      <div class="footer-locs">
+        <h4 class="footer-nav-title">Consultorios</h4>
+
+        <div class="footer-loc">
+          <strong>Tijuana, B.C.</strong>
+          <address>
+            New City Medical Plaza<br>
+            Av. P. del Centenario 9580, Piso 27<br>
+            Zona Urbana Río Tijuana, B.C. 22010<br>
+            <a href="tel:+526641596633">(664) 159 6633</a>
+          </address>
+        </div>
+
+        <div class="footer-loc">
+          <strong>Rosarito, B.C.</strong>
+          <address>
+            Blvd. Benito Juárez 907-31<br>
+            Centro Playas<br>
+            Playas de Rosarito, B.C. 22710<br>
+            <a href="tel:+526641596633">(664) 159 6633</a>
+          </address>
+        </div>
+
+        <div class="footer-loc">
+          <strong>Guadalajara, Jal.</strong>
+          <address>
+            Av. Patria 1355, Puerta de Hierro<br>
+            Piso 12, Consultorio 1240<br>
+            Zapopan, Jalisco, C.P. 45116<br>
+            <a href="tel:+523312345678">(33) 1234 5678</a>
+          </address>
+        </div>
+
+      </div>
+
+    </div><!-- /footer-inner -->
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Dr. Francisco Cisneros Oliva &middot; Especialista en Cirugía de Columna Vertebral &middot; <a href="/aviso-privacidad/">Aviso de Privacidad</a></p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating widget -->
+  <div id="wa-widget" class="wa-widget">
+    <div class="wa-panel" id="wa-panel" role="dialog" aria-modal="true" aria-label="Chat de citas por WhatsApp" hidden>
+      <div class="wa-panel-header">
+        <div class="wa-panel-header-info">
+          <img src="/Assets/WhatsApp.png" alt="" class="wa-panel-avatar" aria-hidden="true">
+          <div>
+            <p class="wa-panel-name">Dr. Francisco Cisneros</p>
+            <p class="wa-panel-status">Consultorio &bull; Responde r&aacute;pido</p>
+          </div>
+        </div>
+        <button class="wa-close" id="wa-close" aria-label="Cerrar chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="wa-panel-body">
+        <div class="wa-bubble"><p>&iexcl;Hola! 👋 &iquest;En d&oacute;nde te gustar&iacute;a hacer tu cita?</p></div>
+        <div class="wa-actions" role="list">
+          <a role="listitem" href="https://api.whatsapp.com/send?phone=526641596633&text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Guadalajara%2C%20Jalisco" target="_blank" rel="noopener noreferrer" class="wa-action-btn" aria-label="Agendar cita en Guadalajara, Jalisco">
+            <svg class="wa-loc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Guadalajara, Jalisco
+          </a>
+          <a role="listitem" href="https://api.whatsapp.com/send?phone=526641596633&text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Tijuana%2C%20B.C." target="_blank" rel="noopener noreferrer" class="wa-action-btn" aria-label="Agendar cita en Tijuana, B.C.">
+            <svg class="wa-loc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Tijuana, B.C.
+          </a>
+          <a role="listitem" href="https://api.whatsapp.com/send?phone=526641596633&text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Rosarito%2C%20B.C." target="_blank" rel="noopener noreferrer" class="wa-action-btn" aria-label="Agendar cita en Rosarito, B.C.">
+            <svg class="wa-loc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Rosarito, B.C.
+          </a>
+        </div>
+      </div>
+    </div>
+    <button class="wa-fab" id="wa-fab" aria-label="Abrir chat para agendar cita" aria-expanded="false" aria-controls="wa-panel">
+      <img src="/Assets/WhatsApp.png" alt="WhatsApp">
+    </button>
+  </div>
+
+<script defer src="../Assets/js/main.js?v=20260507o"></script>
+
+</body>
+</html>

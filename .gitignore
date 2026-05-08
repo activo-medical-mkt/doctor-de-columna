@@ -1,0 +1,125 @@
+# Dev environment
+.venv/
+.vscode/
+.githooks/
+.github/
+
+# Dev artifacts
+hero-compare.html
+hero-v2-preview.html
+hero-preview.png
+index.html.bak
+
+# Design reference
+Inspiration/
+Assets/Palette/
+
+# Utility scripts (not served)
+scripts/
+
+# Font variants — only variable WOFF2 files are used by the site
+Assets/Fonts/Inter/*.ttf
+Assets/Fonts/Work Sans/*.ttf
+
+# Unreferenced root-level images
+Assets/491947238_696404516088934_5015991764652611965_n.jpg
+Assets/logo.png
+Assets/logo.webp
+Assets/Logo_secundario_doctoralia.png
+Assets/Logo_secundario_doctoralia.webp
+Assets/spine.jpg
+
+# Stock images not referenced by any page
+# (keep the ~11 used ones; exclude everything else in Stock/)
+Assets/Images/Stock/AdobeStock_265150514-1-1024x768.jpeg
+Assets/Images/Stock/Alivio de Ciatica en Tijuana.jpg
+Assets/Images/Stock/Alivio de Dolor de Espalda en Tijuana Traumatologo Ortopedista.jpeg
+Assets/Images/Stock/Aplicación de Yeso para Fractura de Muñeca en Tijuana.jpg
+Assets/Images/Stock/Artroscopia de Cadera en Tijuana.jpg
+Assets/Images/Stock/Artroscopia de Hombro en Tijuana.jpg
+Assets/Images/Stock/Artroscopia de Pie y Tobillo en Tijuana.jpeg
+Assets/Images/Stock/Artroscopia de Rodilla en Tijuana BC.jpg
+Assets/Images/Stock/Artroscopia de Rodilla en Tijuana Cirugia de Rodilla.jpg
+Assets/Images/Stock/artroscopia de rodilla en tijuana.jpg
+Assets/Images/Stock/Artroscopia-de-Rodilla en Tijuana, Cirugia Ortopedica en Tijuana.jpg
+Assets/Images/Stock/atencion a lesiones deportivas.png
+Assets/Images/Stock/Atención a Enfermerdades Crónicas.jpg
+Assets/Images/Stock/bursitis de cadera.jpeg
+Assets/Images/Stock/ciatica o hernia discal reconoce las diferencias y evita cirugia.jpg
+Assets/Images/Stock/cirugia de cadera en tijuana.jpg
+Assets/Images/Stock/Cirugia de Hombro en Tijuana.jpg
+Assets/Images/Stock/cirugia de meniscos en tijuana.jpeg
+Assets/Images/Stock/cirugia de minima invasion en tijuana.jpeg
+Assets/Images/Stock/Cirugia de Muñeca en Tijuana.jpg
+Assets/Images/Stock/cirugia de tobillo en tijuana.jpg
+Assets/Images/Stock/cirujano ortopedista en tijuana.jpg
+Assets/Images/Stock/cuando considerar una segunda opinion antes de cirugia.jpg
+Assets/Images/Stock/Debilidad en piernas.jpg
+Assets/Images/Stock/descompresion espinal hernias de disco.jpg
+Assets/Images/Stock/desgaste de cadera.jpeg
+Assets/Images/Stock/diagnostico hernia de disco en tijuana.png
+Assets/Images/Stock/Doctor Especialista en Problemas de Columna en Tijuana.jpg
+Assets/Images/Stock/dolor de cadera.png
+Assets/Images/Stock/Dolor de Hombro en Tijuana Traumatologo Ortopedista.jpg
+Assets/Images/Stock/Dolor de Nervio Ciático en Tijuana.jpg
+Assets/Images/Stock/dolor de piernas y ciatica en tijuana.jpg
+Assets/Images/Stock/El-Tiempo-de-Reposo-Recomendado-para-Tobillo-en-Tijuana.jpg
+Assets/Images/Stock/Esguince de Muñeca en Tijuana.jpg
+Assets/Images/Stock/Estiramientos para Evitar Lesiones Deportivas en Tijuana.jpg
+Assets/Images/Stock/Fijación de Fractura de Muñeca en Tijuana.jpg
+Assets/Images/Stock/finding-relief-from-sciatica-tailbone-pain-featured.webp
+Assets/Images/Stock/Fisioterapia para el Dolor de Rodilla en Tijuana.jpg
+Assets/Images/Stock/fisioterapia para la hernia de disco en tijuana.jpeg
+Assets/Images/Stock/Fisioterapia y Ejercicios para Dolor de Ciática - Copy.jpg
+Assets/Images/Stock/Fisioterapia y Ejercicios para Dolor de Ciática.jpg
+Assets/Images/Stock/Fractura de Brazo en Tijuana.jpg
+Assets/Images/Stock/Fractura de Cadera en Tijuana.jpg
+Assets/Images/Stock/fractura de cadera.jpg
+Assets/Images/Stock/Fractura de Clavicula en Tijuana.jpg
+Assets/Images/Stock/Fractura de Columna en Tijuana.jpg
+Assets/Images/Stock/Fractura de Muñeca en Tijuana.jpg
+Assets/Images/Stock/Fractura de Pie en Tijuana.jpg
+Assets/Images/Stock/Fractura de Pierna en Tijuana.jpg
+Assets/Images/Stock/Fractura de Tobillo en Tijuana.jpg
+Assets/Images/Stock/Fracturas de Huesos Mas Comunes.jpg
+Assets/Images/Stock/imoblizacion de tobillo por fractura en tijuana.jpg
+Assets/Images/Stock/Infiltracion de Rodilla en Tijuana.jpg
+Assets/Images/Stock/Inflamación de Rodilla.jpg
+# iStock-1184777566-scaled.jpg is referenced — keep it
+Assets/Images/Stock/Inyeccion Epidural para Dolor de Ciatica Tijuana.jpeg
+Assets/Images/Stock/La Escoliosis Causa Dolor de Espalda en Tijuana.jpg
+Assets/Images/Stock/La Mala Postura Causa Dolor de Espalda.jpeg
+Assets/Images/Stock/La Relación Entre el Estrés y las Lesiones Musculoesqueléticas.jpg
+Assets/Images/Stock/Lesiones de Ligamentos en la Rodilla en Tijuana.jpg
+Assets/Images/Stock/Malformacion de cadera.jpg
+Assets/Images/Stock/masaje para ciatica en tijuana.jpg
+Assets/Images/Stock/medicamento para hernia de disco en tijuana.jpg
+Assets/Images/Stock/meniscos de rodilla.jpg
+Assets/Images/Stock/nunca debe ignorar el dolor del nervio ciático tijuana.jpg
+Assets/Images/Stock/operación meniscal en tijuana.jpg
+Assets/Images/Stock/Ortopedista o Traumatólogo en Tijuana.jpeg
+Assets/Images/Stock/Pastillas para la Ciática Tijuana.jpg
+Assets/Images/Stock/protesis de cadera en tijuana.jpg
+Assets/Images/Stock/Recuperacion post operacion cirugia de hombro en tijuana.jpg
+Assets/Images/Stock/Recuperación de Cirugia Artroscopia de Rodilla en Tijuana.jpg
+Assets/Images/Stock/recuperación de movilidad de rodilla en tijuana.jpg
+Assets/Images/Stock/Reemplazo Protesis de Rodilla en Tijuana.jpg
+Assets/Images/Stock/Reemplazo Total de Cadera en Tijuana.jpeg
+Assets/Images/Stock/Reposo de Tobillo después de Cirugia.jpg
+Assets/Images/Stock/Rigidez de cuello.jpg
+Assets/Images/Stock/Signos y Síntomas de Posible Fractura.jpg
+Assets/Images/Stock/Síndrome Facetario tijuana.jpg
+Assets/Images/Stock/Terapias de Onda de Choque para Tratamiento de Hombro en Tijuana.jpg
+Assets/Images/Stock/tratamiento de artrosis de cadera en tijuana.jpg
+Assets/Images/Stock/tratamiento de extremidades traumatologo tijuana.jpg
+Assets/Images/Stock/Tratamiento de Fisioterapia para Dolor de Hombro en Tijuana.jpg
+Assets/Images/Stock/Tratamiento para el Dolor de Cadera en Tijuana.jpg
+Assets/Images/Stock/Tratamiento para Hombro Dislocado en Tijuana.jpg
+Assets/Images/Stock/traumatologia y ortopedia en tijuana.png
+Assets/Images/Stock/traumatologo de urgencias.jpg
+Assets/Images/Stock/yeso para fractura de tobillo en tijuana.jpg
+
+# Python cache
+__pycache__/
+*.pyc
+*.py

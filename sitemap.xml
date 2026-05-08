@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+          http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ═══════════════════════════════════════
+       ROOT
+       ═══════════════════════════════════════ -->
+  <url>
+    <loc>https://www.doctordecolumna.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════
+       GUADALAJARA — LANDING
+       ═══════════════════════════════════════ -->
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════
+       GUADALAJARA — CONDICIONES
+       ═══════════════════════════════════════ -->
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/condiciones/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/condiciones/dolor-cervical-radiculopatia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/condiciones/dolor-ciatica/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/condiciones/dolor-lumbar/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/condiciones/escoliosis-adulto/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/condiciones/espondilolistesis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/condiciones/estenosis-espinal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/condiciones/hernia-de-disco-cervical/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/condiciones/hernia-de-disco-lumbar/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/condiciones/hernia-discal-cervical/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════
+       GUADALAJARA — SERVICIOS
+       ═══════════════════════════════════════ -->
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/servicios/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/servicios/bloqueos-epidurales/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/servicios/cirugia-de-columna-vertebral/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/servicios/cirugia-descompresion-lumbar/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/servicios/consulta-especialista/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/servicios/endoscopia-de-columna/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/servicios/fusion-vertebral/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/servicios/microdiscectomia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/guadalajara/servicios/rehabilitacion/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════
+       TIJUANA — LANDING
+       ═══════════════════════════════════════ -->
+  <url>
+    <loc>https://www.doctordecolumna.com/tijuana/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════
+       TIJUANA — CONDICIONES
+       ═══════════════════════════════════════ -->
+  <url>
+    <loc>https://www.doctordecolumna.com/tijuana/condiciones/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/tijuana/condiciones/dolor-ciatica/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/tijuana/condiciones/hernia-de-disco-cervical/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/tijuana/condiciones/hernia-de-disco-lumbar/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════
+       TIJUANA — SERVICIOS
+       ═══════════════════════════════════════ -->
+  <url>
+    <loc>https://www.doctordecolumna.com/tijuana/servicios/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.doctordecolumna.com/tijuana/servicios/cirugia-de-columna-vertebral/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════
+       ROSARITO — LANDING
+       ═══════════════════════════════════════ -->
+  <url>
+    <loc>https://www.doctordecolumna.com/rosarito/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

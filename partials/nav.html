@@ -2,15 +2,45 @@
     <div class="navbar-inner">
 
       <a href="/" class="logo" aria-label="Traumatólogo GDL - Inicio">
-        <img src="Assets/dr-logo.svg" alt="Traumatólogo GDL" class="logo-icon">
+        <img src="/Assets/dr-logo.svg" alt="Traumatólogo GDL" class="logo-icon">
       </a>
 
       <ul class="nav-links" role="list">
-        <li><a href="/" class="active" aria-current="page">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#doctor">El Doctor</a></li>
-        <li><a href="#resenas">Pacientes</a></li>
-        <li><a href="#agendar">Contacto</a></li>
+        <li><a href="/">Inicio</a></li>
+
+        <!-- Ubicaciones — dropdown -->
+        <li class="nav-item-drop" id="nav-drop-loc">
+          <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-drop-loc-panel">
+            Ubicaciones
+            <svg class="nav-drop-chevron" width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="2 3.5 5.5 7.5 9 3.5"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown nav-dropdown--cities" id="nav-drop-loc-panel" role="region" aria-label="Ubicaciones">
+            <div class="nav-dropdown-inner">
+              <div class="nav-dropdown-col">
+                <p class="nav-dropdown-group">Cambiar Ciudad</p>
+                <a href="/guadalajara/" class="nav-dropdown-item nav-dropdown-item--city">
+                  <span class="nav-dropdown-item-title">Guadalajara</span>
+                  <span class="nav-dropdown-item-desc">Hospitales y consulta presencial</span>
+                </a>
+                <a href="/tijuana/" class="nav-dropdown-item nav-dropdown-item--city">
+                  <span class="nav-dropdown-item-title">Tijuana</span>
+                  <span class="nav-dropdown-item-desc">Atención especializada en Baja California</span>
+                </a>
+                <a href="/rosarito/" class="nav-dropdown-item nav-dropdown-item--city">
+                  <span class="nav-dropdown-item-title">Rosarito</span>
+                  <span class="nav-dropdown-item-desc">Agenda rápida y seguimiento cercano</span>
+                </a>
+              </div>
+            </div>
+            <a href="/#ubicaciones" class="nav-dropdown-footer">
+              Ver todas las ubicaciones
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+            </a>
+          </div>
+        </li>
+        <li><a href="/blog/">Blog</a></li>
       </ul>
 
       <a href="https://wa.me/5213312345678?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
@@ -36,11 +66,24 @@
 
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav aria-label="Navegación móvil">
-      <a href="/" class="mobile-menu-link active">Inicio</a>
-      <a href="#servicios" class="mobile-menu-link">Servicios</a>
-      <a href="#doctor" class="mobile-menu-link">El Doctor</a>
-      <a href="#resenas" class="mobile-menu-link">Pacientes</a>
-      <a href="#agendar" class="mobile-menu-link">Contacto</a>
+      <a href="/" class="mobile-menu-link">Inicio</a>
+
+      <!-- Ubicaciones — accordion -->
+      <div class="mobile-nav-group">
+        <button class="mobile-nav-group-btn" aria-expanded="false" aria-controls="mob-loc-sub">
+          Ubicaciones
+          <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="4 6 8 10 12 6"/>
+          </svg>
+        </button>
+        <div class="mobile-nav-sub" id="mob-loc-sub">
+          <a href="/guadalajara/" class="mobile-menu-link mobile-menu-link--sub">Guadalajara</a>
+          <a href="/tijuana/" class="mobile-menu-link mobile-menu-link--sub">Tijuana</a>
+          <a href="/rosarito/" class="mobile-menu-link mobile-menu-link--sub">Rosarito</a>
+          <a href="/#ubicaciones" class="mobile-menu-link mobile-menu-link--sub mobile-menu-link--all">Ver todas las ubicaciones →</a>
+        </div>
+      </div>
+      <a href="/blog/" class="mobile-menu-link">Blog</a>
     </nav>
     <a href="https://wa.me/5213312345678?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
        class="mobile-menu-cta" target="_blank" rel="noopener">

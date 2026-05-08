@@ -1,0 +1,396 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Blog de Columna Vertebral &#8212; Dr. Francisco Cisneros</title>
+  <meta name="description" content="Artículos sobre hernia discal, ciática, estenosis espinal y cirugía de columna vertebral. Información confiable del especialista Dr. Francisco Cisneros Oliva." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.doctordecolumna.com/blog/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.doctordecolumna.com/blog/" />
+  <meta property="og:title" content="Blog de Columna Vertebral &#8212; Dr. Francisco Cisneros" />
+  <meta property="og:description" content="Artículos sobre hernia discal, ciática, estenosis espinal y cirugía de columna vertebral escritos por el especialista Dr. Francisco Cisneros Oliva." />
+  <meta property="og:image" content="https://www.doctordecolumna.com/Assets/Images/og-home.jpg" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../Assets/Fonts/Inter/InterVariable.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../Assets/Fonts/Work%20Sans/WorkSansVariable.woff2" />
+
+  <meta name="theme-color" content="#183F66" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/Assets/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/Assets/favicons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/Assets/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="stylesheet" href="../Assets/css/base.css?v=20260507e" />
+  <link rel="stylesheet" href="../Assets/css/components.css?v=20260507r" />
+  <link rel="preload" as="style" href="../Assets/css/animations.css?v=20260507e" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="../Assets/css/animations.css?v=20260507e" /></noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog de Columna Vertebral",
+    "url": "https://www.doctordecolumna.com/blog/",
+    "description": "Artículos sobre hernia discal, ciática, estenosis espinal y cirugía de columna vertebral.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Dr. Francisco Cisneros Oliva",
+      "url": "https://www.doctordecolumna.com"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-20VX1GGGBH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-20VX1GGGBH');
+  </script>
+
+  <style>
+    /* ── BLOG HERO ───────────────────────────────────────────── */
+    .blog-hero {
+      background: var(--color-navy);
+      padding: 7rem 1.5rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(53,126,179,.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .blog-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .blog-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: 'Inter', 'Inter-fallback', sans-serif;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--color-accent-soft);
+      margin-bottom: 1.25rem;
+    }
+    .blog-hero-title {
+      font-family: 'Work Sans', 'WorkSans-fallback', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--color-text-high);
+      margin: 0 0 1.25rem;
+    }
+    .blog-hero-sub {
+      font-family: 'Inter', 'Inter-fallback', sans-serif;
+      font-size: 1.1rem;
+      color: var(--color-text-mid);
+      max-width: 55ch;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── BLOG GRID SECTION ───────────────────────────────────── */
+    .blog-content {
+      background: var(--color-bg-base);
+      padding: 5rem 1.5rem 6rem;
+    }
+    .blog-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .blog-section-label {
+      font-family: 'Inter', 'Inter-fallback', sans-serif;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 2.5rem;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 2rem;
+    }
+
+    /* ── BLOG CARD ───────────────────────────────────────────── */
+    .blog-card {
+      background: var(--color-bg-card);
+      border: 1px solid #dce8f3;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .blog-card:hover {
+      box-shadow: 0 8px 32px rgba(24,63,102,.13);
+      transform: translateY(-3px);
+    }
+    .blog-card-img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #1a4a7a 0%, #357eb3 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .blog-card-img-placeholder svg { opacity: .2; }
+    .blog-card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card-cat {
+      font-family: 'Inter', 'Inter-fallback', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: .75rem;
+    }
+    .blog-card-title {
+      font-family: 'Work Sans', 'WorkSans-fallback', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--color-text-dark);
+      margin: 0 0 .75rem;
+    }
+    .blog-card-excerpt {
+      font-family: 'Inter', 'Inter-fallback', sans-serif;
+      font-size: .9rem;
+      line-height: 1.65;
+      color: var(--color-text-body);
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'Inter', 'Inter-fallback', sans-serif;
+      font-size: .78rem;
+      color: var(--color-text-low);
+    }
+    .blog-card-read {
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      transition: gap .2s;
+    }
+    .blog-card-read:hover { gap: .6rem; }
+
+    /* ── BLOG CTA ────────────────────────────────────────────── */
+    .blog-cta {
+      background: var(--color-navy);
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+    .blog-cta-title {
+      font-family: 'Work Sans', 'WorkSans-fallback', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--color-text-high);
+      margin: 0 0 1rem;
+    }
+    .blog-cta-sub {
+      font-family: 'Inter', 'Inter-fallback', sans-serif;
+      font-size: 1rem;
+      color: var(--color-text-mid);
+      max-width: 52ch;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div data-include="../partials/nav.html?v=20260507f"></div>
+
+  <main id="main-content">
+
+    <!-- BLOG HERO -->
+    <section class="blog-hero" data-nav-dark>
+      <div class="blog-hero-inner">
+        <div class="blog-hero-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          Información Médica de Confianza
+        </div>
+        <h1 class="blog-hero-title">Blog de Columna Vertebral</h1>
+        <p class="blog-hero-sub">Artículos escritos por el Dr. Francisco Cisneros Oliva sobre diagnóstico, tratamiento y cirugía de columna vertebral.</p>
+      </div>
+    </section>
+
+    <!-- ARTICLES -->
+    <section class="blog-content">
+      <div class="blog-inner">
+        <p class="blog-section-label">Artículos Recientes</p>
+        <div class="blog-grid">
+
+          <!-- Card 1 -->
+          <article class="blog-card">
+            <div class="blog-card-img-placeholder" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5.5 4.5 1.4"/></svg>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-card-cat">Hernia Discal</span>
+              <h2 class="blog-card-title">¿Qué es una hernia de disco y cómo saber si la tengo?</h2>
+              <p class="blog-card-excerpt">El disco intervertebral actúa como amortiguador entre las vértebras. Cuando su núcleo se desplaza puede comprimir nervios y generar dolor intenso, hormigueos o debilidad en brazo o pierna.</p>
+              <div class="blog-card-meta">
+                <span>Mayo 2026 · 5 min</span>
+                <a href="/guadalajara/condiciones/hernia-de-disco-lumbar/" class="blog-card-read">
+                  Leer más
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="blog-card">
+            <div class="blog-card-img-placeholder" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><path d="M12 20v2"/><path d="M12 4v2"/><path d="M8 12h8"/></svg>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-card-cat">Cirugía Mínimamente Invasiva</span>
+              <h2 class="blog-card-title">Endoscopia de columna: alta hospitalaria el mismo día</h2>
+              <p class="blog-card-excerpt">La cirugía endoscópica usa una cámara de 7 mm para tratar hernias discales sin cortes grandes. La mayoría de los pacientes regresan a casa pocas horas después del procedimiento.</p>
+              <div class="blog-card-meta">
+                <span>Abril 2026 · 4 min</span>
+                <a href="/guadalajara/servicios/endoscopia-de-columna/" class="blog-card-read">
+                  Leer más
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="blog-card">
+            <div class="blog-card-img-placeholder" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-card-cat">Dolor de Espalda</span>
+              <h2 class="blog-card-title">Ciática: síntomas, causas y cuándo acudir al especialista</h2>
+              <p class="blog-card-excerpt">El dolor que baja por la pierna hasta el pie puede ser ciática. Te explicamos por qué ocurre, qué lo diferencia del dolor lumbar común y cuáles son las señales de alarma que no debes ignorar.</p>
+              <div class="blog-card-meta">
+                <span>Marzo 2026 · 6 min</span>
+                <a href="/guadalajara/condiciones/dolor-ciatica/" class="blog-card-read">
+                  Leer más
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="blog-card">
+            <div class="blog-card-img-placeholder" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-card-cat">Estenosis Espinal</span>
+              <h2 class="blog-card-title">Estenosis espinal: síntomas que no debes ignorar</h2>
+              <p class="blog-card-excerpt">El estrechamiento del canal vertebral puede causar dolor al caminar, pérdida de equilibrio y entumecimiento en piernas. El diagnóstico temprano evita daño neurológico permanente.</p>
+              <div class="blog-card-meta">
+                <span>Febrero 2026 · 5 min</span>
+                <a href="/guadalajara/condiciones/estenosis-espinal/" class="blog-card-read">
+                  Leer más
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="blog-card">
+            <div class="blog-card-img-placeholder" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-card-cat">Tratamiento Conservador</span>
+              <h2 class="blog-card-title">¿Cuándo es realmente necesaria la cirugía de columna?</h2>
+              <p class="blog-card-excerpt">No toda hernia o dolor de espalda requiere cirugía. Explicamos qué criterios usa el especialista para decidir entre tratamiento conservador y quirúrgico, y cuándo la operación es la mejor opción.</p>
+              <div class="blog-card-meta">
+                <span>Enero 2026 · 7 min</span>
+                <a href="/guadalajara/servicios/consulta-especialista/" class="blog-card-read">
+                  Leer más
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="blog-card">
+            <div class="blog-card-img-placeholder" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-card-cat">Rehabilitación</span>
+              <h2 class="blog-card-title">Recuperación tras cirugía de columna: qué esperar semana a semana</h2>
+              <p class="blog-card-excerpt">El proceso de rehabilitación postoperatoria es clave para un resultado exitoso. Describimos las etapas típicas y cómo la fisioterapia acelera el retorno a las actividades cotidianas.</p>
+              <div class="blog-card-meta">
+                <span>Diciembre 2025 · 6 min</span>
+                <a href="/guadalajara/servicios/rehabilitacion/" class="blog-card-read">
+                  Leer más
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /blog-grid -->
+      </div><!-- /blog-inner -->
+    </section>
+
+    <!-- CTA -->
+    <section class="blog-cta" data-nav-dark>
+      <h2 class="blog-cta-title">¿Tienes dolor de espalda o cuello?</h2>
+      <p class="blog-cta-sub">El Dr. Francisco Cisneros Oliva realiza una valoración precisa de tu caso desde la primera consulta. Agenda hoy.</p>
+      <a href="https://wa.me/5213312345678?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
+         class="btn-primary"
+         target="_blank" rel="noopener"
+         aria-label="Agendar consulta por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Agendar Consulta
+      </a>
+    </section>
+
+  </main>
+
+  <div data-include="../partials/footer.html?v=20260507n"></div>
+
+  <script defer src="../Assets/js/loader.js?v=20260325r"></script>
+  <script defer src="../Assets/js/main.js?v=20260507o"></script>
+
+</body>
+</html>
