@@ -6,7 +6,15 @@
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "exclude": [
+      ".git/**",
+      "scripts/**",
+      "docs/**",
+      "Inspiration/**",
+      "Assets/Palette/**",
+      "node_modules/**"
+    ]
   },
   "compatibility_flags": [
     "nodejs_compat"

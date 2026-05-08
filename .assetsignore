@@ -1,0 +1,19 @@
+# Git internals — pack files can be 75MB+
+.git/
+
+# Dev-only folders not served to users
+scripts/
+docs/
+Inspiration/
+Assets/Palette/
+node_modules/
+
+# Dev/preview HTML files
+hero-compare.html
+hero-v2-preview.html
+index.html.bak
+
+# Editor and Python cache
+*.bak
+*.py
+__pycache__/
