@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Allow: /favicon.ico
-Allow: /Assets/favicons/
 Allow: /site.webmanifest
 
 # Block dev/preview files

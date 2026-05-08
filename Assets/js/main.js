@@ -3,6 +3,13 @@
 
 // ── Navbar scroll + progress bar ────────────────────────────────────
 let darkSections = [];
+let cachedNavbarHeight = 68;
+
+function updateNavbarMetrics(navbar) {
+  if (!navbar) return;
+  const h = Math.round(navbar.getBoundingClientRect().height);
+  cachedNavbarHeight = h > 0 ? h : 68;
+}
 
 function refreshDarkSections() {
   darkSections = Array.from(document.querySelectorAll('[data-nav-dark]'));
@@ -16,7 +23,7 @@ function applyNavbarThemeBySection(navbar) {
   }
 
   const navBandTop = 0;
-  const navBandBottom = navbar.offsetHeight || 68;
+  const navBandBottom = cachedNavbarHeight;
   const onDark = darkSections.some(section => {
     const rect = section.getBoundingClientRect();
     return rect.top < navBandBottom && rect.bottom > navBandTop;
@@ -51,6 +58,7 @@ function initCore() {
     }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
+  updateNavbarMetrics(navbar);
   refreshDarkSections();
   // Apply correct scroll-dependent navbar state immediately on first paint.
   onScroll();
@@ -205,10 +213,13 @@ function initReveal() {
     }, { threshold: 0.06, rootMargin: '0px 0px -10px 0px' });
 
     const vh = window.innerHeight;
-    reveals.forEach(el => {
+    // Read phase first (geometry), then write phase (class mutations) to avoid layout thrash.
+    const revealState = Array.from(reveals, el => {
       const rect = el.getBoundingClientRect();
-      const inView = rect.top < vh + 100 && rect.bottom > 0;
+      return { el, inView: rect.top < vh + 100 && rect.bottom > 0 };
+    });
 
+    revealState.forEach(({ el, inView }) => {
       if (inView) {
         // Already on screen — just mark visible, no shift
         el.classList.add('visible');
@@ -920,10 +931,16 @@ if (hasIncludes) {
     refreshDarkSections();
     // Apply correct scroll-dependent navbar state now that the partial is in the DOM.
     const navbar = document.getElementById('navbar');
-    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 60);
-    window.requestAnimationFrame(() => {
-      applyNavbarThemeBySection(document.getElementById('navbar'));
-    });
+    if (navbar) {
+      updateNavbarMetrics(navbar);
+      // Separate style write from geometry reads to reduce forced reflow.
+      window.requestAnimationFrame(() => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+        window.requestAnimationFrame(() => {
+          applyNavbarThemeBySection(navbar);
+        });
+      });
+    }
     bootContent();
   }, { once: true });
 } else if (document.readyState === 'loading') {
