@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /favicon.ico
+Allow: /Assets/favicons/
+Allow: /site.webmanifest
 
 # Block dev/preview files
 Disallow: /hero-compare.html
@@ -8,7 +11,6 @@ Disallow: /index.html.bak
 Disallow: /_blog-post/
 
 # Block assets that don't need indexing
-Disallow: /Assets/
 Disallow: /partials/
 Disallow: /scripts/
 Disallow: /docs/
