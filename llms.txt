@@ -1,7 +1,3 @@
-# llms.txt — Machine-readable site summary for AI assistants
-# https://llmstxt.org
-# Canonical: https://www.doctordecolumna.com/
-
 # Dr. Francisco Cisneros Oliva — Especialista en Cirugía de Columna Vertebral
 
 > Dr. Francisco Javier Cisneros Oliva es cirujano de columna vertebral con
@@ -21,7 +17,6 @@
 - [Condiciones — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/): Índice de padecimientos tratados en Guadalajara.
 - [Hernia de Disco Lumbar — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/hernia-de-disco-lumbar/): Síntomas, diagnóstico y tratamiento de hernia discal lumbar en Guadalajara.
 - [Hernia de Disco Cervical — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/hernia-de-disco-cervical/): Hernia cervical en Guadalajara.
-- [Hernia Discal Cervical — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/hernia-discal-cervical/): Hernia discal cervical en Guadalajara.
 - [Dolor Lumbar — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/dolor-lumbar/): Tratamiento de dolor lumbar en Guadalajara.
 - [Ciática — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/dolor-ciatica/): Dolor ciático en Guadalajara.
 - [Dolor Cervical y Radiculopatía — Guadalajara](https://www.doctordecolumna.com/guadalajara/condiciones/dolor-cervical-radiculopatia/): Radiculopatía cervical en Guadalajara.
