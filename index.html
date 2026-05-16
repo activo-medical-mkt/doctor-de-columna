@@ -20,11 +20,11 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- ④ LCP image preload — WebP for supporting browsers, JPG fallback via <picture> -->
-  <link rel="preload" as="image" href="Assets/Images/hero.webp" type="image/webp" />
+  <link rel="preload" as="image" href="/Assets/Images/hero.webp" type="image/webp" />
 
   <!-- ④b Font preloads — prevent FOUT on heading/body fonts -->
-  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="Assets/Fonts/Inter/InterVariable.woff2" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="Assets/Fonts/Work%20Sans/WorkSansVariable.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/Assets/Fonts/Inter/InterVariable.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/Assets/Fonts/Work%20Sans/WorkSansVariable.woff2" />
 
   <!-- ④c Theme color (Best Practices audit) -->
   <meta name="theme-color" content="#183F66" />
@@ -35,13 +35,13 @@
     <link rel="manifest" href="/site.webmanifest" />
 
   <!-- ⑤ Stylesheets -->
-  <link rel="stylesheet" href="Assets/css/base.css?v=20260510m" />
-  <link rel="preload" as="style" href="Assets/css/components.css?v=20260510r" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="Assets/css/components.css?v=20260510r" /></noscript>
-  <link rel="preload" as="style" href="Assets/css/pages/home.css?v=20260510s" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="Assets/css/pages/home.css?v=20260510s" /></noscript>
-  <link rel="preload" as="style" href="Assets/css/animations.css?v=20260510m" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="Assets/css/animations.css?v=20260510m" /></noscript>
+  <link rel="stylesheet" href="/Assets/css/base.css?v=20260510m" />
+  <link rel="preload" as="style" href="/Assets/css/components.css?v=20260510r" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="/Assets/css/components.css?v=20260510r" /></noscript>
+  <link rel="preload" as="style" href="/Assets/css/pages/home.css?v=20260510s" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="/Assets/css/pages/home.css?v=20260510s" /></noscript>
+  <link rel="preload" as="style" href="/Assets/css/animations.css?v=20260510m" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="/Assets/css/animations.css?v=20260510m" /></noscript>
 
   <!-- ⑥ Structured data — Physician + LocalBusiness -->
   <script type="application/ld+json">
@@ -108,7 +108,7 @@
     <div class="navbar-inner">
 
       <a href="/" class="logo" aria-label="Doctor de Columna - Inicio">
-        <img src="Assets/dr-logo.svg" alt="Doctor de Columna" class="logo-icon" width="182" height="66">
+        <img src="/Assets/dr-logo.svg" alt="Doctor de Columna" class="logo-icon" width="182" height="66">
       </a>
 
       <ul class="nav-links" role="list">
@@ -270,8 +270,8 @@
                aria-label="Ver opiniones verificadas en Doctoralia">
               <div class="doc-cert-pill-top">
                 <picture>
-                  <source type="image/webp" srcset="Assets/Logo_secundario_doctoralia.webp" />
-                  <img src="Assets/Logo_secundario_doctoralia.png" alt="Doctoralia" class="doc-cert-pill-logo" width="88" height="16" loading="eager">
+                  <source type="image/webp" srcset="/Assets/Logo_secundario_doctoralia.webp" />
+                  <img src="/Assets/Logo_secundario_doctoralia.png" alt="Doctoralia" class="doc-cert-pill-logo" width="88" height="16" loading="eager">
                 </picture>
                 <span class="doc-cert-pill-verified" aria-hidden="true">Verificado</span>
               </div>
@@ -314,8 +314,8 @@
           <div class="hero-photo-frame hero-enter hero-enter-3">
             <div class="hero-photo-capsule">
               <picture>
-                <source type="image/webp" srcset="Assets/Images/hero.webp" />
-                <img src="Assets/Images/hero.jpg"
+                <source type="image/webp" srcset="/Assets/Images/hero.webp" />
+                <img src="/Assets/Images/hero.jpg"
                      alt="Médico Traumátologo y Especialista en Columna Vertebral"
                      width="460" height="620"
                      loading="eager"
@@ -387,8 +387,8 @@
 
   <div data-include="partials/footer.html?v=20260507o"></div>
 
-  <script defer src="Assets/js/loader.js?v=20260510m"></script>
-  <script defer src="Assets/js/main.js?v=20260510m"></script>
+  <script defer src="/Assets/js/loader.js?v=20260510m"></script>
+  <script defer src="/Assets/js/main.js?v=20260510m"></script>
 
 </body>
 </html>

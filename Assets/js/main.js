@@ -205,6 +205,13 @@ moreBtn.setAttribute('aria-expanded',String(!isExpanded));
 extraList.hidden=isExpanded;
 moreBtn.querySelector('.faq-more-label').textContent=
 isExpanded ? 'Ver más preguntas' : 'Ver menos preguntas';
+if (!isExpanded){setTimeout(()=>{moreBtn.scrollIntoView({behavior:'smooth',block:'end'});},80);}
+});
+}
+}
+function initDoctoralia(){
+const hasAnchor=document.getElementById('zl-url-book');
+if (!hasAnchor) return;
 const isLocal=['localhost','127.0.0.1',''].includes(location.hostname);
 if (isLocal) return;
 if (!document.getElementById('zl-widget-s')){
@@ -221,7 +228,7 @@ if (!container||!anchor||!fallback) return;
 const hasLiveWidget=()=>{
 if (anchor.children.length>0) return true;
 if (container.querySelector('iframe')) return true;
-if (container.querySelector('[class*=__STR7__], [class*=__STR8__], [id*=__STR9__], [id*=__STR10__]')) return true;
+if (container.querySelector('[class*="docplanner"],[class*="zlw"],[id*="zlw"],[id*="doctoralia"]')) return true;
 return Array.from(container.children).some(node=>{
 const el=node;
 return el!==anchor&&el!==fallback&&!el.classList.contains('zl-url');
