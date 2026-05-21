@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- ④ LCP image preload &mdash; WebP for supporting browsers, JPG fallback via <picture> -->
-  <link rel="preload" as="image" href="/Assets/Images/hero.webp" type="image/webp" />
+  <link rel="preload" as="image" href="/Assets/Images/hero.webp" type="image/webp" fetchpriority="high" />
 
   <!-- ④b Font preloads &mdash; prevent FOUT on heading/body fonts -->
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/Assets/Fonts/Inter/InterVariable.woff2" />
@@ -36,7 +36,7 @@
 
   <!-- ⑤ Stylesheets -->
   <link rel="stylesheet" href="/Assets/css/base.css?v=20260516" />
-  <link rel="stylesheet" href="/Assets/css/components.css?v=20260518b" />
+  <link rel="stylesheet" href="/Assets/css/components.css?v=20260520" />
   <link rel="stylesheet" href="/Assets/css/pages/home.css?v=20260518b" />
   <link rel="preload" as="style" href="/Assets/css/animations.css?v=20260516" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="/Assets/css/animations.css?v=20260516" /></noscript>
@@ -98,7 +98,7 @@
     <div class="navbar-inner">
 
       <a href="/" class="logo" aria-label="Doctor de Columna - Inicio">
-        <img src="/Assets/dr-logo.svg" alt="Traumatólogo en Tijuana" class="logo-icon">
+        <img src="/Assets/dr-logo.svg" alt="Traumatólogo en Tijuana" class="logo-icon" width="182" height="66">
       </a>
 
       <ul class="nav-links" role="list">
@@ -2009,7 +2009,7 @@
     </button>
   </div>
 
-<script defer src="/Assets/js/main.js?v=20260518"></script>
+<script defer src="/Assets/js/main.js?v=20260520"></script>
 
 </body>
 </html>

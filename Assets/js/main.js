@@ -36,7 +36,7 @@ const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
 const nav=document.getElementById('navbar');
 if (nav) nav.classList.toggle('scrolled',scrollY>60);
 if (nav) applyNavbarThemeBySection(nav);
-if (progress) progress.style.width=(maxScroll>0 ? (scrollY/maxScroll)*100 : 0)+'%';
+if (progress) progress.style.transform='scaleX('+(maxScroll>0 ? scrollY/maxScroll : 0)+')';
 ticking=false;
 });
 ticking=true;
