@@ -16,3 +16,6 @@ index.html.bak
 *.bak
 *.py
 __pycache__/
+.wrangler/
+.venv/
+node_modules/

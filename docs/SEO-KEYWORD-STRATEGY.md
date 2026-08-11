@@ -13,7 +13,7 @@
 
 ---
 
-## Page 1 — Homepage (`/guadalajara/`)
+## Page 1 — Homepage (`/`)
 
 ### Intent
 Someone looking for a spine specialist to see in Guadalajara. They may use "especialista", "traumatologo", "cirujano" — they want a qualified doctor, not a clinic chain.
@@ -64,7 +64,7 @@ Especialista en Columna Vertebral en Guadalajara
 
 ---
 
-## Page 2 — Condiciones Hub (`/guadalajara/condiciones/`)
+## Page 2 — Condiciones Hub (`/condiciones/`)
 
 ### Intent
 Someone experiencing back or spine pain who doesn't yet know their diagnosis. They're searching their symptom, not looking for a clinic. The condiciones page educates them on what's causing their pain and points them to the right condition page.
@@ -116,7 +116,7 @@ Dolor de Columna Vertebral en Guadalajara
 
 ---
 
-## Page 3 — Servicios Hub (`/guadalajara/servicios/`)
+## Page 3 — Servicios Hub (`/servicios/`)
 
 ### Intent
 Someone who already knows they need spine treatment and is looking for a specialist clinic — comparing options, checking services, possibly looking for pricing. The "clinica" framing matches this commercial intent.
@@ -146,7 +146,7 @@ Clínica de Columna Vertebral en Guadalajara — Servicios del Dr. Cisneros
 
 ### Meta description
 ```
-Clínica especialista en columna vertebral en Guadalajara. Cirugía mínimamente invasiva, bloqueos epidurales y rehabilitación. Consulta disponible en menos de 48 h.
+Clínica especialista en columna vertebral en Guadalajara. Cirugía mínimamente invasiva, bloqueos epidurales y rehabilitación. Consulta con cita programada.
 ```
 
 ### H1
@@ -217,7 +217,7 @@ Clínica de Columna Vertebral en Guadalajara
 
 ---
 
-## Page 4 — Hernia de Disco Lumbar (`/guadalajara/condiciones/hernia-de-disco-lumbar/`)
+## Page 4 — Hernia de Disco Lumbar (`/condiciones/hernia-de-disco-lumbar-guadalajara/`)
 
 ### Intent
 Someone with back pain who has been told (or suspects) they have a lumbar herniated disc. Mixed informational + commercial: they want to understand what they have, whether they need surgery, and who to see. They are often anxious about surgery and disability.
@@ -297,7 +297,7 @@ Hernia de Disco Lumbar en Guadalajara
 
 ---
 
-## Page 5 — Hernia Discal Cervical (`/guadalajara/condiciones/hernia-discal-cervical/`)
+## Page 5 — Hernia Discal Cervical (`/condiciones/hernia-discal-cervical-guadalajara/`)
 
 ### Intent
 Someone with neck pain, arm numbness, or tingling who has been told they have a cervical herniated disc — or suspects it. Often more anxious than lumbar patients because cervical symptoms (arm weakness, headache, dizziness) are scarier. Searching to understand, find severity, and locate a surgeon.
@@ -372,7 +372,7 @@ Hernia de Disco Cervical en Guadalajara
 
 ---
 
-## Page 6 — Cirugía de Columna Vertebral (`/guadalajara/servicios/cirugia-de-columna-vertebral/`)
+## Page 6 — Cirugía de Columna Vertebral (`/servicios/cirugia-de-columna-vertebral-guadalajara/`)
 
 *Based on: `cirugia-cirujano-columna_cleaned_2026-05-04.csv` (277 rows)*
 
@@ -462,7 +462,7 @@ Cirugía de Columna Vertebral en Guadalajara
 
 ---
 
-## Page 7 — Ciática (`/guadalajara/condiciones/dolor-ciatica/`)
+## Page 7 — Ciática (`/condiciones/dolor-ciatica-guadalajara/`)
 
 *Based on: `ciatica_cleaned_2026-05-04.csv` (930 rows)*
 
