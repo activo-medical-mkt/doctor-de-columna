@@ -1,0 +1,110 @@
+/* Lead form inside the WhatsApp panel (lead-widget-b.js). Builds on the .wa-* styles in components.css. */
+.wa-panel.lw-panel {
+  width: 320px;
+  max-width: calc(100vw - 2rem);
+  max-height: calc(100vh - 8rem);
+  max-height: calc(100dvh - 8rem);
+  display: flex;
+  flex-direction: column;
+}
+.lw-panel .wa-panel-header { background: #004b87; }
+.lw-panel .wa-panel-avatar { object-fit: cover; border-color: rgba(255, 255, 255, .55); }
+.lw-panel .wa-panel-body { padding: 16px 14px; gap: 10px; overflow-y: auto; }
+
+.lw-form {
+  background: #fff;
+  padding: 12px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-family: 'Inter Variable', Inter, sans-serif;
+}
+.lw-field { display: flex; flex-direction: column; gap: 3px; }
+.lw-label { font-size: .72rem; font-weight: 600; color: #475569; }
+.lw-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 16px; /* 16px stops iOS from zooming in */
+  color: #1a2a3a;
+  background: #fff;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.lw-input::placeholder { color: #94a3b8; }
+.lw-input:focus { outline: none; border-color: #004b87; box-shadow: 0 0 0 3px rgba(0, 75, 135, .18); }
+.lw-input.is-invalid { border-color: #dc2626; }
+.lw-cities { border: 0; margin: 0; padding: 0; min-width: 0; }
+.lw-city-row { display: flex; gap: 6px; margin-top: 3px; }
+.lw-city { flex: 1; position: relative; cursor: pointer; }
+.lw-city input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.lw-city span {
+  display: block;
+  padding: 8px 6px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  text-align: center;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #004b87;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.lw-city input:checked + span { background: #004b87; border-color: #004b87; color: #fff; }
+.lw-city input:focus-visible + span { box-shadow: 0 0 0 3px rgba(0, 75, 135, .3); }
+.lw-error { font-size: .72rem; color: #dc2626; min-height: 0; }
+.lw-error:empty { display: none; }
+
+.lw-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 50px;
+  background: #004b87;
+  color: #fff;
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .18s ease, opacity .18s ease;
+}
+.lw-submit:hover { background: #003a6b; }
+.lw-submit[aria-disabled="true"] { opacity: .45; }
+.lw-call {
+  align-self: center;
+  font-size: .78rem;
+  font-weight: 600;
+  color: #004b87;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.lw-privacy { margin: 0; font-size: .68rem; color: #64748b; text-align: center; }
+.lw-privacy a { color: #004b87; }
+
+.lw-done {
+  display: none;
+  background: #fff;
+  padding: 14px 16px 16px;
+  font-family: 'Inter Variable', Inter, sans-serif;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: #1a2a3a;
+}
+.lw-done .lw-submit { margin-top: 10px; }
+.lw-panel.lw-sent .lw-form { display: none; }
+.lw-panel.lw-sent .lw-done { display: block; }
+
+@media (max-width: 768px) {
+  .wa-panel.lw-panel { width: 300px; }
+}
+
+/* Turnstile bot check: takes no space unless Cloudflare asks the visitor to click. */
+/* Collapsed rather than display:none, so the Turnstile iframe still loads and runs. */
+.lw-turnstile { display: flex; justify-content: center; max-height: 0; overflow: hidden; margin: 0 0 -9px; }
+.lw-turnstile.is-visible { max-height: 90px; margin: 0; }
