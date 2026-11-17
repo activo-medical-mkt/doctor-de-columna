@@ -1,2 +1,0 @@
-# NOTE: Cloudflare Workers static _redirects only supports relative paths.
-# Configure apex -> www host redirect in Cloudflare domain settings.

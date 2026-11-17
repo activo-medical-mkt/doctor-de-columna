@@ -6,7 +6,7 @@
     "enabled": true
   },
   "assets": {
-    // Redesigned site (Version B). The previous site remains in ./first-version for rollback.
+    // Redesigned site (Version B). The previous site is in git history (commit 6e86d07) for rollback.
     "directory": "./doctor-de-columna",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"

@@ -131,3 +131,6 @@ _not-commited/
 # Site tooling is versioned even though other *.py files are ignored
 !tools/
 !tools/*.py
+
+# Previous site kept locally for reference only (history: commit 6e86d07)
+first-version/
