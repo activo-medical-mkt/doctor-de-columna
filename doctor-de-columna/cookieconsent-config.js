@@ -40,7 +40,11 @@
 
     // Helper para pruebas: ?reset o #reset borra la cookie para que el aviso vuelva a salir
     if (window.location.search.indexOf('reset') !== -1 || window.location.hash.indexOf('reset') !== -1) {
-      document.cookie = 'cc_cookie=; Max-Age=0; path=/';
+      // CookieConsent sets the cookie with domain=<hostname>, so clear it with and without a domain.
+      var host = window.location.hostname;
+      ['', '; domain=' + host, '; domain=.' + host.replace(/^www\./, '')].forEach(function (d) {
+        document.cookie = 'cc_cookie=; Max-Age=0; path=/' + d;
+      });
     }
 
     CookieConsent.run({
