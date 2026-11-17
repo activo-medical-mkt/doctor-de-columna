@@ -1,56 +1,58 @@
-/* CookieConsent v3 theme — adapted from the Romario implementation to the Doctor de Columna palette (#004b87 + green).
+/* CookieConsent v3 theme: white glass panel with #004b87 text and buttons.
    The consent box sits at the bottom on every screen size, over the WhatsApp button while it is open. */
 #cc-main {
   --cc-font-family: 'Work Sans', 'WorkSans-fallback', system-ui, sans-serif;
-  --cc-bg: #004b87;
-  --cc-primary-color: #f4f7ff;
-  --cc-secondary-color: #adcde2;
-  --cc-btn-primary-bg: #63ff84;
-  --cc-btn-primary-color: #004b87;
-  --cc-btn-primary-border-color: #63ff84;
-  --cc-btn-primary-hover-bg: #4ddbac;
-  --cc-btn-primary-hover-color: #004b87;
-  --cc-btn-primary-hover-border-color: #4ddbac;
-  --cc-btn-secondary-bg: #003a6b;
-  --cc-btn-secondary-color: #edf6ff;
-  --cc-btn-secondary-border-color: #3f7db3;
-  --cc-btn-secondary-hover-bg: #00315a;
-  --cc-btn-secondary-hover-color: #ffffff;
-  --cc-btn-secondary-hover-border-color: #7a9ab8;
-  --cc-separator-border-color: #003a6b;
-  --cc-toggle-on-bg: #357eb3;
-  --cc-toggle-off-bg: #3f7db3;
+  --cc-bg: #ffffff;
+  --cc-primary-color: #004b87;
+  --cc-secondary-color: #4e7391;
+  --cc-btn-primary-bg: #004b87;
+  --cc-btn-primary-color: #ffffff;
+  --cc-btn-primary-border-color: #004b87;
+  --cc-btn-primary-hover-bg: #003a6b;
+  --cc-btn-primary-hover-color: #ffffff;
+  --cc-btn-primary-hover-border-color: #003a6b;
+  --cc-btn-secondary-bg: #eef5fa;
+  --cc-btn-secondary-color: #004b87;
+  --cc-btn-secondary-border-color: #d5e2ef;
+  --cc-btn-secondary-hover-bg: #e1edf5;
+  --cc-btn-secondary-hover-color: #003a6b;
+  --cc-btn-secondary-hover-border-color: #b8cfdf;
+  --cc-separator-border-color: #e3eef4;
+  --cc-toggle-on-bg: #004b87;
+  --cc-toggle-off-bg: #b8cfdf;
   --cc-toggle-on-knob-bg: #ffffff;
-  --cc-toggle-off-knob-bg: #adcde2;
-  --cc-toggle-enabled-icon-color: #ffffff;
-  --cc-toggle-disabled-icon-color: #004b87;
-  --cc-toggle-readonly-bg: #003a6b;
-  --cc-toggle-readonly-knob-bg: #7a9ab8;
-  --cc-toggle-readonly-knob-icon-color: #003a6b;
-  --cc-cookie-category-block-bg: #0a5a9c;
-  --cc-cookie-category-block-border: #2b6ea6;
-  --cc-section-category-border: #2b6ea6;
+  --cc-toggle-off-knob-bg: #ffffff;
+  --cc-toggle-enabled-icon-color: #004b87;
+  --cc-toggle-disabled-icon-color: #7a9ab8;
+  --cc-toggle-readonly-bg: #d5e2ef;
+  --cc-toggle-readonly-knob-bg: #ffffff;
+  --cc-toggle-readonly-knob-icon-color: #7a9ab8;
+  --cc-cookie-category-block-bg: rgb(244 248 251 / 80%);
+  --cc-cookie-category-block-border: #e1ebf2;
+  --cc-section-category-border: #e1ebf2;
   --cc-modal-border-radius: 16px;
   --cc-btn-border-radius: 10px;
-  --cc-overlay-bg: rgba(0, 40, 75, 0.8);
-  --cc-webkit-scrollbar-bg: #004b87;
+  --cc-overlay-bg: rgba(0, 40, 75, 0.35);
+  --cc-webkit-scrollbar-bg: #c8d9e6;
 }
 
+/* White glass, like the home h1: solid white at the top fading to see-through white at the bottom. */
 #cc-main .cm,
 #cc-main .pm {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(16px);
+  background: linear-gradient(180deg, rgb(255 255 255 / 97%) 0%, rgb(255 255 255 / 92%) 45%, rgb(255 255 255 / 80%) 100%) !important;
+  border: 1px solid rgb(255 255 255 / 75%);
+  box-shadow: 0 24px 48px rgba(0, 40, 75, 0.18), inset 0 1px 0 rgb(255 255 255 / 90%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
 }
 
 html.show--consent #cc-main .cm { z-index: 2147483641 !important; }
 html.show--preferences #cc-main .cm { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
 
-#cc-main .cm--box { background: #004b87 !important; }
 #cc-main .cm--box .cm__texts { padding: 0 !important; }
-#cc-main .cm--box .cm__title { font-family: var(--font-heading) !important; font-size: 1.2rem !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 0.45rem !important; letter-spacing: -0.01em !important; padding: 0 !important; }
-#cc-main .cm--box .cm__desc { font-size: 0.92rem !important; line-height: 1.6 !important; color: #adcde2 !important; padding: 0 !important; margin: 0 !important; }
-#cc-main .cc-privacy-link { color: #63ff84 !important; text-decoration: underline; text-underline-offset: 3px; }
+#cc-main .cm--box .cm__title { font-family: var(--font-heading) !important; font-size: 1.2rem !important; font-weight: 700 !important; color: #004b87 !important; margin: 0 0 0.45rem !important; letter-spacing: -0.01em !important; padding: 0 !important; }
+#cc-main .cm--box .cm__desc { font-size: 0.92rem !important; line-height: 1.6 !important; color: #4e7391 !important; padding: 0 !important; margin: 0 !important; }
+#cc-main .cc-privacy-link { color: #004b87 !important; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
 #cc-main .cm--box .cm__btns { display: flex !important; flex-direction: column !important; gap: 0.65rem !important; padding: 0 !important; border: none !important; }
 #cc-main .cm--box .cm__btn-group { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem !important; width: 100% !important; align-items: stretch !important; }
@@ -63,26 +65,26 @@ html.show--preferences #cc-main .cm { opacity: 0 !important; visibility: hidden 
   transition: all 0.2s ease !important; text-align: center !important; width: 100% !important; margin: 0 !important;
   box-sizing: border-box !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; line-height: 1 !important;
 }
-#cc-main .cm [data-role="all"] { background: #63ff84 !important; color: #004b87 !important; border: 1px solid #63ff84 !important; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22) !important; }
-#cc-main .cm [data-role="all"]:hover { background: #4ddbac !important; border-color: #4ddbac !important; box-shadow: 0 6px 20px rgba(99, 255, 132, 0.4) !important; transform: translateY(-1px) !important; }
-#cc-main .cm [data-role="necessary"] { background: #ffffff !important; color: #004b87 !important; border: 1px solid #ffffff !important; }
-#cc-main .cm [data-role="necessary"]:hover { background: #edf6ff !important; transform: translateY(-1px) !important; }
+#cc-main .cm [data-role="all"] { background: #004b87 !important; color: #ffffff !important; border: 1px solid #004b87 !important; box-shadow: 0 6px 16px rgba(0, 75, 135, 0.22) !important; }
+#cc-main .cm [data-role="all"]:hover { background: #003a6b !important; border-color: #003a6b !important; box-shadow: 0 8px 20px rgba(0, 75, 135, 0.3) !important; transform: translateY(-1px) !important; }
+#cc-main .cm [data-role="necessary"] { background: #ffffff !important; color: #004b87 !important; border: 1px solid #c8d9e6 !important; }
+#cc-main .cm [data-role="necessary"]:hover { background: #eef5fa !important; border-color: #b8cfdf !important; transform: translateY(-1px) !important; }
 
 #cc-main .cm--box .cm__btn-group [data-role="show"] {
-  background: transparent !important; color: #edf6ff !important; border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  background: transparent !important; color: #004b87 !important; border: 1px solid rgba(0, 75, 135, 0.18) !important;
   border-radius: 999px !important; font-size: 0.95rem !important; font-weight: 600 !important; text-decoration: none !important;
   height: 48px !important; min-height: 48px !important; padding: 0 1.4rem !important; margin: 0 !important;
   display: inline-flex !important; align-items: center !important; justify-content: center !important; line-height: 1 !important; box-shadow: none !important;
 }
-#cc-main .cm--box .cm__btn-group [data-role="show"]:hover { border-color: rgba(255, 255, 255, 0.6) !important; background: rgba(255, 255, 255, 0.06) !important; }
+#cc-main .cm--box .cm__btn-group [data-role="show"]:hover { border-color: rgba(0, 75, 135, 0.4) !important; background: rgba(0, 75, 135, 0.05) !important; }
 
 #cc-main .cc-close-x {
   position: absolute !important; top: 10px !important; right: 10px !important; width: 34px !important; height: 34px !important;
   padding: 0 !important; margin: 0 !important; border: 0 !important; border-radius: 50% !important; background: transparent !important;
-  color: #adcde2 !important; display: flex !important; align-items: center !important; justify-content: center !important; cursor: pointer !important;
+  color: #4e7391 !important; display: flex !important; align-items: center !important; justify-content: center !important; cursor: pointer !important;
 }
-#cc-main .cc-close-x:hover { color: #ffffff !important; background: rgba(255, 255, 255, 0.08) !important; }
-#cc-main .cc-close-x:focus-visible { outline: 2px solid #63ff84 !important; outline-offset: 2px !important; }
+#cc-main .cc-close-x:hover { color: #004b87 !important; background: rgba(0, 75, 135, 0.07) !important; }
+#cc-main .cc-close-x:focus-visible { outline: 2px solid #004b87 !important; outline-offset: 2px !important; }
 
 /* Desktop: one row, text left and buttons right */
 @media screen and (min-width: 821px) {
@@ -121,15 +123,15 @@ html.show--preferences #cc-main .cm { opacity: 0 !important; visibility: hidden 
 }
 
 #cc-main .cm__title,
-#cc-main .pm__title { font-family: var(--font-heading); color: #ffffff !important; font-weight: 700; }
+#cc-main .pm__title { font-family: var(--font-heading); color: #004b87 !important; font-weight: 700; }
 #cc-main .cm__desc,
 #cc-main .pm__desc,
-#cc-main .pm__section-desc { color: #cfe0ee !important; font-size: 0.9rem; line-height: 1.5; }
-#cc-main .pm__section-title { color: #ffffff !important; font-weight: 600; }
-#cc-main .pm__badge { background: #003a6b !important; color: #63ff84 !important; border: 1px solid rgba(99, 255, 132, 0.3) !important; }
-#cc-main .pm__close-btn { border-color: rgba(255, 255, 255, 0.2) !important; }
+#cc-main .pm__section-desc { color: #4e7391 !important; font-size: 0.9rem; line-height: 1.5; }
+#cc-main .pm__section-title { color: #004b87 !important; font-weight: 600; }
+#cc-main .pm__badge { background: #e6f7ec !important; color: #11713d !important; border: 1px solid rgba(17, 113, 61, 0.2) !important; }
+#cc-main .pm__close-btn { border-color: rgba(0, 75, 135, 0.18) !important; background: transparent !important; }
 #cc-main .pm__close-btn svg,
-#cc-main .pm__section-arrow svg { stroke: #ffffff !important; stroke-width: 2.5px; }
+#cc-main .pm__section-arrow svg { stroke: #004b87 !important; stroke-width: 2.5px; }
 
 /* Floating cookie button (bottom-left; WhatsApp sits bottom-right) */
 #cc-floating-btn {

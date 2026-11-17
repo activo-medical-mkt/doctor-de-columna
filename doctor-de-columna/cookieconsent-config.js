@@ -38,8 +38,6 @@
       if (btn) btn.classList.add('is-visible');
     }
 
-    document.documentElement.classList.add('cc--darkmode');
-
     // Helper para pruebas: ?reset o #reset borra la cookie para que el aviso vuelva a salir
     if (window.location.search.indexOf('reset') !== -1 || window.location.hash.indexOf('reset') !== -1) {
       document.cookie = 'cc_cookie=; Max-Age=0; path=/';
