@@ -48,11 +48,14 @@
     rosarito: { name: 'Rosarito', tz: 'America/Tijuana', placeholder: '661 123 4567' }
   };
 
-  // Events go to the dataLayer only; Tag Manager (GTM-MPMCVHDW) sends them to GA4 (G-N539005TR1)
-  // through its "GA4 - lead_form_submit" and "GA4 - wa_widget_open" tags.
+  // Events go to the dataLayer only, as `dl_<GA4 event name>` (e.g. dl_lead_form_submit_tij).
+  // Tag Manager (GTM-MPMCVHDW) listens for them ("CE - dl_..." triggers) and its "GA4 Event - ..." tags
+  // send the GA4 event without the prefix to G-N539005TR1. The prefix matters: GTM also treats the
+  // tag's own gtag('event', name) as a dataLayer event, so the same name would fire the tag again in a loop.
+  // Every event name ends in the clinic: _tij, _gdl (or _general when no city is chosen yet).
   function track(name, params) {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(Object.assign({ event: name }, params));
+    window.dataLayer.push(Object.assign({ event: 'dl_' + name }, params));
   }
 
   function pageTopic() {
@@ -86,7 +89,7 @@
     return 'body';
   }
 
-  // Phone clicks anywhere on the page -> dataLayer `clicks_telefono_gdl` / `clicks_telefono_tij`
+  // Phone clicks anywhere on the page -> dataLayer `dl_clicks_telefono_gdl` / `dl_clicks_telefono_tij`
   // (GTM custom-event triggers pick them up). Runs once, even though init() may run twice.
   if (!window.__lwPhoneTracking) {
     window.__lwPhoneTracking = true;
@@ -280,7 +283,7 @@
       ].join('\n');
       return 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text);
     }
-    // WhatsApp opened -> dataLayer `whatsapp_click_gdl` / `whatsapp_click_tij`.
+    // WhatsApp opened -> dataLayer `dl_whatsapp_click_gdl` / `dl_whatsapp_click_tij`.
     function trackWhatsapp() {
       var suffix = clinicSuffix(waNumber);
       if (!suffix) return;
@@ -328,7 +331,7 @@
       var phone = phoneInput.value.trim();
       var url = whatsappUrl(name, phone);
 
-      track('lead_form_submit', {
+      track('lead_form_submit_' + (clinicSuffix(waNumber) || 'general'), {
         form_name: 'widget_whatsapp', lead_city: cityName || 'sin ciudad', lead_topic: topic,
         widget_source: lastOpen.widget_source, cta_text: lastOpen.cta_text, cta_location: lastOpen.cta_location
       });
@@ -352,16 +355,16 @@
     }
 
     // ── Open the widget ──
-    // Every open is reported as `wa_widget_open` with
+    // Every open is reported as `wa_widget_open_<tij|gdl|general>` with
     //   widget_source: 'floating_button' (the round WhatsApp button) or 'page_button' (any
     //                  "Agendar" / "Reserva" / WhatsApp button on the page),
     //   cta_text / cta_location: which page button and where it sits (header, mobile_menu, body, footer).
-    // The same source rides along on `lead_form_submit`, so leads can be split by entry point too.
+    // The same source rides along on `lead_form_submit_<tij|gdl>`, so leads can be split by entry point too.
     var openingFromPage = false;
     var lastOpen = { widget_source: 'floating_button', cta_text: '', cta_location: '' };
     function trackOpen(info) {
       lastOpen = info;
-      track('wa_widget_open', { widget_source: info.widget_source, cta_text: info.cta_text, cta_location: info.cta_location, lead_topic: topic });
+      track('wa_widget_open_' + (clinicSuffix(waNumber) || 'general'), { lead_city: cityName || 'sin ciudad', widget_source: info.widget_source, cta_text: info.cta_text, cta_location: info.cta_location, lead_topic: topic });
     }
     function openWidget(info) {
       if (!panel.classList.contains('wa-panel--open')) { // main.js animates it
