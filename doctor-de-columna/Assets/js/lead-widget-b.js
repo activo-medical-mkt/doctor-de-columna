@@ -16,7 +16,7 @@
   // Formspree form that emails the leads. Empty = no email is sent (WhatsApp still opens).
   var FORMSPREE_URL = 'https://formspree.io/f/mzerrvqd';
   var IS_LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-  var CSS_HREF = '/Assets/css/lead-widget-b.css?v=5';
+  var CSS_HREF = '/Assets/css/lead-widget-b.css?v=6';
   // Cloudflare Turnstile bot check: Cloudflare's always-pass test key on localhost, the real
   // site key (doctordecolumna.com) everywhere else. Runs invisibly; it only asks for a click
   // when Cloudflare is unsure about the visitor. The secret key is not used here.

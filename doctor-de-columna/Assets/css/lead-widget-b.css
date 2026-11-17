@@ -119,3 +119,9 @@
 .wa-widget.lw-kb-open { bottom: calc(var(--lw-kb, 0px) + 8px); }
 .wa-widget.lw-kb-open .wa-fab { display: none; }
 .wa-widget.lw-kb-open .wa-panel.lw-panel { max-height: calc(var(--lw-vvh, 100dvh) - 16px); }
+
+/* The widget box is as tall as the (hidden) panel + button, about 300x680px on a phone. Let touches
+   pass through it so the page underneath (swipe rows, links) works; only the button and the open panel catch them. */
+.wa-widget { pointer-events: none; }
+.wa-widget .wa-fab,
+.wa-widget .wa-panel--open { pointer-events: auto; }
