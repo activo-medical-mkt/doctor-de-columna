@@ -1,4 +1,6 @@
+# Content Signals (https://contentsignals.org): search engines, AI answers and AI training may all use this content.
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
 # /partials/ stays crawlable so Google can render the doctor, reviews and contact sections

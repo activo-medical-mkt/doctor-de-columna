@@ -7,8 +7,10 @@
   const MAX_TILT = 12; // degrees
 
   function init() {
+    if (window.__cx3dInit) return; // runs on load and again on partials-ready
     const arts = document.querySelectorAll('.cx3d');
     if (!arts.length) return;
+    window.__cx3dInit = true;
 
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries) => {

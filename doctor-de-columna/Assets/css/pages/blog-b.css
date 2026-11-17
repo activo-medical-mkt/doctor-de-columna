@@ -54,3 +54,6 @@
   .blog-b-cover img { aspect-ratio: 4 / 3; border-radius: 16px; }
   .blog-b-author-box { flex-direction: column; align-items: flex-start; }
 }
+@media (max-width: 768px) {
+  .blog-b-hero .care-hub-eyebrow + h1 { margin-top: 8px; }
+}

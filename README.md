@@ -2,6 +2,10 @@
 
 Sitio del Dr. Francisco Cisneros Oliva, traumatólogo y cirujano de columna (Tijuana, Rosarito y Guadalajara).
 
+## Diseño
+
+La paleta y las reglas vigentes de opción B están en [DESIGN_GUIDE.md](DESIGN_GUIDE.md). Las instrucciones para mantenerlas están en [AGENTS.md](AGENTS.md).
+
 ## Estructura
 
 - `doctor-de-columna/`: el sitio publicado (HTML estático). Su contenido se sirve en la raíz del dominio.

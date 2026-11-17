@@ -15,3 +15,51 @@
 
 # The old XSL sitemap view was replaced by an HTML sitemap page
 /sitemap.xsl                                      /mapa-del-sitio/  301
+
+# BEGIN generated trailing-slash redirects (tools/build-seo-files.py)
+/guadalajara                                              /guadalajara/  301
+/rosarito                                                 /rosarito/  301
+/tijuana                                                  /tijuana/  301
+/guadalajara/condiciones                                  /guadalajara/condiciones/  301
+/tijuana/condiciones                                      /tijuana/condiciones/  301
+/guadalajara/condiciones/dolor-cervical-radiculopatia     /guadalajara/condiciones/dolor-cervical-radiculopatia/  301
+/guadalajara/condiciones/dolor-ciatica                    /guadalajara/condiciones/dolor-ciatica/  301
+/guadalajara/condiciones/dolor-lumbar                     /guadalajara/condiciones/dolor-lumbar/  301
+/guadalajara/condiciones/escoliosis-adulto                /guadalajara/condiciones/escoliosis-adulto/  301
+/guadalajara/condiciones/espondilolistesis                /guadalajara/condiciones/espondilolistesis/  301
+/guadalajara/condiciones/estenosis-espinal                /guadalajara/condiciones/estenosis-espinal/  301
+/guadalajara/condiciones/fractura-de-columna              /guadalajara/condiciones/fractura-de-columna/  301
+/guadalajara/condiciones/hernia-de-disco-cervical         /guadalajara/condiciones/hernia-de-disco-cervical/  301
+/guadalajara/condiciones/hernia-de-disco                  /guadalajara/condiciones/hernia-de-disco/  301
+/tijuana/condiciones/dolor-cervical-radiculopatia         /tijuana/condiciones/dolor-cervical-radiculopatia/  301
+/tijuana/condiciones/dolor-ciatica                        /tijuana/condiciones/dolor-ciatica/  301
+/tijuana/condiciones/dolor-lumbar                         /tijuana/condiciones/dolor-lumbar/  301
+/tijuana/condiciones/escoliosis-adulto                    /tijuana/condiciones/escoliosis-adulto/  301
+/tijuana/condiciones/espondilolistesis                    /tijuana/condiciones/espondilolistesis/  301
+/tijuana/condiciones/estenosis-espinal                    /tijuana/condiciones/estenosis-espinal/  301
+/tijuana/condiciones/fractura-de-columna                  /tijuana/condiciones/fractura-de-columna/  301
+/tijuana/condiciones/hernia-de-disco-cervical             /tijuana/condiciones/hernia-de-disco-cervical/  301
+/tijuana/condiciones/hernia-de-disco                      /tijuana/condiciones/hernia-de-disco/  301
+/guadalajara/servicios/bloqueos-epidurales                /guadalajara/servicios/bloqueos-epidurales/  301
+/guadalajara/servicios/cirugia-de-columna-vertebral       /guadalajara/servicios/cirugia-de-columna-vertebral/  301
+/guadalajara/servicios/cirugia-descompresion-lumbar       /guadalajara/servicios/cirugia-descompresion-lumbar/  301
+/guadalajara/servicios/consulta-especialista              /guadalajara/servicios/consulta-especialista/  301
+/guadalajara/servicios/endoscopia-de-columna              /guadalajara/servicios/endoscopia-de-columna/  301
+/guadalajara/servicios/fusion-vertebral                   /guadalajara/servicios/fusion-vertebral/  301
+/guadalajara/servicios/microdiscectomia                   /guadalajara/servicios/microdiscectomia/  301
+/guadalajara/servicios/rehabilitacion                     /guadalajara/servicios/rehabilitacion/  301
+/tijuana/servicios/bloqueos-epidurales                    /tijuana/servicios/bloqueos-epidurales/  301
+/tijuana/servicios/cirugia-de-columna-vertebral           /tijuana/servicios/cirugia-de-columna-vertebral/  301
+/tijuana/servicios/cirugia-descompresion-lumbar           /tijuana/servicios/cirugia-descompresion-lumbar/  301
+/tijuana/servicios/consulta-especialista                  /tijuana/servicios/consulta-especialista/  301
+/tijuana/servicios/endoscopia-de-columna                  /tijuana/servicios/endoscopia-de-columna/  301
+/tijuana/servicios/fusion-vertebral                       /tijuana/servicios/fusion-vertebral/  301
+/tijuana/servicios/microdiscectomia                       /tijuana/servicios/microdiscectomia/  301
+/tijuana/servicios/rehabilitacion                         /tijuana/servicios/rehabilitacion/  301
+/blog                                                     /blog/  301
+/blog/ciatica-sintomas-senales-de-alarma                  /blog/ciatica-sintomas-senales-de-alarma/  301
+/blog/cuando-operar-hernia-discal                         /blog/cuando-operar-hernia-discal/  301
+/blog/estenosis-espinal-cuando-operar                     /blog/estenosis-espinal-cuando-operar/  301
+/mapa-del-sitio                                           /mapa-del-sitio/  301
+/aviso-privacidad                                         /aviso-privacidad/  301
+# END generated trailing-slash redirects

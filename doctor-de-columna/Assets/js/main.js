@@ -1,4 +1,5 @@
 let darkSections=[];
+const NAVBAR_SCROLL_THRESHOLD=12;
 let cachedNavbarHeight=68;
 function updateNavbarMetrics(navbar){
 if (!navbar) return;
@@ -14,42 +15,45 @@ if (!darkSections.length){
 navbar.classList.remove('navbar--on-dark');
 return;
 }
-const navBandTop=0;
-const navBandBottom=cachedNavbarHeight;
+// Use the floating header's actual position, including its mobile top inset.
+const navRect=navbar.getBoundingClientRect();
+const navMidpoint=navRect.top+(navRect.height||cachedNavbarHeight)/2;
 const onDark=darkSections.some(section=>{
 const rect=section.getBoundingClientRect();
-return rect.top<navBandBottom&&rect.bottom>navBandTop;
+return rect.top<=navMidpoint&&rect.bottom>navMidpoint;
 });
 navbar.classList.toggle('navbar--on-dark',onDark);
 }
 function enhanceLocationNavigation(){
 const match=window.location.pathname.match(/^\/(guadalajara|tijuana|rosarito)(?:\/|$)/);
-if (!match||document.getElementById('nav-drop-cond')) return;
-const city=match[1];
-const base='/'+city+'/';
+if (document.getElementById('nav-drop-specialties')) return;
+const city=match ? match[1] : null;
+const base=city ? '/'+city+'/' : '/';
 // Rosarito has no condition/service pages of its own: it links to the nearby Tijuana pages.
-const contentCity=city==='rosarito' ? 'tijuana' : city;
+const contentCity=city==='guadalajara' ? 'guadalajara' : 'tijuana';
 const labels={guadalajara:'Guadalajara',tijuana:'Tijuana',rosarito:'Rosarito'};
 const conditions={
 guadalajara:[
-['Columna Lumbar','/guadalajara/condiciones/hernia-de-disco/','Hernia de Disco Lumbar','L4·L5 · Tratamiento mínimamente invasivo'],
+['Columna en General','/guadalajara/condiciones/hernia-de-disco/','Hernia de Disco','Lumbar y cervical · Tratamiento mínimamente invasivo'],
 ['Columna Lumbar','/guadalajara/condiciones/dolor-ciatica/','Ciática y Dolor Radicular','Dolor irradiado a pierna o glúteo'],
 ['Columna Lumbar','/guadalajara/condiciones/estenosis-espinal/','Estenosis Espinal','Estrechamiento del canal vertebral'],
 ['Columna Lumbar','/guadalajara/condiciones/espondilolistesis/','Espondilolistesis','Inestabilidad vertebral lumbar'],
 ['Columna Lumbar','/guadalajara/condiciones/dolor-lumbar/','Dolor Lumbar Crónico','Diagnóstico preciso y tratamiento'],
 ['Columna Cervical','/guadalajara/condiciones/hernia-de-disco-cervical/','Hernia Discal Cervical','C5·C6 · Técnica endoscópica'],
 ['Columna Cervical','/guadalajara/condiciones/dolor-cervical-radiculopatia/','Radiculopatía Cervical','Dolor irradiado a brazo o mano'],
-['Columna Cervical','/guadalajara/condiciones/escoliosis-adulto/','Escoliosis del Adulto','Deformidad y dolor espinal']
+['Columna Cervical','/guadalajara/condiciones/escoliosis-adulto/','Escoliosis del Adulto','Deformidad y dolor espinal'],
+['Columna en General','/guadalajara/condiciones/fractura-de-columna/','Fractura de Columna','Lesión vertebral por trauma u osteoporosis']
 ],
 tijuana:[
-['Columna Lumbar','/tijuana/condiciones/hernia-de-disco/','Hernia de Disco Lumbar','L4·L5 · Tratamiento mínimamente invasivo'],
+['Columna en General','/tijuana/condiciones/hernia-de-disco/','Hernia de Disco','Lumbar y cervical · Tratamiento mínimamente invasivo'],
 ['Columna Lumbar','/tijuana/condiciones/dolor-ciatica/','Ciática y Dolor Radicular','Dolor irradiado a pierna o glúteo'],
 ['Columna Lumbar','/tijuana/condiciones/estenosis-espinal/','Estenosis Espinal','Estrechamiento del canal vertebral'],
 ['Columna Lumbar','/tijuana/condiciones/espondilolistesis/','Espondilolistesis','Inestabilidad vertebral lumbar'],
 ['Columna Lumbar','/tijuana/condiciones/dolor-lumbar/','Dolor Lumbar Crónico','Diagnóstico preciso y tratamiento'],
 ['Columna Cervical','/tijuana/condiciones/hernia-de-disco-cervical/','Hernia Discal Cervical','C5·C6 · Técnica endoscópica'],
 ['Columna Cervical','/tijuana/condiciones/dolor-cervical-radiculopatia/','Radiculopatía Cervical','Dolor irradiado a brazo o mano'],
-['Columna Cervical','/tijuana/condiciones/escoliosis-adulto/','Escoliosis del Adulto','Deformidad y dolor espinal']
+['Columna Cervical','/tijuana/condiciones/escoliosis-adulto/','Escoliosis del Adulto','Deformidad y dolor espinal'],
+['Columna en General','/tijuana/condiciones/fractura-de-columna/','Fractura de Columna','Lesión vertebral por trauma u osteoporosis']
 ]
 };
 const services={
@@ -80,34 +84,77 @@ return'<svg class="nav-drop-chevron" width="11" height="11" viewBox="0 0 11 11" 
 function mobileChevron(){
 return'<svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 6 8 10 12 6"/></svg>';
 }
-function columns(items){
-return [...new Set(items.map(item=>item[0]))].map(group=>'<div class="nav-dropdown-col"><p class="nav-dropdown-group">'+group+'</p>'+items.filter(item=>item[0]===group).map(item=>'<a href="'+item[1]+'" class="nav-dropdown-item"><span class="nav-dropdown-item-title">'+item[2]+'</span><span class="nav-dropdown-item-desc">'+item[3]+'</span></a>').join('')+'</div>').join('');
+function specialtyArrow(){
+return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>';
 }
-function desktopDropdown(id,label,ariaLabel,items,footerHref,footerLabel){
-return'<li class="nav-item-drop" id="nav-drop-'+id+'"><button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-drop-'+id+'-panel">'+label+chevron()+'</button><div class="nav-dropdown" id="nav-drop-'+id+'-panel" role="region" aria-label="'+ariaLabel+'"><div class="nav-dropdown-inner">'+columns(items)+'</div><a href="'+footerHref+'" class="nav-dropdown-footer">'+footerLabel+'<svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg></a></div></li>';
+function specialtiesMenu(){
+const route='/'+contentCity+'/';
+const lesionGroups=[
+{label:'Columna lumbar',key:'lumbar',items:[['dolor-ciatica','Ciática'],['dolor-lumbar','Dolor lumbar'],['espondilolistesis','Espondilolistesis']]},
+{label:'Columna cervical',key:'cervical',items:[['hernia-de-disco-cervical','Hernia de disco cervical'],['dolor-cervical-radiculopatia','Radiculopatía cervical']]},
+{label:'Columna en general',key:'general',items:[['hernia-de-disco','Hernia de disco'],['estenosis-espinal','Estenosis espinal'],['escoliosis-adulto','Escoliosis del adulto'],['fractura-de-columna','Fractura de columna']]}
+];
+const treatments=[['endoscopia-de-columna','Endoscopia de columna'],['microdiscectomia','Microdiscectomía'],['cirugia-descompresion-lumbar','Descompresión lumbar'],['fusion-vertebral','Fusión vertebral'],['bloqueos-epidurales','Bloqueos epidurales'],['rehabilitacion','Rehabilitación de columna'],['consulta-especialista','Consulta con especialista']];
+function links(items,folder){
+return items.map(item=>'<li><a class="specialties-link" href="'+route+folder+'/'+item[0]+'/"><span>'+item[1]+'</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg></a></li>').join('');
+}
+return '<li class="nav-item-drop nav-item-mega" id="nav-drop-specialties">'+
+'<button class="nav-drop-trigger" id="nav-specialties-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-specialties-panel">Especialidades'+chevron()+'</button>'+
+'<div class="nav-dropdown specialties-menu" id="nav-specialties-panel" role="region" aria-labelledby="nav-specialties-trigger" aria-hidden="true" inert>'+
+'<div class="specialties-toolbar"><div class="specialties-location"><span>Consulta en</span><div class="specialties-city-switch" role="group" aria-label="Ciudad de atención">'+['tijuana','guadalajara'].map(key=>'<button type="button" data-specialty-city="'+key+'" aria-pressed="'+String(key===contentCity)+'">'+labels[key]+'</button>').join('')+'</div></div><a class="specialties-city-page" data-specialty-city-page href="'+route+'"><span>Ver inicio de '+labels[contentCity]+'</span>'+specialtyArrow()+'</a><span class="specialties-announcement" role="status" aria-live="polite"></span></div>'+
+'<div class="specialties-column specialties-column--lesions"><p class="specialties-label">Lesiones de columna</p><p class="specialties-intro">Explora por zona de la columna.</p><div class="specialties-anatomy">'+lesionGroups.map(group=>'<div class="specialties-region specialties-region--'+group.key+'"><p class="specialties-region-label">'+group.label+'</p><ul class="specialties-links" aria-label="'+group.label+'">'+links(group.items,'condiciones')+'</ul></div>').join('')+'</div><a class="specialties-all" href="'+route+'condiciones/">Ver todas las lesiones'+specialtyArrow()+'</a></div>'+
+'<div class="specialties-column specialties-column--treatments"><p class="specialties-label">Tratamientos y procedimientos</p><p class="specialties-intro">Opciones según tu valoración.</p><ul class="specialties-links" aria-label="Tratamientos y procedimientos">'+links(treatments,'servicios')+'</ul><a class="specialties-all" href="'+route+'servicios/cirugia-de-columna-vertebral/">Explorar las cirugías'+specialtyArrow()+'</a></div>'+
+'<div class="specialties-visuals"><a class="specialties-feature" href="'+route+'condiciones/"><img src="/Assets/Images/conditions-hub-spine-wide-b.webp" alt="Ilustración de la columna vertebral en cristal azul" width="1600" height="935" loading="lazy" decoding="async"><span class="specialties-feature-caption"><span><small>Entiende tu columna</small><strong>Conoce las lesiones</strong></span><span class="specialties-feature-arrow">'+specialtyArrow()+'</span></span></a>'+
+'<a class="specialties-feature specialties-feature--procedure" href="'+route+'servicios/endoscopia-de-columna/"><img src="/Assets/Images/endoscopy-feature-b.webp" alt="Ilustración de una endoscopia de columna lumbar" width="1200" height="900" loading="lazy" decoding="async"><span class="specialties-feature-caption"><span><small>Conoce el procedimiento</small><strong>Endoscopia de columna</strong></span><span class="specialties-feature-arrow">'+specialtyArrow()+'</span></span></a></div>'+
+'</div></li>';
 }
 function mobileDropdown(id,label,items,footerHref,footerLabel){
 return'<div class="mobile-nav-group"><button class="mobile-nav-group-btn" aria-expanded="false" aria-controls="mob-'+id+'-sub">'+label+mobileChevron()+'</button><div class="mobile-nav-sub" id="mob-'+id+'-sub">'+items.map(item=>'<a href="'+item[1]+'" class="mobile-menu-link mobile-menu-link--sub">'+item[2]+'</a>').join('')+'<a href="'+footerHref+'" class="mobile-menu-link mobile-menu-link--sub mobile-menu-link--all">'+footerLabel+' →</a></div></div>';
 }
 const navbar=document.getElementById('navbar');
+const endoscopyHref='/'+contentCity+'/servicios/endoscopia-de-columna/';
+const onEndoscopy=/\/servicios\/endoscopia-de-columna\/$/.test(window.location.pathname);
+// Outside a city folder (brand homepage) the link carries the Guadalajara URL too, so city-chooser-b.js asks which city; inside a city it goes straight there.
+const endoscopyCityAttr=city ? '' : ' data-gdl-href="/guadalajara/servicios/endoscopia-de-columna/"';
 const desktopList=navbar&&navbar.querySelector('.nav-links');
 const locationItem=document.getElementById('nav-drop-loc');
 if (desktopList&&locationItem){
-Array.from(desktopList.children).forEach(item=>{
-const link=item.querySelector(':scope > a');
-if (link&&['#doctor','#resenas'].includes(link.getAttribute('href'))) item.remove();
-});
-const home=desktopList.querySelector(':scope > li:first-child > a');
+const homeItem=desktopList.querySelector(':scope > li:first-child');
+const home=homeItem&&homeItem.querySelector('a');
 if (home){
 home.href=base;
-home.classList.add('active');
-home.setAttribute('aria-current','page');
+const isHome=window.location.pathname===base;
+home.classList.toggle('active',isHome);
+if (isHome) home.setAttribute('aria-current','page');
+else home.removeAttribute('aria-current');
 }
-locationItem.insertAdjacentHTML('afterend',
-desktopDropdown('cond','Condiciones','Condiciones de columna',conditions[contentCity],'/'+contentCity+'/condiciones/','Ver todas las condiciones')+
-desktopDropdown('srv','Servicios','Servicios de columna',services[contentCity],base+'#servicios','Ver todos los servicios'));
-const contact=Array.from(desktopList.querySelectorAll(':scope > li > a')).find(link=>link.textContent.trim()==='Contacto');
-if (contact) contact.href=base+'#ubicaciones';
+desktopList.replaceChildren(homeItem);
+// Order: Inicio · Endoscopia de columna · Especialidades ▾ · Ubicaciones ▾ · El doctor (the two dropdowns side by side).
+desktopList.insertAdjacentHTML('beforeend','<li><a href="'+endoscopyHref+'"'+endoscopyCityAttr+(onEndoscopy?' class="active" aria-current="page"':'')+'>Endoscopia de columna</a></li>'+specialtiesMenu());
+desktopList.appendChild(locationItem);
+desktopList.insertAdjacentHTML('beforeend','<li><a href="'+base+'#doctor">El doctor</a></li>');
+if (!onEndoscopy&&/\/(condiciones|servicios)\//.test(window.location.pathname)) desktopList.querySelector('#nav-specialties-trigger').classList.add('is-current');
+const specialtyPanel=desktopList.querySelector('#nav-specialties-panel');
+const canMatchCityPage=city==='tijuana'||city==='guadalajara';
+const pageSuffix=canMatchCityPage ? window.location.pathname.slice(city.length+1) : '/';
+function selectSpecialtyCity(selectedCity,announce=false){
+if (!['tijuana','guadalajara'].includes(selectedCity)) return;
+specialtyPanel.dataset.city=selectedCity;
+specialtyPanel.querySelectorAll('a[href]').forEach(link=>{
+link.setAttribute('href',link.getAttribute('href').replace(/^\/(tijuana|guadalajara)\//,'/'+selectedCity+'/'));
+});
+specialtyPanel.querySelectorAll('[data-specialty-city]').forEach(button=>{
+button.setAttribute('aria-pressed',String(button.dataset.specialtyCity===selectedCity));
+});
+const cityPage=specialtyPanel.querySelector('[data-specialty-city-page]');
+cityPage.href='/'+selectedCity+pageSuffix;
+cityPage.querySelector('span').textContent=(pageSuffix==='/' ? 'Ver inicio de ' : 'Ver esta página en ')+labels[selectedCity];
+if (announce) specialtyPanel.querySelector('.specialties-announcement').textContent='Enlaces actualizados para '+labels[selectedCity]+'.';
+}
+specialtyPanel.querySelectorAll('[data-specialty-city]').forEach(button=>{
+button.addEventListener('click',()=>selectSpecialtyCity(button.dataset.specialtyCity,true));
+});
+selectSpecialtyCity(contentCity);
 }
 const locationLink=document.querySelector('#nav-drop-loc-panel a[href="'+base+'"]');
 if (locationLink){
@@ -122,7 +169,9 @@ const logo=navbar&&navbar.querySelector('.logo');
 if (logo) logo.href=base;
 const mobileNav=document.querySelector('#mobile-menu nav');
 const mobileLocation=mobileNav&&mobileNav.querySelector('.mobile-nav-group');
-if (mobileNav&&mobileLocation){
+const mobileFirst=mobileNav&&mobileNav.querySelector(':scope > a:first-child');
+if (mobileFirst&&!mobileNav.querySelector('[data-nav-endoscopy]')) mobileFirst.insertAdjacentHTML('afterend','<a href="'+endoscopyHref+'" class="mobile-menu-link'+(onEndoscopy?' active':'')+'" data-nav-endoscopy'+endoscopyCityAttr+(onEndoscopy?' aria-current="page"':'')+'>Endoscopia de columna</a>');
+if (city&&mobileNav&&mobileLocation){
 Array.from(mobileNav.children).forEach(item=>{
 if (item.matches('a')&&['#doctor','#resenas'].includes(item.getAttribute('href'))) item.remove();
 });
@@ -152,7 +201,7 @@ requestAnimationFrame(()=>{
 const scrollY=window.scrollY;
 const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
 const nav=document.getElementById('navbar');
-if (nav) nav.classList.toggle('scrolled',scrollY>60);
+if (nav) nav.classList.toggle('scrolled',scrollY>NAVBAR_SCROLL_THRESHOLD);
 if (nav) applyNavbarThemeBySection(nav);
 if (progress) progress.style.transform='scaleX('+(maxScroll>0 ? scrollY/maxScroll : 0)+')';
 ticking=false;
@@ -167,54 +216,121 @@ onScroll();
 const hamburger=document.getElementById('nav-hamburger');
 const mobileMenu=document.getElementById('mobile-menu');
 if (hamburger&&mobileMenu){
-hamburger.setAttribute('aria-expanded','false');
-mobileMenu.setAttribute('aria-hidden','true');
-mobileMenu.classList.remove('open');
-hamburger.addEventListener('click',()=>{
-const isOpen=hamburger.getAttribute('aria-expanded')==='true';
-hamburger.setAttribute('aria-expanded',String(!isOpen));
-mobileMenu.setAttribute('aria-hidden',String(isOpen));
-mobileMenu.classList.toggle('open',!isOpen);
-document.body.style.overflow=!isOpen ? 'hidden' : '';
-});
-mobileMenu.querySelectorAll('a').forEach(a=>{
-a.addEventListener('click',()=>{
-hamburger.setAttribute('aria-expanded','false');
-mobileMenu.setAttribute('aria-hidden','true');
-mobileMenu.classList.remove('open');
-document.body.style.overflow='';
-});
-});
-window.addEventListener('scroll',()=>{
-if (mobileMenu.classList.contains('open')){
-hamburger.setAttribute('aria-expanded','false');
-mobileMenu.setAttribute('aria-hidden','true');
-mobileMenu.classList.remove('open');
-document.body.style.overflow='';
+const backdrop=document.createElement('div');
+backdrop.className='mobile-nav-backdrop';
+backdrop.setAttribute('aria-hidden','true');
+document.body.appendChild(backdrop);
+let previousOverflow='';
+let previousPaddingRight='';
+function setMobileMenu(open,restoreFocus=false){
+const wasOpen=mobileMenu.classList.contains('open');
+if (open&&!wasOpen){
+previousOverflow=document.body.style.overflow;
+previousPaddingRight=document.body.style.paddingRight;
+const scrollbarGap=window.innerWidth-document.documentElement.clientWidth;
+if (scrollbarGap>0) document.body.style.paddingRight=(parseFloat(getComputedStyle(document.body).paddingRight)+scrollbarGap)+'px';
 }
-},{passive: true});
+hamburger.setAttribute('aria-expanded',String(open));
+hamburger.setAttribute('aria-label',open ? 'Cerrar menú' : 'Abrir menú');
+mobileMenu.setAttribute('aria-hidden',String(!open));
+mobileMenu.inert=!open;
+mobileMenu.classList.toggle('open',open);
+navbar.classList.toggle('menu-open',open);
+backdrop.classList.toggle('open',open);
+document.body.classList.toggle('mobile-menu-open',open);
+if (open) document.body.style.overflow='hidden';
+else if (wasOpen){
+document.body.style.overflow=previousOverflow;
+document.body.style.paddingRight=previousPaddingRight;
+}
+if (!open&&restoreFocus) hamburger.focus({preventScroll:true});
+}
+setMobileMenu(false);
+hamburger.addEventListener('click',()=>setMobileMenu(!mobileMenu.classList.contains('open')));
+backdrop.addEventListener('click',()=>setMobileMenu(false,true));
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMobileMenu(false)));
+document.addEventListener('keydown',e=>{
+if (!mobileMenu.classList.contains('open')) return;
+if (e.key==='Escape'){
+e.preventDefault();
+setMobileMenu(false,true);
+} else if (e.key==='Tab'){
+const focusable=[...navbar.querySelectorAll('a.logo,button.nav-hamburger'),...mobileMenu.querySelectorAll('a,button')].filter(el=>el.getClientRects().length);
+const first=focusable[0];
+const last=focusable[focusable.length-1];
+if (e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+else if (!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+}
+});
+window.addEventListener('resize',()=>{
+if (window.innerWidth>768) setMobileMenu(false);
+},{passive:true});
+}
+const dropdownTimers=new Map();
+const dropdownHoverOpened=new WeakSet();
+function setDropdownOpen(item,open){
+clearTimeout(dropdownTimers.get(item));
+dropdownTimers.delete(item);
+item.classList.toggle('open',open);
+if (!open) dropdownHoverOpened.delete(item);
+const trigger=item.querySelector('.nav-drop-trigger');
+const panel=item.querySelector('.nav-dropdown');
+if (trigger) trigger.setAttribute('aria-expanded',String(open));
+if (panel){panel.setAttribute('aria-hidden',String(!open));panel.inert=!open;}
+}
+function closeAllDropdowns(except=null){
+document.querySelectorAll('.nav-item-drop').forEach(item=>{if(item!==except)setDropdownOpen(item,false);});
+}
+function openDropdown(item,fromHover=false){
+closeAllDropdowns(item);
+setDropdownOpen(item,true);
+if (fromHover) dropdownHoverOpened.add(item);
+else dropdownHoverOpened.delete(item);
+}
+function scheduleDropdownClose(item){
+clearTimeout(dropdownTimers.get(item));
+dropdownTimers.set(item,setTimeout(()=>setDropdownOpen(item,false),220));
 }
 document.querySelectorAll('.nav-item-drop').forEach(item=>{
 const trigger=item.querySelector('.nav-drop-trigger');
+const panel=item.querySelector('.nav-dropdown');
 if (!trigger) return;
+setDropdownOpen(item,false);
 trigger.addEventListener('click',e=>{
 e.stopPropagation();
 const isOpen=item.classList.contains('open');
+const openedByHover=dropdownHoverOpened.has(item);
 closeAllDropdowns();
-if (!isOpen){
-item.classList.add('open');
-trigger.setAttribute('aria-expanded','true');
+if (!isOpen||openedByHover) openDropdown(item);
+});
+trigger.addEventListener('keydown',e=>{
+if (e.key!=='ArrowDown'&&e.key!=='ArrowUp') return;
+e.preventDefault();
+openDropdown(item);
+const links=panel&&Array.from(panel.querySelectorAll('a, button')).filter(link=>link.getClientRects().length);
+if (links&&links.length) links[e.key==='ArrowUp' ? links.length-1 : 0].focus();
+});
+const hoverAllowed=()=>window.matchMedia('(hover: hover) and (min-width: 769px)').matches;
+const enterDropdown=()=>{
+if (!hoverAllowed()) return;
+if (!item.classList.contains('open')) openDropdown(item,true);
+else {clearTimeout(dropdownTimers.get(item));dropdownTimers.delete(item);}
+};
+item.addEventListener('mouseenter',enterDropdown);
+item.addEventListener('mouseleave',()=>{if(hoverAllowed())scheduleDropdownClose(item);});
+item.addEventListener('focusout',e=>{if(!item.contains(e.relatedTarget))scheduleDropdownClose(item);});
+item.addEventListener('focusin',()=>{clearTimeout(dropdownTimers.get(item));});
+if (panel){
+panel.addEventListener('mouseenter',enterDropdown);
+panel.addEventListener('mouseleave',()=>{if(hoverAllowed())scheduleDropdownClose(item);});
+panel.addEventListener('click',e=>{if(e.target.closest('a'))closeAllDropdowns();});
 }
 });
+document.querySelectorAll('.nav-links > li > a').forEach(link=>{
+link.addEventListener('mouseenter',()=>closeAllDropdowns());
+link.addEventListener('focusin',()=>closeAllDropdowns());
 });
-function closeAllDropdowns(){
-document.querySelectorAll('.nav-item-drop.open').forEach(item=>{
-item.classList.remove('open');
-const t=item.querySelector('.nav-drop-trigger');
-if (t) t.setAttribute('aria-expanded','false');
-});
-}
-document.addEventListener('click',closeAllDropdowns);
+document.addEventListener('click',e=>{if(!e.target.closest('.nav-item-drop'))closeAllDropdowns();});
 document.addEventListener('keydown',e=>{
 if (e.key==='Escape'){
 const openItem=document.querySelector('.nav-item-drop.open');
@@ -245,11 +361,13 @@ btn.setAttribute('aria-expanded',String(!isOpen));
 target.classList.toggle('open',!isOpen);
 });
 });
-return true;
 window.addEventListener('resize',()=>{
+if (window.innerWidth<=768) closeAllDropdowns();
+updateNavbarMetrics(navbar);
 refreshDarkSections();
 onScroll();
 },{passive: true});
+return true;
 }
 function initOnVisible(selector,callback,rootMargin='0px'){
 const target=document.querySelector(selector);
@@ -552,7 +670,7 @@ const navbar=document.getElementById('navbar');
 if (navbar){
 updateNavbarMetrics(navbar);
 window.requestAnimationFrame(()=>{
-navbar.classList.toggle('scrolled',window.scrollY>60);
+navbar.classList.toggle('scrolled',window.scrollY>NAVBAR_SCROLL_THRESHOLD);
 window.requestAnimationFrame(()=>{
 applyNavbarThemeBySection(navbar);
 });

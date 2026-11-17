@@ -160,14 +160,36 @@ blog = '\n'.join(link(p) for p in pages if kind(p) in ('blog', 'post'))
 legal = '\n'.join(link(p) for p in pages if kind(p) == 'legal')
 llms = f"""# Dr. Francisco Cisneros Oliva — Especialista en Columna y Cirugía Endoscópica
 
-> El Dr. Francisco Javier Cisneros Oliva es traumatólogo, ortopedista y cirujano de columna vertebral (cédula profesional 12294474), con formación en cirugía endoscópica de columna. Atiende con cita previa en Tijuana y Playas de Rosarito (Baja California) y en Guadalajara/Zapopan (Jalisco): valoración, diagnóstico y tratamiento de hernia de disco, ciática, estenosis espinal, espondilolistesis, escoliosis del adulto, dolor lumbar y cervical, y fracturas de columna.
+> El Dr. Francisco Javier Cisneros Oliva es traumatólogo, ortopedista y cirujano de columna vertebral, certificado por el Consejo Mexicano de Ortopedia y Traumatología (CMOT), con cédula de especialidad 12294474 y máster en endoscopia lumbar. Atiende con cita previa en Tijuana y Playas de Rosarito (Baja California) y en Guadalajara/Zapopan (Jalisco), y también por videollamada: valoración, diagnóstico y tratamiento de hernia de disco, ciática, estenosis espinal, espondilolistesis, escoliosis del adulto, dolor lumbar y cervical, y fracturas de columna.
 
 Información clave:
 
 - Idioma del sitio: español (México).
 - El tratamiento se decide tras una valoración individual; la mayoría de los planes inician sin cirugía.
-- El contenido del sitio es informativo y no sustituye una consulta médica.
+- El contenido médico del sitio está revisado por el Dr. Francisco Javier Cisneros Oliva. Es informativo y no sustituye una consulta médica.
+- Consulta presencial en Tijuana, Rosarito y Guadalajara, y por videollamada.
 - Correo de contacto: {EMAIL}
+
+## Sobre el doctor
+
+Formación y trayectoria:
+
+- Médico Cirujano, Universidad de Guadalajara.
+- Especialidad en Ortopedia y Traumatología, Centro Médico Nacional de Occidente (CMNO), Guadalajara. Cédula de especialidad 12294474.
+- Adiestramiento en Cirugía de Columna, Centro Médico Nacional de Occidente.
+- Estancia internacional en cirugía de columna, Clínica CEMTRO, Madrid, España.
+- Máster en endoscopia lumbar, LESS Invasiva Academy.
+- Médico encargado del Módulo de Columna, Hospital General Regional No. 46 del IMSS, Guadalajara.
+- Certificación del Consejo Mexicano de Ortopedia y Traumatología, A.C. (CMOT).
+- Enfoque de práctica: técnicas endoscópicas y microquirúrgicas de columna.
+
+Perfiles:
+
+- [Doctoralia (opiniones de pacientes)](https://www.doctoralia.com.mx/perfil/francisco-javier-cisneros-oliva)
+- [Biografía en drcisnerosortopedia.com](https://drcisnerosortopedia.com/francisco-javier-cisneros-oliva/)
+- [Facebook](https://www.facebook.com/traumatologoentijuana)
+- [Instagram](https://www.instagram.com/traumatologoentijuana/)
+- [YouTube](https://www.youtube.com/channel/UChaG08GcdbiEGnbBk2CQMAA)
 
 ## Sitio
 
@@ -176,7 +198,7 @@ Información clave:
 
 ## Tijuana (Baja California)
 
-Consultorio: New City Medical Plaza, Av. Paseo del Centenario 9580, piso 27, Zona Urbana Río, Tijuana, B.C. 22010. Teléfono y WhatsApp: +52 664 159 6633.
+Consultorio: New City Medical Plaza, Av. Paseo del Centenario 9580, piso 27, Zona Urbana Río, Tijuana, B.C. 22010. Teléfono y WhatsApp: +52 664 159 6633. Horario: lunes a viernes de 9:00 a 14:00 y sábado de 9:00 a 16:00; domingo cerrado. [Ver en Google Maps](https://maps.google.com/?cid=3513509886492714459).
 
 {city_section('tijuana')}
 ## Rosarito (Baja California)
@@ -186,7 +208,7 @@ Consultorio: Blvd. Benito Juárez 907-31, Centro Playas, Playas de Rosarito, B.C
 {city_section('rosarito')}
 ## Guadalajara (Zapopan, Jalisco)
 
-Consultorio: Hospital Ángeles Andares, Av. Patria 1355, piso 32, consultorio 3225, Zapopan, Jal. 45116. Teléfono y WhatsApp: +52 33 1172 8391.
+Consultorio: Hospital Ángeles Andares, Av. Patria 1355, piso 32, consultorio 3225, Zapopan, Jal. 45116. Teléfono y WhatsApp: +52 33 1172 8391. Horario: lunes a viernes de 8:00 a 19:00 y sábado de 8:00 a 17:00; domingo cerrado. [Ver en Google Maps](https://maps.google.com/?cid=8073500582903296711).
 
 {city_section('guadalajara')}
 ## Blog
@@ -205,4 +227,15 @@ Consultorio: Hospital Ángeles Andares, Av. Patria 1355, piso 32, consultorio 32
 - [Mapa del sitio (XML)]({BASE}/sitemap.xml)
 """
 (ROOT / 'llms.txt').write_text(re.sub(r'\n{3,}', '\n\n', llms), encoding='utf-8')
+
+# ---------- _redirects: permanent trailing-slash redirects ----------
+# Workers' html_handling sends /tijuana -> /tijuana/ as a temporary 307. An explicit 301 per page tells
+# search engines the slash version is the permanent URL. Only the block between the markers is generated.
+START, END = '# BEGIN generated trailing-slash redirects (tools/build-seo-files.py)', '# END generated trailing-slash redirects'
+redirects_file = ROOT / '_redirects'
+current = redirects_file.read_text(encoding='utf-8')
+manual = re.sub(rf'\n*{re.escape(START)}.*?{re.escape(END)}\n?', '\n', current, flags=re.S).rstrip('\n') + '\n'
+rules = [f'{p["path"].rstrip("/"):<58}{p["path"]}  301' for p in pages if p['path'] != '/']
+block = '\n'.join([START, *rules, END])
+redirects_file.write_text(manual + '\n' + block + '\n', encoding='utf-8')
 print(f'sitemap.xml: {len(indexable)} URLs ({len(pages) - len(indexable)} noindex skipped) | llms.txt | {HTML_SITEMAP}')

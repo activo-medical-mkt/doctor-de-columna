@@ -39,7 +39,11 @@ const isFileProtocol=location.protocol==='file:';
 const isLocalDev=['localhost','127.0.0.1',''].includes(location.hostname);
 const slots=Array.from(document.querySelectorAll('[data-include]'));
 if (!slots.length){
-document.dispatchEvent(new Event('partials-ready'));
+// Partials are already baked into the HTML (scripts/inline_partials.py). Announce it once the other
+// deferred scripts have run and added their listeners (they run before DOMContentLoaded).
+const ready=()=>document.dispatchEvent(new Event('partials-ready'));
+if (document.readyState==='complete') ready();
+else document.addEventListener('DOMContentLoaded',ready,{once: true});
 return;
 }
 if (isFileProtocol){

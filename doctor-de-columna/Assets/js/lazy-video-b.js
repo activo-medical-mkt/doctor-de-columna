@@ -4,8 +4,10 @@
  * Pauses off-screen; with prefers-reduced-motion only the poster is shown. */
 (() => {
   const init = () => {
+    if (window.__lazyVideoInit) return; // runs on load and again on partials-ready
     const vids = document.querySelectorAll('video[data-lazy-video]');
     if (!vids.length || !('IntersectionObserver' in window)) return;
+    window.__lazyVideoInit = true;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const io = new IntersectionObserver((entries) => {
       entries.forEach(({ target: v, isIntersecting }) => {
