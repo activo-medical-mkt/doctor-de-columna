@@ -71,6 +71,37 @@
     return null;
   }
 
+  // Clinic numbers -> the suffix used in the GA4 event names (clicks_telefono_gdl, whatsapp_click_tij...).
+  var CLINIC_SUFFIX = { '523311728391': 'gdl', '526641596633': 'tij' };
+  function clinicSuffix(href) {
+    var digits = (href || '').replace(/\D/g, '');
+    for (var num in CLINIC_SUFFIX) if (digits.indexOf(num) !== -1) return CLINIC_SUFFIX[num];
+    return null;
+  }
+  function ctaLocation(el) {
+    if (el.closest('#wa-widget')) return 'widget';
+    if (el.closest('#mobile-menu')) return 'mobile_menu';
+    if (el.closest('.navbar, header')) return 'header';
+    if (el.closest('footer')) return 'footer';
+    return 'body';
+  }
+
+  // Phone clicks anywhere on the page -> dataLayer `clicks_telefono_gdl` / `clicks_telefono_tij`
+  // (GTM custom-event triggers pick them up). Runs once, even though init() may run twice.
+  if (!window.__lwPhoneTracking) {
+    window.__lwPhoneTracking = true;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+      var suffix = a && clinicSuffix(a.getAttribute('href'));
+      if (!suffix) return;
+      track('clicks_telefono_' + suffix, {
+        cta_text: a.textContent.replace(/\s+/g, ' ').trim().slice(0, 60),
+        cta_location: ctaLocation(a),
+        lead_topic: pageTopic()
+      });
+    });
+  }
+
   function init() {
     var widget = document.getElementById('wa-widget');
     var panel = document.getElementById('wa-panel');
@@ -145,6 +176,7 @@
     var phoneError = form.querySelector('#lw-phone-error');
     var submitBtn = form.querySelector('.lw-submit');
     var doneLink = done.querySelector('.lw-done-link');
+    doneLink.addEventListener('click', function () { trackWhatsapp(); });
     phoneInput.placeholder = city ? city.placeholder : '664 123 4567';
     var cityError = form.querySelector('#lw-city-error');
     var turnstileBox = form.querySelector('.lw-turnstile');
@@ -248,6 +280,15 @@
       ].join('\n');
       return 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text);
     }
+    // WhatsApp opened -> dataLayer `whatsapp_click_gdl` / `whatsapp_click_tij`.
+    function trackWhatsapp() {
+      var suffix = clinicSuffix(waNumber);
+      if (!suffix) return;
+      track('whatsapp_click_' + suffix, {
+        lead_city: cityName || 'sin ciudad', lead_topic: topic,
+        widget_source: lastOpen.widget_source, cta_text: lastOpen.cta_text, cta_location: lastOpen.cta_location
+      });
+    }
     function sendLeadEmail(lead) {
       if (!FORMSPREE_URL || IS_LOCAL) {
         console.info('[lead-widget] email not sent (' + (IS_LOCAL ? 'localhost' : 'no Formspree URL') + '):', lead);
@@ -302,6 +343,7 @@
         _subject: 'Nuevo paciente (' + (cityName || 'web') + '): ' + name
       });
 
+      trackWhatsapp();
       doneLink.href = url;
       panel.classList.add('lw-sent');
       var win = window.open(url, '_blank');
@@ -375,12 +417,6 @@
       if (/wa\.me\/|api\.whatsapp\.com\/send/.test(href) || el.hasAttribute('data-lead-open')) return el;
       if (/^tel:|^mailto:/.test(href)) return null;
       return BOOKING_TEXT.test(el.textContent) ? el : null;
-    }
-    function ctaLocation(el) {
-      if (el.closest('#mobile-menu')) return 'mobile_menu';
-      if (el.closest('.navbar, header')) return 'header';
-      if (el.closest('footer')) return 'footer';
-      return 'body';
     }
 
     // Capture phase, so the panel's own "click outside closes it" handler in main.js never sees this click.
