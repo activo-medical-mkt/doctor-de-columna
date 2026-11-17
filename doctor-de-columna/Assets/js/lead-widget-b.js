@@ -16,7 +16,7 @@
   // Formspree form that emails the leads. Empty = no email is sent (WhatsApp still opens).
   var FORMSPREE_URL = 'https://formspree.io/f/mzerrvqd';
   var IS_LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-  var CSS_HREF = '/Assets/css/lead-widget-b.css?v=4';
+  var CSS_HREF = '/Assets/css/lead-widget-b.css?v=5';
   // Cloudflare Turnstile bot check: Cloudflare's always-pass test key on localhost, the real
   // site key (doctordecolumna.com) everywhere else. Runs invisibly; it only asks for a click
   // when Cloudflare is unsure about the visitor. The secret key is not used here.
@@ -48,16 +48,11 @@
     rosarito: { name: 'Rosarito', tz: 'America/Tijuana', placeholder: '661 123 4567' }
   };
 
-  // Events go straight to Google Analytics through the page's gtag (the Google tag GT-NNQR7S7X
-  // in <head>, which forwards to G-N539005TR1). gtag also lands in the dataLayer, so Tag Manager
-  // sees the same events by name if a tag ever needs them (e.g. Google Ads conversions).
+  // Events go to the dataLayer only; Tag Manager (GTM-MPMCVHDW) sends them to GA4 (G-N539005TR1)
+  // through its "GA4 - lead_form_submit" and "GA4 - wa_widget_open" tags.
   function track(name, params) {
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', name, params);
-    } else {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push(Object.assign({ event: name }, params));
-    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: name }, params));
   }
 
   function pageTopic() {
@@ -338,6 +333,30 @@
         setTimeout(function () { nameInput.focus({ preventScroll: true }); }, 320);
       }
     }
+    // Phone keyboard: the fixed widget sits behind the keyboard unless we move it into the visible area.
+    var vv = window.visualViewport;
+    function fitToKeyboard() {
+      var kb = (vv && panel.classList.contains('wa-panel--open'))
+        ? Math.max(0, window.innerHeight - vv.height - vv.offsetTop) : 0;
+      var open = kb > 80 && panel.contains(document.activeElement);
+      widget.classList.toggle('lw-kb-open', open);
+      widget.style.setProperty('--lw-kb', open ? Math.round(kb) + 'px' : '0px');
+      widget.style.setProperty('--lw-vvh', Math.round(vv ? vv.height : window.innerHeight) + 'px');
+    }
+    if (vv && !widget.hasAttribute('data-lw-kb')) {
+      widget.setAttribute('data-lw-kb', '');
+      vv.addEventListener('resize', fitToKeyboard);
+      vv.addEventListener('scroll', fitToKeyboard);
+      panel.addEventListener('focusin', function (e) {
+        setTimeout(fitToKeyboard, 50);
+        setTimeout(function () { // keep the focused field in view once the keyboard has settled
+          fitToKeyboard();
+          if (e.target.scrollIntoView) e.target.scrollIntoView({ block: 'nearest' });
+        }, 350);
+      });
+      panel.addEventListener('focusout', function () { setTimeout(fitToKeyboard, 100); });
+    }
+
     fab.addEventListener('click', function () {
       if (!openingFromPage && !panel.classList.contains('wa-panel--open')) {
         trackOpen({ widget_source: 'floating_button', cta_text: '', cta_location: 'floating' });

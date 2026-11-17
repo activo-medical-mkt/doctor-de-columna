@@ -6,10 +6,15 @@
   max-height: calc(100dvh - 8rem);
   display: flex;
   flex-direction: column;
+  /* The whole panel scrolls (header stays on top), so no part is squeezed or cut off on short screens. */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
-.lw-panel .wa-panel-header { background: #004b87; }
+.lw-panel > * { flex-shrink: 0; }
+.lw-panel .wa-panel-header { background: #004b87; position: sticky; top: 0; z-index: 1; }
 .lw-panel .wa-panel-avatar { object-fit: cover; border-color: rgba(255, 255, 255, .55); }
-.lw-panel .wa-panel-body { padding: 16px 14px; gap: 10px; overflow-y: auto; }
+.lw-panel .wa-panel-body { padding: 16px 14px; gap: 10px; }
 
 .lw-form {
   background: #fff;
@@ -108,3 +113,9 @@
 /* Collapsed rather than display:none, so the Turnstile iframe still loads and runs. */
 .lw-turnstile { display: flex; justify-content: center; max-height: 0; overflow: hidden; margin: 0 0 -9px; }
 .lw-turnstile.is-visible { max-height: 90px; margin: 0; }
+
+/* Phone keyboard open (lead-widget-b.js sets these from visualViewport): sit just above the keyboard,
+   hide the round button, and fit the panel in the visible area. */
+.wa-widget.lw-kb-open { bottom: calc(var(--lw-kb, 0px) + 8px); }
+.wa-widget.lw-kb-open .wa-fab { display: none; }
+.wa-widget.lw-kb-open .wa-panel.lw-panel { max-height: calc(var(--lw-vvh, 100dvh) - 16px); }
