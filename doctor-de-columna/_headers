@@ -1,0 +1,54 @@
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Cross-Origin-Opener-Policy: same-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://cdn.jsdelivr.net https://platform.docplanner.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.mx https://i.ytimg.com https://*.docplanner.com https://*.doctoralia.com.mx; font-src 'self'; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://ad.doubleclick.net https://stats.g.doubleclick.net https://www.google.com https://www.googletagmanager.com https://cloudflareinsights.com https://*.docplanner.com; frame-src https://www.google.com https://maps.google.com https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://*.doctoralia.com.mx https://*.docplanner.com; object-src 'none'; base-uri 'self'; form-action 'self'
+
+# Long-lived cache for versioned assets (cache-busting via ?v= query strings in HTML)
+/Assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/Assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/Assets/Fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/cookieconsent-config.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/Assets/Images/*
+  Cache-Control: public, max-age=2592000
+
+/Assets/Videos/*
+  Cache-Control: public, max-age=2592000
+
+/Assets/new%20logo/*
+  Cache-Control: public, max-age=2592000
+
+# Partials: short cache, loader.js fetches these at runtime
+/partials/*
+  Cache-Control: public, max-age=300
+  X-Robots-Tag: noindex
+
+# Favicon and manifest
+/favicon.ico
+  Cache-Control: public, max-age=86400
+
+/site.webmanifest
+  Cache-Control: public, max-age=86400
+
+# Crawlers and AI assistants
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+  Content-Type: application/xml; charset=utf-8
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/llms.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain; charset=utf-8

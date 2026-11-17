@@ -1,0 +1,84 @@
+/* Hover disclosures and linked titles for symptom and treatment cards. */
+(() => {
+  function initCareDisclosures() {
+    document.querySelectorAll('.cb-symptom-grid, .cb-treatment-grid').forEach(grid => {
+      if (grid.dataset.disclosuresReady) return;
+      grid.dataset.disclosuresReady = 'true';
+      const cards = [...grid.querySelectorAll('details.cb-expand')];
+      const hoverPointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const titleSelector = '.cb-symptom-title, .cb-treatment-title';
+
+      function animateOpening(card) {
+        const panel = card.querySelector('.cb-expand-body');
+        panel.getAnimations().forEach(animation => animation.cancel());
+        if (reducedMotion.matches) return;
+        const height = panel.getBoundingClientRect().height;
+        const style = window.getComputedStyle(panel);
+        panel.animate([
+          { height: '0px', paddingTop: '0px', paddingBottom: '0px', opacity: 0, transform: 'translateY(-6px)' },
+          { height: `${height}px`, paddingTop: style.paddingTop, paddingBottom: style.paddingBottom, opacity: 1, transform: 'translateY(0)' }
+        ], { duration: 320, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' });
+      }
+
+      function openCard(card) {
+        cards.forEach(other => { if (other !== card) other.open = false; });
+        if (card.open) return;
+        card.open = true;
+        animateOpening(card);
+      }
+
+      cards.forEach(card => {
+        const panel = card.querySelector('.cb-expand-body');
+        card.addEventListener('pointerenter', event => {
+          if (hoverPointer.matches && event.pointerType === 'mouse') openCard(card);
+        });
+        card.addEventListener('pointerleave', event => {
+          if (hoverPointer.matches && event.pointerType === 'mouse' && !card.contains(document.activeElement)) card.open = false;
+        });
+        card.addEventListener('focusin', event => {
+          if (event.target.closest(`${titleSelector}, .cb-expand-body`)) openCard(card);
+        });
+        card.addEventListener('focusout', event => {
+          if (hoverPointer.matches && !card.contains(event.relatedTarget) && !card.matches(':hover')) card.open = false;
+        });
+        card.querySelector(titleSelector)?.addEventListener('click', event => {
+          const link = event.currentTarget;
+          if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          if (!link.getAttribute('href')?.startsWith('#') || link.hash !== `#${panel.id}`) return;
+          event.preventDefault();
+          openCard(card);
+          panel.focus({ preventScroll: true });
+          window.history.replaceState(null, '', link.hash);
+        });
+        card.addEventListener('keydown', event => {
+          if (event.key !== 'Escape' || !card.open) return;
+          event.preventDefault();
+          card.open = false;
+          card.querySelector('summary').focus({ preventScroll: true });
+        });
+        card.addEventListener('toggle', () => {
+          if (!card.open) {
+            panel.getAnimations().forEach(animation => animation.cancel());
+          } else if (!panel.getAnimations().some(animation => animation.playState === 'running')) {
+            // Native summary activation (touch or keyboard) also gets the reveal.
+            animateOpening(card);
+          }
+        });
+      });
+
+      function openLinkedDetail() {
+        let id;
+        try { id = decodeURIComponent(window.location.hash.slice(1)); } catch { return; }
+        const target = document.getElementById(id);
+        const card = cards.find(item => item === target || item.contains(target));
+        if (card) openCard(card);
+      }
+      window.addEventListener('hashchange', openLinkedDetail);
+      openLinkedDetail();
+    });
+  }
+  document.addEventListener('DOMContentLoaded', initCareDisclosures);
+  document.addEventListener('partials-ready', initCareDisclosures);
+  initCareDisclosures();
+})();

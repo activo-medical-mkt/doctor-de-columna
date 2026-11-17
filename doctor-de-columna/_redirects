@@ -1,0 +1,17 @@
+# NOTE: Cloudflare Workers static _redirects only supports relative paths.
+# Configure apex -> www host redirect in Cloudflare domain settings.
+
+# URLs from the previous site (first-version) that changed in the redesign
+/guadalajara/condiciones/hernia-de-disco-lumbar/  /guadalajara/condiciones/hernia-de-disco/  301
+/guadalajara/condiciones/hernia-de-disco-lumbar   /guadalajara/condiciones/hernia-de-disco/  301
+/tijuana/condiciones/hernia-de-disco-lumbar/      /tijuana/condiciones/hernia-de-disco/      301
+/tijuana/condiciones/hernia-de-disco-lumbar       /tijuana/condiciones/hernia-de-disco/      301
+/guadalajara/servicios/                           /guadalajara/servicios/cirugia-de-columna-vertebral/  301
+/guadalajara/servicios                            /guadalajara/servicios/cirugia-de-columna-vertebral/  301
+/tijuana/servicios/                               /tijuana/servicios/cirugia-de-columna-vertebral/      301
+/tijuana/servicios                                /tijuana/servicios/cirugia-de-columna-vertebral/      301
+/_blog-post/                                      /blog/  301
+/_blog-post                                       /blog/  301
+
+# The old XSL sitemap view was replaced by an HTML sitemap page
+/sitemap.xsl                                      /mapa-del-sitio/  301

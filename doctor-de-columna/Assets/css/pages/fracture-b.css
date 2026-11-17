@@ -1,0 +1,13 @@
+/* Same condition-page template; anatomy and photography adapted to fractures. */
+.fracture-hero-note{max-width:720px!important;margin:25px auto 0!important;font-size:12px!important;line-height:1.65!important;color:#587b98!important}
+.fracture-hero-note a{color:#004b87;text-underline-offset:3px}
+.fracture-b .cb-anatomy img{max-height:490px;padding:42px 14px 36px;object-fit:contain}
+.fracture-b .cb-cause-grid img{object-fit:cover;border-radius:15px}
+.fracture-b .cb-cause-grid article:nth-child(2) img{object-fit:contain;background:#d5e8f3}
+.fracture-b .cb-cause-grid h3{font-size:clamp(24px,2.2vw,30px)}
+.fracture-b .cb-treatment-image>img{object-fit:cover;height:480px;object-position:50% 35%}
+.fracture-b #urgencias{scroll-margin-top:110px}
+@media(max-width:1050px){.fracture-b .cb-treatment h3{overflow-wrap:anywhere}}
+@media(max-width:700px){.fracture-hero-note{font-size:11px!important;margin-top:22px!important}.fracture-b .cb-anatomy img{max-height:330px;padding:36px 8px 30px}.fracture-b .cb-cause-grid h3{font-size:27px}.fracture-b .cb-treatment-image>img{height:370px}}
+@media(max-width:480px){.fracture-b .cb-treatment h3{font-size:25px;overflow-wrap:normal}.fracture-b .cb-hero h1{font-size:39px}}
+@media(max-width:350px){.fracture-b .cb-hero h1{font-size:36px}.fracture-b .cb-treatment h3{font-size:23px;overflow-wrap:anywhere}}

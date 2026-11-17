@@ -123,3 +123,11 @@ Assets/Images/Stock/yeso para fractura de tobillo en tijuana.jpg
 __pycache__/
 *.pyc
 *.py
+
+# Local working files and Wrangler temp output
+_not-commited/
+.wrangler/
+
+# Site tooling is versioned even though other *.py files are ignored
+!tools/
+!tools/*.py

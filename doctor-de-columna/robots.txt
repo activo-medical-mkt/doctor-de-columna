@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# HTML fragments loaded at runtime, not standalone pages
+Disallow: /partials/
+
+Sitemap: https://www.doctordecolumna.com/sitemap.xml

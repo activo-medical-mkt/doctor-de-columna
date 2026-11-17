@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Consent Mode v2 (analytics + ad measurement granted by default, ad personalization denied; GPC turns ads off). Must run before GTM. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': (navigator.globalPrivacyControl ? 'denied' : 'granted'),
+    'ad_user_data': (navigator.globalPrivacyControl ? 'denied' : 'granted'),
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  (function(){try{var m=document.cookie.match(/(?:^|; )cc_cookie=([^;]*)/);if(!m)return;var c=JSON.parse(decodeURIComponent(m[1]));var cat=c.categories||[];var ad=cat.indexOf('ads')>-1&&!navigator.globalPrivacyControl;gtag('consent','update',{analytics_storage:cat.indexOf('analytics')>-1?'granted':'denied',ad_storage:ad?'granted':'denied',ad_user_data:ad?'granted':'denied',ad_personalization:'denied'});}catch(e){}})();
+  gtag('set', 'url_passthrough', true);
+</script>
+<!-- Google Tag Manager -->
+<script>if (/(^|\.)doctordecolumna\.com$/.test(location.hostname)) (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MPMCVHDW');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script>
+  // Only measure the live site: local previews (127.0.0.1, localhost) must not send hits to GA4.
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  if (/(^|\.)doctordecolumna\.com$/.test(location.hostname)) {
+    var gt = document.createElement('script'); gt.async = true;
+    gt.src = 'https://www.googletagmanager.com/gtag/js?id=GT-NNQR7S7X';
+    document.head.appendChild(gt);
+    gtag('js', new Date());
+    gtag('config', 'GT-NNQR7S7X');
+  }
+</script>
+  <!-- ① charset + viewport MUST be the first two tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ② Primary meta -->
+  <title>Especialista en Columna Vertebral en Tijuana | Dr. Francisco Cisneros Oliva</title>
+  <meta name="description" content="Especialista en columna vertebral en Tijuana. Hernia de disco, ciática y estenosis espinal en New City Medical Plaza, a minutos de la garita de San Ysidro." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.doctordecolumna.com/tijuana/" />
+
+  <!-- ③ Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.doctordecolumna.com/tijuana/" />
+  <meta property="og:title" content="Especialista en Columna Vertebral en Tijuana &mdash; Dr. Francisco Cisneros" />
+  <meta property="og:description" content="Especialista en columna vertebral en Tijuana. Hernia de disco, ciática y estenosis espinal en New City Medical Plaza, a minutos de la garita de San Ysidro." />
+  <meta property="og:locale" content="es_MX" />
+
+  <!-- ④ LCP image preload — WebP for supporting browsers, JPG fallback via <picture> -->
+  <link rel="preload" as="image" href="/Assets/Images/hero.webp" type="image/webp" fetchpriority="high" />
+
+  <!-- ④b Font preloads — prevent FOUT on heading/body fonts -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/Assets/Fonts/Funnel%20Display/FunnelDisplayVariable.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/Assets/Fonts/Inter/InterVariable.woff2" />
+
+  <!-- ④c Theme color (Best Practices audit) -->
+  <meta name="theme-color" content="#004B87" />
+<link rel="icon" href="/favicon.ico?v=2" sizes="48x48" />
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+<link rel="manifest" href="/site.webmanifest?v=2" />
+<!-- ⑤ Stylesheets -->
+  <link rel="stylesheet" href="/Assets/css/base.css?v=20260516" />
+  <link rel="stylesheet" href="/Assets/css/components.css?v=20260520" />
+  <link rel="stylesheet" href="/Assets/css/pages/home.css?v=20260518b" />
+  <link rel="stylesheet" href="/Assets/css/pages/home-b.css?v=20261117" />
+  <link rel="stylesheet" href="/Assets/css/pages/home-city-type-b.css?v=20261116b" />
+  <link rel="preload" as="style" href="/Assets/css/animations.css?v=20261117" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="/Assets/css/animations.css?v=20261117" /></noscript>
+
+  <!-- ⑥ Structured data — Physician + LocalBusiness -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css" />
+<link rel="stylesheet" href="/Assets/css/cookieconsent-b.css?v=1" />
+<script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js"></script>
+<script defer src="/cookieconsent-config.js?v=2"></script>
+<script type="application/ld+json" id="site-structured-data">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.doctordecolumna.com/#doctor",
+      "email": "info@doctordecolumna.com",
+      "name": "Dr. Francisco Javier Cisneros Oliva",
+      "alternateName": "Dr. Francisco Cisneros Oliva",
+      "url": "https://www.doctordecolumna.com/#doctor",
+      "image": "https://www.doctordecolumna.com/Assets/Images/dr-francisco-cisneros-consultorio.webp",
+      "jobTitle": "Traumatólogo y cirujano de columna",
+      "knowsAbout": [
+        "Ortopedia y traumatología",
+        "Cirugía de columna",
+        "Endoscopia de columna"
+      ],
+      "sameAs": [
+        "https://www.doctoralia.com.mx/perfil/francisco-javier-cisneros-oliva"
+      ],
+      "workLocation": [
+        {
+          "@id": "https://www.doctordecolumna.com/tijuana/#office"
+        },
+        {
+          "@id": "https://www.doctordecolumna.com/guadalajara/#office"
+        }
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Especialidad en Ortopedia y Traumatología",
+        "credentialCategory": "Cédula de especialidad",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "Cédula de especialidad",
+          "value": "12294474"
+        }
+      }
+    },
+    {
+      "@type": [
+        "Physician",
+        "PhysiciansOffice"
+      ],
+      "@id": "https://www.doctordecolumna.com/tijuana/#office",
+      "name": "Consultorio del Dr. Francisco Cisneros en Tijuana",
+      "url": "https://www.doctordecolumna.com/tijuana/",
+      "telephone": "+526641596633",
+      "image": "https://www.doctordecolumna.com/Assets/Images/hero-v2.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Paseo del Centenario 9580, Piso 27, New City Medical Plaza",
+        "addressLocality": "Tijuana",
+        "addressRegion": "Baja California",
+        "postalCode": "22010",
+        "addressCountry": "MX"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.5364082,
+        "longitude": -117.0228125
+      },
+      "hasMap": "https://www.google.com/maps/dir/?api=1&destination=32.5364082%2C-117.0228125",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tijuana",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Baja California"
+          }
+        }
+      ],
+      "medicalSpecialty": [
+        "https://schema.org/Musculoskeletal",
+        "https://schema.org/Surgical"
+      ],
+      "employee": {
+        "@id": "https://www.doctordecolumna.com/#doctor"
+      }
+    },
+    {
+      "@type": [
+        "Physician",
+        "PhysiciansOffice"
+      ],
+      "@id": "https://www.doctordecolumna.com/guadalajara/#office",
+      "name": "Consultorio del Dr. Francisco Cisneros en Guadalajara y Zapopan",
+      "url": "https://www.doctordecolumna.com/guadalajara/",
+      "telephone": "+523311728391",
+      "image": "https://www.doctordecolumna.com/Assets/Images/hero-v2.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Patria 1355, Piso 32, Consultorio 3225, Hospital Ángeles Andares",
+        "addressLocality": "Zapopan",
+        "addressRegion": "Jalisco",
+        "postalCode": "45116",
+        "addressCountry": "MX"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 20.7027687,
+        "longitude": -103.4179422
+      },
+      "hasMap": "https://www.google.com/maps/place/Dr+Francisco+Javier+Cisneros+Oliva+-+Cirugia+de+Columna+Endoscopica/@20.7027687,-103.4179422,17z",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Guadalajara",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Jalisco"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Zapopan",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Jalisco"
+          }
+        }
+      ],
+      "medicalSpecialty": [
+        "https://schema.org/Musculoskeletal",
+        "https://schema.org/Surgical"
+      ],
+      "employee": {
+        "@id": "https://www.doctordecolumna.com/#doctor"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.doctordecolumna.com/#website",
+      "url": "https://www.doctordecolumna.com/",
+      "name": "Dr. Francisco Cisneros Oliva",
+      "inLanguage": "es-MX",
+      "publisher": {
+        "@id": "https://www.doctordecolumna.com/#doctor"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.doctordecolumna.com/tijuana/#faq",
+      "url": "https://www.doctordecolumna.com/tijuana/#faq",
+      "isPartOf": {
+        "@id": "https://www.doctordecolumna.com/tijuana/#webpage"
+      },
+      "inLanguage": "es-MX",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo agendo una consulta en Tijuana?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Puedes escribirnos por WhatsApp o llamar al (664) 159 6633. La consulta es con cita previa y el horario se confirma según la disponibilidad de agenda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde está el consultorio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La consulta es en New City Medical Plaza, piso 27, Av. Paseo del Centenario 9580, Zona Urbana Río Tijuana, B.C. 22010, a minutos de la garita de San Ysidro. Consulta el mapa y cómo llegar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué debo llevar a mi primera consulta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lleva los estudios e informes médicos que ya tengas, una lista de tus medicamentos y las preguntas que quieras resolver. Si vienes por una segunda opinión, también puedes compartir tu diagnóstico y tratamiento previos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo solicitar una segunda opinión?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Puedes agendar una valoración para revisar tu diagnóstico previo, los estudios disponibles y las opciones de atención. Es útil llevar los informes y las imágenes de tus estudios anteriores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Todos los problemas de columna requieren cirugía?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Según el diagnóstico, el manejo puede incluir rehabilitación, medicamentos u otras opciones sin cirugía. La elección se realiza después de una valoración individual; la cirugía se considera cuando existe una indicación clínica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta la consulta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Puedes consultar la tarifa vigente y las formas de pago por WhatsApp antes de confirmar tu cita."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo atenderme con seguro de gastos médicos mayores?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contacta al consultorio para revisar tu aseguradora y la documentación que puede requerirse. La cobertura depende de tu póliza y de la autorización correspondiente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo toma la recuperación después de una cirugía?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El tiempo varía según el procedimiento, tu condición y las actividades a las que deseas regresar. En la valoración se explica el proceso de recuperación, el seguimiento y el plan de rehabilitación que corresponda a tu caso."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.doctordecolumna.com/#video-_00kxeBh96w",
+      "name": "Testimonio: camina 10 horas después de su cirugía endoscópica de columna",
+      "description": "Operado de hernia de disco lumbar por endoscopia. A las 10 horas ya camina y sin dolor de ciática.",
+      "thumbnailUrl": "https://www.doctordecolumna.com/Assets/Images/reviews-b/_00kxeBh96w.webp",
+      "uploadDate": "2026-11-14T17:25:32-08:00",
+      "embedUrl": "https://www.youtube.com/embed/_00kxeBh96w",
+      "duration": "PT0M34S"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.doctordecolumna.com/#video-QEU7C_iIAt8",
+      "name": "Testimonio de Ange: endoscopia lumbar para hernia de disco en Tijuana",
+      "description": "Llegó con una hernia lumbar y nos cuenta cómo fue su endoscopia de columna y su recuperación.",
+      "thumbnailUrl": "https://www.doctordecolumna.com/Assets/Images/reviews-b/QEU7C_iIAt8.webp",
+      "uploadDate": "2026-11-14T17:34:04-08:00",
+      "embedUrl": "https://www.youtube.com/embed/QEU7C_iIAt8",
+      "duration": "PT1M13S"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.doctordecolumna.com/#video-dfkndJbXgns",
+      "name": "Testimonio: gracias a la endoscopia de hernia lumbar, recuperé mi vida",
+      "description": "Después de su endoscopia de hernia lumbar, nos cuenta el cambio en su día a día.",
+      "thumbnailUrl": "https://www.doctordecolumna.com/Assets/Images/reviews-b/dfkndJbXgns.webp",
+      "uploadDate": "2025-02-13T09:20:20-08:00",
+      "embedUrl": "https://www.youtube.com/embed/dfkndJbXgns",
+      "duration": "PT2M1S"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.doctordecolumna.com/#video-O30d29IbL_4",
+      "name": "Testimonio: así recuperó su vida después de una cirugía endoscópica de columna",
+      "description": "Menos dolor y más movimiento después de su cirugía endoscópica de columna.",
+      "thumbnailUrl": "https://www.doctordecolumna.com/Assets/Images/reviews-b/O30d29IbL_4.webp",
+      "uploadDate": "2026-11-14T17:32:05-08:00",
+      "embedUrl": "https://www.youtube.com/embed/O30d29IbL_4",
+      "duration": "PT2M3S"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.doctordecolumna.com/#video-LEKY0CluCrs",
+      "name": "24 horas después de una cirugía endoscópica de columna: así se recupera",
+      "description": "Así se ve la recuperación al día siguiente de una cirugía endoscópica de columna.",
+      "thumbnailUrl": "https://www.doctordecolumna.com/Assets/Images/reviews-b/LEKY0CluCrs.webp",
+      "uploadDate": "2026-11-14T17:29:14-08:00",
+      "embedUrl": "https://www.youtube.com/embed/LEKY0CluCrs",
+      "duration": "PT0M52S"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.doctordecolumna.com/#video-5TWC58C9YHg",
+      "name": "Cada paciente tiene una historia: testimonio de cirugía de columna en Tijuana",
+      "description": "Desde la valoración hasta la recuperación: así vivió su cirugía de columna.",
+      "thumbnailUrl": "https://www.doctordecolumna.com/Assets/Images/reviews-b/5TWC58C9YHg.webp",
+      "uploadDate": "2026-11-14T17:32:57-08:00",
+      "embedUrl": "https://www.youtube.com/embed/5TWC58C9YHg",
+      "duration": "PT0M58S"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.doctordecolumna.com/tijuana/#webpage",
+      "url": "https://www.doctordecolumna.com/tijuana/",
+      "name": "Especialista en columna en Tijuana",
+      "inLanguage": "es-MX",
+      "isPartOf": {
+        "@id": "https://www.doctordecolumna.com/#website"
+      },
+      "publisher": {
+        "@id": "https://www.doctordecolumna.com/#doctor"
+      },
+      "description": "Especialista en columna vertebral en Tijuana. Hernia de disco, ciática y estenosis espinal en New City Medical Plaza, a minutos de la garita de San Ysidro.",
+      "mainEntity": {
+        "@id": "https://www.doctordecolumna.com/tijuana/#office"
+      },
+      "about": [
+        {
+          "@id": "https://www.doctordecolumna.com/tijuana/#office"
+        }
+      ],
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.doctordecolumna.com/Assets/Images/hero-v2.webp"
+      },
+      "hasPart": [
+        {
+          "@id": "https://www.doctordecolumna.com/tijuana/#faq"
+        }
+      ],
+      "video": [
+        {
+          "@id": "https://www.doctordecolumna.com/#video-_00kxeBh96w"
+        },
+        {
+          "@id": "https://www.doctordecolumna.com/#video-QEU7C_iIAt8"
+        },
+        {
+          "@id": "https://www.doctordecolumna.com/#video-dfkndJbXgns"
+        },
+        {
+          "@id": "https://www.doctordecolumna.com/#video-O30d29IbL_4"
+        },
+        {
+          "@id": "https://www.doctordecolumna.com/#video-LEKY0CluCrs"
+        },
+        {
+          "@id": "https://www.doctordecolumna.com/#video-5TWC58C9YHg"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <meta property="og:image" content="https://www.doctordecolumna.com/Assets/Images/og-dr-francisco-cisneros.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1470" />
+  <meta property="og:image:alt" content="Dr. Francisco Cisneros Oliva, traumatólogo y cirujano de columna" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.doctordecolumna.com/Assets/Images/og-dr-francisco-cisneros.jpg" />
+</head>
+<body class="city-home-b">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPMCVHDW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Source of truth: navbar is intentionally inlined for faster above-the-fold render. -->
+  <header class="site-header">
+  <nav class="navbar" id="navbar" aria-label="Navegación principal">
+    <div class="navbar-inner">
+
+      <a href="/" class="logo logo--b" aria-label="Dr. Francisco Cisneros - Inicio">
+        <img src="/Assets/new%20logo/logo-columna-endoscopio-tilt-glass.svg?v=2" alt="" class="logo-mark" width="1241" height="801">
+        <span class="logo-wordmark" aria-hidden="true"><span class="logo-wordmark-top">Dr. Francisco</span><span class="logo-wordmark-name">Cisneros</span></span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/" class="active" aria-current="page">Inicio</a></li>
+
+        <!-- Ubicaciones dropdown -->
+        <li class="nav-item-drop" id="nav-drop-loc">
+          <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="nav-drop-loc-panel">
+            Ubicaciones
+            <svg class="nav-drop-chevron" width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="2 3.5 5.5 7.5 9 3.5"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown nav-dropdown--cities" id="nav-drop-loc-panel" role="region" aria-label="Ubicaciones">
+            <div class="nav-dropdown-inner">
+              <div class="nav-dropdown-col">
+                <p class="nav-dropdown-group">Selecciona tu Ciudad</p>
+                <a href="/guadalajara/" class="nav-dropdown-item nav-dropdown-item--city">
+                  <span class="nav-dropdown-item-title">Guadalajara</span>
+                  <span class="nav-dropdown-item-desc">Hospitales y consulta presencial</span>
+                </a>
+                <a href="/tijuana/" class="nav-dropdown-item nav-dropdown-item--city">
+                  <span class="nav-dropdown-item-title">Tijuana</span>
+                  <span class="nav-dropdown-item-desc">Atención especializada en Baja California</span>
+                </a>
+                <a href="/rosarito/" class="nav-dropdown-item nav-dropdown-item--city">
+                  <span class="nav-dropdown-item-title">Rosarito</span>
+                  <span class="nav-dropdown-item-desc">Agenda rápida y seguimiento cercano</span>
+                </a>
+              </div>
+            </div>
+            <a href="#otras-ubicaciones" class="nav-dropdown-footer">
+              Ver todas las ubicaciones
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5 2.5 10.5 6.5 6.5 10.5"/></svg>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="#doctor">El Doctor</a></li>
+        <li><a href="#resenas">Pacientes</a></li>
+        <li><a href="#ubicaciones">Contacto</a></li>
+      </ul>
+
+      <a href="https://wa.me/526641596633?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
+         class="navbar-cta"
+         target="_blank" rel="noopener"
+         aria-label="Agendar consulta por WhatsApp">
+        Agendar Cita
+        <span class="navbar-cta-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+          </svg>
+        </span>
+      </a>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-expanded="false" aria-label="Abrir menú" aria-controls="mobile-menu">
+        <span class="nav-hamburger-bar"></span>
+        <span class="nav-hamburger-bar"></span>
+        <span class="nav-hamburger-bar"></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Navegación móvil">
+      <a href="/" class="mobile-menu-link active">Inicio</a>
+
+      <!-- Ubicaciones accordion -->
+      <div class="mobile-nav-group">
+        <button class="mobile-nav-group-btn" aria-expanded="false" aria-controls="mob-loc-sub">
+          Ubicaciones
+          <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="4 6 8 10 12 6"/>
+          </svg>
+        </button>
+        <div class="mobile-nav-sub" id="mob-loc-sub">
+          <a href="/guadalajara/" class="mobile-menu-link mobile-menu-link--sub">Guadalajara</a>
+          <a href="/tijuana/" class="mobile-menu-link mobile-menu-link--sub">Tijuana</a>
+          <a href="/rosarito/" class="mobile-menu-link mobile-menu-link--sub">Rosarito</a>
+          <a href="#otras-ubicaciones" class="mobile-menu-link mobile-menu-link--sub mobile-menu-link--all">Ver todas las ubicaciones →</a>
+        </div>
+      </div>
+
+      <a href="#doctor" class="mobile-menu-link">El Doctor</a>
+      <a href="#resenas" class="mobile-menu-link">Pacientes</a>
+      <a href="#ubicaciones" class="mobile-menu-link">Contacto</a>
+    </nav>
+    <a href="https://wa.me/526641596633?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
+       class="mobile-menu-cta" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar Cita por WhatsApp
+    </a>
+  </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Source of truth: hero is intentionally inlined for faster above-the-fold render. -->
+    <section class="hero" aria-labelledby="hero-h1" id="hero">
+
+      <div class="hero-inner">
+
+        <div class="hero-content">
+
+          <div class="hero-badge hero-enter">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            Dr. Francisco Cisneros Oliva
+          </div>
+
+          <h1 class="hero-headline hero-enter hero-enter-1" id="hero-h1">
+            <span class="line-accent">Especialista&nbsp;</span>en columna<br>
+            <span class="hero-headline-sub">en Tijuana</span>
+          </h1>
+
+          <p class="hero-subtext hero-enter hero-enter-2">
+            <strong>Cuidado de columna vertebral</strong> para recuperar tu movilidad
+            sin dolor. Diagnóstico preciso y tratamiento de
+            <strong>hernia de disco, ciática y estenosis espinal</strong> con técnicas mínimamente invasivas.
+          </p>
+
+          <div class="hero-cta-group hero-cta-group--desktop hero-enter hero-enter-3">
+            <a href="https://wa.me/526641596633?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
+               class="btn-primary"
+               target="_blank" rel="noopener"
+               aria-label="Agendar consulta por WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Agendar Consulta
+            </a>
+
+            <a href="tel:+526641596633" class="btn-arrow-circle" aria-label="Llamar ahora">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero-urgency hero-enter hero-enter-4">
+            <span class="urgency-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+              Urgencias
+            </span>
+            <a href="tel:+526641596633" aria-label="Llamar a urgencias ortopédicas">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              Urgencias de Columna
+            </a>
+          </div>
+
+        </div>
+
+        <div class="hero-visual" aria-label="Visual del médico traumatólogo">
+
+          <div class="hero-photo-frame hero-enter hero-enter-3">
+            <div class="hero-photo-capsule">
+              <picture>
+                <source type="image/webp" srcset="/Assets/Images/hero.webp" />
+                <img src="/Assets/Images/hero.jpg"
+                     alt="Dr. Francisco Cisneros Oliva, traumatólogo y especialista en columna en Tijuana"
+                     width="460" height="620"
+                     loading="eager"
+                     fetchpriority="high"
+                     decoding="async" />
+              </picture>
+            </div>
+          </div>
+
+          <div class="hb-side-panel hero-enter hero-enter-3" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="/Assets/Images/hero-endoscopy-white-b.webp" />
+              <img src="/Assets/Images/hero-endoscopy-white-b.jpg" alt="" width="1130" height="1392" loading="eager" decoding="async" />
+            </picture>
+          </div>
+
+          <div class="hb-cluster hb-cluster--top hero-enter hero-enter-3">
+            <a href="https://www.doctoralia.com.mx/francisco-javier-cisneros-oliva/ortopedista-traumatologo/tijuana"
+               id="hero-cert-fallback"
+               class="hb-badge hb-badge--tall"
+               target="_blank" rel="nofollow noopener"
+               aria-label="Doctoralia: 100% de pacientes satisfechos, 5 de 5 estrellas. Ver opiniones verificadas">
+              <span class="hb-tall-pct">100%</span>
+              <span class="hb-tall-label">Satisfechos</span>
+              <span class="hb-tall-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <picture>
+                <source type="image/webp" srcset="/Assets/Logo_secundario_doctoralia.webp" />
+                <img src="/Assets/Logo_secundario_doctoralia.png" alt="" class="hb-tall-logo" width="88" height="16" loading="eager">
+              </picture>
+            </a>
+            <div class="hb-stack" aria-hidden="true">
+              <div class="hb-badge">
+                <span class="hb-badge-icon"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm-34.32,69.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></svg></span>
+                <span class="hb-badge-text"><strong class="hb-badge-num">CMOT</strong><span class="hb-badge-label">Certificado vigente</span></span>
+              </div>
+              <div class="hb-badge">
+                <span class="hb-badge-icon"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.87,83.16A104.1,104.1,0,1,1,195.67,49l22.67-22.68a8,8,0,0,1,11.32,11.32L167.6,99.71h0l-37.71,37.71-23.95,23.95a40,40,0,0,0,62-35.67,8,8,0,1,1,16-.9,56,56,0,0,1-95.5,42.79h0a56,56,0,0,1,73.13-84.43L184.3,60.39a87.88,87.88,0,1,0,23.13,29.67,8,8,0,0,1,14.44-6.9Z"/></svg></span>
+                <span class="hb-badge-text"><strong class="hb-badge-num">Mínima</strong><span class="hb-badge-label">Invasión</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hb-cluster hb-cluster--bottom hero-enter hero-enter-4" aria-hidden="true">
+              <div class="hb-badge">
+                <span class="hb-badge-icon"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M176,207.24a119,119,0,0,0,16-7.73V240a8,8,0,0,1-16,0Zm11.76-88.43-56-29.87a8,8,0,0,0-7.52,14.12L171,128l17-9.06Zm64-29.87-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V130.67L171,128l-43,22.93L43.83,106l0,0L25,96,128,41.07,231,96l-18.78,10-.06,0L188,118.94a8,8,0,0,1,4,6.93v73.64a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12Z"/></svg></span>
+                <span class="hb-badge-text"><strong class="hb-badge-num">Alta</strong><span class="hb-badge-label">Especialidad en columna</span></span>
+              </div>
+              <div class="hb-badge">
+                <span class="hb-badge-icon"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1-5.66-13.66L180.65,72a79.48,79.48,0,0,0-54.72-22.09h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27,96,96,0,0,1,192,60.7l18.36-18.36A8,8,0,0,1,224,48ZM186.41,183.29A80,80,0,0,1,75.35,184l18.31-18.31A8,8,0,0,0,88,152H40a8,8,0,0,0-8,8v48a8,8,0,0,0,13.66,5.66L64,195.3a95.42,95.42,0,0,0,66,26.76h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></svg></span>
+                <span class="hb-badge-text"><strong class="hb-badge-num">Práctica</strong><span class="hb-badge-label">Actualizada</span></span>
+              </div>
+          </div>
+
+          <div class="hero-cta-group hero-cta-group--mobile hero-enter hero-enter-3" aria-label="Acciones rápidas">
+            <a href="https://wa.me/526641596633?text=Hola%2C%20quisiera%20agendar%20una%20consulta"
+               class="btn-primary"
+               target="_blank" rel="noopener"
+               aria-label="Agendar consulta por WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Agendar Consulta
+            </a>
+
+            <a href="tel:+526641596633" class="btn-arrow-circle" aria-label="Llamar ahora">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <div data-include="/partials/tijuana/section-conditions.html?v=20261116di"></div>
+    <div data-include="/partials/tijuana/section-clinic.html?v=20261116gi"></div>
+    <div data-include="/partials/compartidos/stats.html?v=20261116"></div>
+    <div data-include="/partials/tijuana/section-spine-care.html?v=20261116yi"></div>
+    <div data-include="/partials/tijuana/section-doctor.html?v=20261116bi"></div>
+    <div data-include="/partials/tijuana/section-reviews.html?v=all117"></div>
+    <div data-include="/partials/tijuana/section-conditions-hub.html?v=20261116d"></div>
+    <div data-include="/partials/tijuana/section-procedures.html?v=20261116dxi"></div>
+    <div data-include="/partials/tijuana/section-blog.html?v=20261116bij"></div>
+    <div data-include="/partials/tijuana/section-contact.html?v=20261116b"></div>
+    <div data-include="/partials/tijuana/section-faq.html?v=20261116b"></div>
+  </main>
+
+  <div data-include="/partials/tijuana/footer.html?v=20261117sitemap"></div>
+
+  <script defer src="/Assets/js/loader.js?v=20260516"></script>
+  <script defer src="/Assets/js/main.js?v=20261117launch"></script>
+  <script defer src="/Assets/js/reviews-b.js?v=20261117"></script>
+  <script defer src="/Assets/js/conditions-hub-b.js?v=20261116b"></script>
+  <script defer src="/Assets/js/procedures-flip-b.js?v=20261116b"></script>
+  <script defer src="/Assets/js/contact-b.js?v=20261116"></script>
+  <script defer src="/Assets/js/reveal-b.js?v=3"></script>
+  <script defer src="/Assets/js/lazy-video-b.js?v=20261116b"></script>
+  <script defer src="/Assets/js/cx3d-b.js?v=20261116a"></script>
+
+</body>
+</html>
+

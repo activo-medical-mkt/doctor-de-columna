@@ -1,0 +1,121 @@
+/* City chooser for the brand homepage (index-b).
+ * Condition and procedure links keep a real href (the Tijuana page) so crawlers and no-JS users
+ * still follow them. Links that also carry data-gdl-href open a small popup with both cities instead.
+ * Desktop: popover next to the link. Phones (<= 600px): bottom sheet.
+ * Only opacity/transform animate. Esc, outside click or scroll close it; focus returns to the link.
+ */
+(() => {
+  let pop, backdrop, title, tjLink, gdlLink, lastTrigger;
+
+  const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>';
+
+  function build() {
+    backdrop = document.createElement('div');
+    backdrop.className = 'city-pick-backdrop';
+    backdrop.hidden = true;
+
+    pop = document.createElement('div');
+    pop.className = 'city-pick';
+    pop.setAttribute('role', 'dialog');
+    pop.setAttribute('aria-labelledby', 'city-pick-title');
+    pop.tabIndex = -1;
+    pop.hidden = true;
+    pop.innerHTML = `
+      <div class="city-pick-head">
+        <div><span class="city-pick-eyebrow">Elige tu ciudad</span><p class="city-pick-title" id="city-pick-title"></p></div>
+        <button type="button" class="city-pick-close" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="city-pick-options">
+        <a class="city-pick-option" data-city="tj"><span class="city-pick-dot" aria-hidden="true"></span><span class="city-pick-text"><strong>Tijuana</strong><small>New City Medical Plaza</small></span><span class="city-pick-arrow">${ARROW}</span></a>
+        <a class="city-pick-option" data-city="gdl"><span class="city-pick-dot" aria-hidden="true"></span><span class="city-pick-text"><strong>Guadalajara</strong><small>Hospital Ángeles Andares</small></span><span class="city-pick-arrow">${ARROW}</span></a>
+      </div>`;
+    title = pop.querySelector('.city-pick-title');
+    tjLink = pop.querySelector('[data-city="tj"]');
+    gdlLink = pop.querySelector('[data-city="gdl"]');
+    pop.querySelector('.city-pick-close').addEventListener('click', () => close(true));
+    backdrop.addEventListener('click', () => close(true));
+    document.body.append(backdrop, pop);
+  }
+
+  const isSheet = () => window.matchMedia('(max-width: 600px)').matches;
+
+  function topicOf(link) {
+    const named = link.querySelector('.condition-card-title') || link.querySelector('span:not([aria-hidden="true"])');
+    return (named ? named.textContent : link.textContent).replace(/\s+/g, ' ').trim();
+  }
+
+  function open(link, fromKeyboard) {
+    if (!pop) build();
+    lastTrigger = link;
+    openedAt = window.scrollY;
+    title.textContent = topicOf(link);
+    tjLink.href = link.getAttribute('href');
+    gdlLink.href = link.dataset.gdlHref;
+
+    const sheet = isSheet();
+    pop.classList.toggle('city-pick--sheet', sheet);
+    pop.hidden = false;
+    backdrop.hidden = !sheet;
+
+    if (!sheet) {
+      // Place under the link (or above it when there is no room), kept inside the viewport.
+      const r = link.getBoundingClientRect();
+      const w = pop.offsetWidth, h = pop.offsetHeight, m = 12;
+      let left = Math.min(Math.max(m, r.left + r.width / 2 - w / 2), window.innerWidth - w - m);
+      let top = r.bottom + 10;
+      if (top + h > window.innerHeight - m) top = Math.max(m, r.top - h - 10);
+      pop.style.left = left + 'px';
+      pop.style.top = top + 'px';
+    } else {
+      pop.style.left = pop.style.top = '';
+    }
+    requestAnimationFrame(() => { pop.classList.add('is-open'); backdrop.classList.add('is-open'); });
+    // Keyboard users land on the first option; mouse/touch users get focus on the panel itself,
+    // so neither city looks pre-selected.
+    (fromKeyboard ? tjLink : pop).focus({ preventScroll: true });
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('pointerdown', onOutside, true);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+  }
+
+  function close(restoreFocus) {
+    if (!pop || pop.hidden) return;
+    pop.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    pop.hidden = true;
+    backdrop.hidden = true;
+    document.removeEventListener('keydown', onKey);
+    document.removeEventListener('pointerdown', onOutside, true);
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onScroll);
+    if (restoreFocus && lastTrigger) lastTrigger.focus({ preventScroll: true });
+  }
+
+  function onKey(e) {
+    if (e.key === 'Escape') { e.preventDefault(); close(true); return; }
+    if (e.key === 'Tab') { // keep focus inside the popup
+      const items = [...pop.querySelectorAll('a, button')];
+      const i = items.indexOf(document.activeElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); items[items.length - 1].focus(); }
+      else if (!e.shiftKey && i === items.length - 1) { e.preventDefault(); items[0].focus(); }
+    }
+  }
+  function onOutside(e) { if (!pop.contains(e.target) && !backdrop.contains(e.target) && !e.target.closest('[data-gdl-href]')) close(false); }
+  // Ignore tiny scrolls (trackpad momentum right after the click); close once the page really moves.
+  let openedAt = 0;
+  function onScroll(e) {
+    if (isSheet()) return;
+    if (e.type === 'resize' || Math.abs(window.scrollY - openedAt) > 40) close(false);
+  }
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[data-gdl-href]');
+    if (!link) return;
+    // Let ctrl/cmd/shift/middle clicks open the Tijuana page normally.
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    if (pop && !pop.hidden && lastTrigger === link) { close(true); return; }
+    open(link, e.detail === 0); // detail 0 = activated with Enter, not a pointer click
+  });
+})();

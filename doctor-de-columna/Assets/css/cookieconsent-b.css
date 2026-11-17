@@ -1,0 +1,165 @@
+/* CookieConsent v3 theme — adapted from the Romario implementation to the Doctor de Columna palette */
+#cc-main {
+  --cc-font-family: 'Work Sans', 'WorkSans-fallback', system-ui, sans-serif;
+  --cc-bg: #0d2a45;
+  --cc-primary-color: #f4f7ff;
+  --cc-secondary-color: #adcde2;
+  --cc-btn-primary-bg: #63ff84;
+  --cc-btn-primary-color: #0d2a45;
+  --cc-btn-primary-border-color: #63ff84;
+  --cc-btn-primary-hover-bg: #4ddbac;
+  --cc-btn-primary-hover-color: #0d2a45;
+  --cc-btn-primary-hover-border-color: #4ddbac;
+  --cc-btn-secondary-bg: #183f66;
+  --cc-btn-secondary-color: #edf6ff;
+  --cc-btn-secondary-border-color: #36546c;
+  --cc-btn-secondary-hover-bg: #2c4a62;
+  --cc-btn-secondary-hover-color: #ffffff;
+  --cc-btn-secondary-hover-border-color: #7a9ab8;
+  --cc-separator-border-color: #183f66;
+  --cc-toggle-on-bg: #357eb3;
+  --cc-toggle-off-bg: #36546c;
+  --cc-toggle-on-knob-bg: #ffffff;
+  --cc-toggle-off-knob-bg: #adcde2;
+  --cc-toggle-enabled-icon-color: #ffffff;
+  --cc-toggle-disabled-icon-color: #0d2a45;
+  --cc-toggle-readonly-bg: #183f66;
+  --cc-toggle-readonly-knob-bg: #7a9ab8;
+  --cc-toggle-readonly-knob-icon-color: #183f66;
+  --cc-cookie-category-block-bg: #113454;
+  --cc-cookie-category-block-border: #1f4a72;
+  --cc-section-category-border: #1f4a72;
+  --cc-modal-border-radius: 16px;
+  --cc-btn-border-radius: 10px;
+  --cc-overlay-bg: rgba(6, 24, 42, 0.8);
+  --cc-webkit-scrollbar-bg: #0d2a45;
+}
+
+#cc-main .cm,
+#cc-main .pm {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+}
+
+html.show--consent #cc-main .cm { z-index: 2147483641 !important; }
+html.show--preferences #cc-main .cm { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+
+#cc-main .cm--box { background: #0b2440 !important; }
+#cc-main .cm--box .cm__texts { padding: 0 !important; }
+#cc-main .cm--box .cm__title { font-family: var(--font-heading) !important; font-size: 1.2rem !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 0.45rem !important; letter-spacing: -0.01em !important; padding: 0 !important; }
+#cc-main .cm--box .cm__desc { font-size: 0.92rem !important; line-height: 1.6 !important; color: #adcde2 !important; padding: 0 !important; margin: 0 !important; }
+#cc-main .cc-privacy-link { color: #63ff84 !important; text-decoration: underline; text-underline-offset: 3px; }
+
+#cc-main .cm--box .cm__btns { display: flex !important; flex-direction: column !important; gap: 0.65rem !important; padding: 0 !important; border: none !important; }
+#cc-main .cm--box .cm__btn-group { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem !important; width: 100% !important; align-items: stretch !important; }
+#cc-main .cm--box .cm__btn-group [data-role="show"] { grid-column: 1 / -1; }
+
+#cc-main .cm [data-role="all"],
+#cc-main .cm [data-role="necessary"] {
+  font-size: 0.95rem !important; font-weight: 700 !important; padding: 0 1.5rem !important;
+  height: 56px !important; min-height: 56px !important; border-radius: 999px !important; cursor: pointer !important;
+  transition: all 0.2s ease !important; text-align: center !important; width: 100% !important; margin: 0 !important;
+  box-sizing: border-box !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; line-height: 1 !important;
+}
+#cc-main .cm [data-role="all"] { background: #63ff84 !important; color: #0b2440 !important; border: 1px solid #63ff84 !important; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22) !important; }
+#cc-main .cm [data-role="all"]:hover { background: #4ddbac !important; border-color: #4ddbac !important; box-shadow: 0 6px 20px rgba(99, 255, 132, 0.4) !important; transform: translateY(-1px) !important; }
+#cc-main .cm [data-role="necessary"] { background: #ffffff !important; color: #0b2440 !important; border: 1px solid #ffffff !important; }
+#cc-main .cm [data-role="necessary"]:hover { background: #edf6ff !important; transform: translateY(-1px) !important; }
+
+#cc-main .cm--box .cm__btn-group [data-role="show"] {
+  background: transparent !important; color: #edf6ff !important; border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  border-radius: 999px !important; font-size: 0.95rem !important; font-weight: 600 !important; text-decoration: none !important;
+  height: 48px !important; min-height: 48px !important; padding: 0 1.4rem !important; margin: 0 !important;
+  display: inline-flex !important; align-items: center !important; justify-content: center !important; line-height: 1 !important; box-shadow: none !important;
+}
+#cc-main .cm--box .cm__btn-group [data-role="show"]:hover { border-color: rgba(255, 255, 255, 0.6) !important; background: rgba(255, 255, 255, 0.06) !important; }
+
+#cc-main .cc-close-x {
+  position: absolute !important; top: 10px !important; right: 10px !important; width: 34px !important; height: 34px !important;
+  padding: 0 !important; margin: 0 !important; border: 0 !important; border-radius: 50% !important; background: transparent !important;
+  color: #adcde2 !important; display: flex !important; align-items: center !important; justify-content: center !important; cursor: pointer !important;
+}
+#cc-main .cc-close-x:hover { color: #ffffff !important; background: rgba(255, 255, 255, 0.08) !important; }
+#cc-main .cc-close-x:focus-visible { outline: 2px solid #63ff84 !important; outline-offset: 2px !important; }
+
+/* Desktop: one row, text left and buttons right */
+@media screen and (min-width: 821px) {
+  #cc-main .cm--box {
+    position: fixed !important; width: min(880px, calc(100vw - 32px)) !important; max-width: none !important;
+    top: auto !important; bottom: 20px !important; left: 50% !important; right: auto !important; transform: translateX(-50%) !important;
+    border-radius: 16px !important; padding: 1.1rem 3.25rem 1.1rem 1.5rem !important;
+  }
+  #cc-main .cm--box .cm__body { width: 100% !important; max-width: none !important; display: flex !important; flex-direction: row !important; align-items: center !important; gap: 1.75rem !important; }
+  #cc-main .cm--box .cm__texts { flex: 1 1 auto !important; }
+  #cc-main .cm--box .cm__title { font-size: 1.05rem !important; margin: 0 0 0.3rem !important; }
+  #cc-main .cm--box .cm__desc { font-size: 0.88rem !important; line-height: 1.55 !important; }
+  #cc-main .cm--box .cm__btns { flex: 0 0 auto !important; width: auto !important; }
+  #cc-main .cm--box .cm__btn-group { display: flex !important; flex-direction: row !important; width: auto !important; gap: 0.6rem !important; }
+  #cc-main .cm--box .cm__btn-group [data-role="all"] { width: auto !important; height: 48px !important; min-height: 48px !important; white-space: nowrap !important; }
+}
+
+/* Tablet / small laptop: clear the WhatsApp button */
+@media screen and (min-width: 821px) and (max-width: 1099px) {
+  #cc-main .cm--box { bottom: calc(112px + env(safe-area-inset-bottom)) !important; }
+}
+
+/* Mobile: card above the WhatsApp button, stacked buttons */
+@media screen and (max-width: 820px) {
+  #cc-main .cm--box {
+    top: auto !important; bottom: calc(104px + env(safe-area-inset-bottom)) !important; left: 12px !important; right: 12px !important;
+    margin: 0 auto !important; width: auto !important; max-width: calc(100% - 24px) !important; transform: none !important;
+    border-radius: 16px !important; padding: 1.4rem 3rem 1.4rem 1.4rem !important;
+  }
+  #cc-main .cm--box .cm__body { display: flex !important; flex-direction: column !important; align-items: stretch !important; gap: 1rem !important; }
+  #cc-main .cm--box .cm__btn-group { grid-template-columns: 1fr; }
+  #cc-main .cm--box .cm__btns { max-width: 100% !important; width: 100% !important; }
+  #cc-main .cm--box .cm__btn-group [data-role="all"],
+  #cc-main .cm--box .cm__btn-group [data-role="show"] { height: 50px !important; min-height: 50px !important; font-size: 1rem !important; }
+  #cc-main .cc-close-x { width: 40px !important; height: 40px !important; top: 8px !important; right: 8px !important; }
+}
+
+#cc-main .cm__title,
+#cc-main .pm__title { font-family: var(--font-heading); color: #ffffff !important; font-weight: 700; }
+#cc-main .cm__desc,
+#cc-main .pm__desc,
+#cc-main .pm__section-desc { color: #cfe0ee !important; font-size: 0.9rem; line-height: 1.5; }
+#cc-main .pm__section-title { color: #ffffff !important; font-weight: 600; }
+#cc-main .pm__badge { background: #183f66 !important; color: #63ff84 !important; border: 1px solid rgba(99, 255, 132, 0.3) !important; }
+#cc-main .pm__close-btn { border-color: rgba(255, 255, 255, 0.2) !important; }
+#cc-main .pm__close-btn svg,
+#cc-main .pm__section-arrow svg { stroke: #ffffff !important; stroke-width: 2.5px; }
+
+/* Floating cookie button (bottom-left; WhatsApp sits bottom-right) */
+#cc-floating-btn {
+  position: fixed; bottom: 24px; left: 24px; width: 48px; height: 48px; border-radius: 50%;
+  background: #0d2a45; color: #63ff84; border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 9998;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background-color 0.25s ease, opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0; visibility: hidden; transform: scale(0.8);
+}
+#cc-floating-btn.is-visible { opacity: 1; visibility: visible; transform: scale(1); }
+#cc-floating-btn:hover { color: #ffffff; background: #183f66; box-shadow: 0 10px 28px rgba(53, 126, 179, 0.45); transform: scale(1.1); }
+#cc-floating-btn:active { transform: scale(0.95); }
+html.show--consent #cc-floating-btn,
+html.show--preferences #cc-floating-btn { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+@media screen and (max-width: 640px) {
+  #cc-floating-btn { bottom: 20px; left: 16px; width: 44px; height: 44px; }
+}
+
+/* Footer trigger styled like the neighbouring footer links */
+.footer-b-cookie-btn { background: none; border: 0; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; }
+.footer-b-cookie-btn:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Mobile preferences: compact card instead of fullscreen */
+@media screen and (max-width: 640px) {
+  #cc-main .pm {
+    top: auto !important; bottom: 12px !important; left: 12px !important; right: 12px !important; margin: 0 auto !important;
+    width: auto !important; max-width: calc(100% - 24px) !important; height: auto !important; max-height: calc(100dvh - 24px) !important;
+    border-radius: 20px !important;
+  }
+  #cc-main.show--preferences .pm { transform: translateY(0) !important; }
+  #cc-main .pm__body { flex: initial !important; max-height: 52dvh !important; overflow-y: auto !important; -webkit-overflow-scrolling: touch; padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+  #cc-main .pm__footer { padding-top: 0.75rem !important; }
+}
