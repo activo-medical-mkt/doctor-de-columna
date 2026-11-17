@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# HTML fragments loaded at runtime, not standalone pages
-Disallow: /partials/
+# /partials/ stays crawlable so Google can render the doctor, reviews and contact sections
+# of each page; the fragments themselves send X-Robots-Tag: noindex (see _headers).
 
 Sitemap: https://www.doctordecolumna.com/sitemap.xml
