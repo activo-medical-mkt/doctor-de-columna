@@ -225,9 +225,9 @@
         try { window.turnstile.reset(turnstileWidgetId); } catch (e) { /* renders again on next open */ }
       }
     }
-    // Warm it up after the page loads, so it is usually solved before the form is opened.
-    if (document.readyState === 'complete') setTimeout(loadTurnstile, 1500);
-    else window.addEventListener('load', function () { setTimeout(loadTurnstile, 1500); });
+    // Loaded when the widget opens (fab click below; openWidget() goes through it too), not with the page:
+    // it is a third-party script with a long first task, and most visitors never open the form.
+    // It is usually solved while the visitor types; submit also loads it if it is still missing.
 
     if (pickCity) {
       form.querySelectorAll('input[name="lw-city"]').forEach(function (radio) {
@@ -403,6 +403,7 @@
     }
 
     fab.addEventListener('click', function () {
+      loadTurnstile();
       if (!openingFromPage && !panel.classList.contains('wa-panel--open')) {
         trackOpen({ widget_source: 'floating_button', cta_text: '', cta_location: 'floating' });
       }

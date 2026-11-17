@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="es"><head>
+<meta charset="UTF-8" />
 <!-- Google Consent Mode v2 (analytics + ad measurement granted by default, ad personalization denied; GPC turns ads off). Must run before GTM. -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -17,14 +18,18 @@
   (function(){try{var m=document.cookie.match(/(?:^|; )cc_cookie=([^;]*)/);if(!m)return;var c=JSON.parse(decodeURIComponent(m[1]));var cat=c.categories||[];var ad=cat.indexOf('ads')>-1&&!navigator.globalPrivacyControl;gtag('consent','update',{analytics_storage:cat.indexOf('analytics')>-1?'granted':'denied',ad_storage:ad?'granted':'denied',ad_user_data:ad?'granted':'denied',ad_personalization:'denied'});}catch(e){}})();
   gtag('set', 'url_passthrough', true);
 </script>
-<!-- Google Tag Manager -->
-<script>if (/(^|\.)doctordecolumna\.com$/.test(location.hostname)) (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MPMCVHDW');</script>
-<!-- End Google Tag Manager -->
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google Tag Manager (deferred: loads right after the page finishes loading, when the browser is idle (1.5 s max), or on the first touch/scroll/key if that comes first.
+     Events pushed to dataLayer before that wait in the queue and are sent when GTM arrives; consent defaults above still run first.) -->
+<script>if (/(^|\.)doctordecolumna\.com$/.test(location.hostname)) (function(w,d,l,i){w[l]=w[l]||[];
+var ev=['pointerdown','keydown','touchstart','scroll'],o={passive:true};
+function go(){if(w.__gtmLoad)return;w.__gtmLoad=1;ev.forEach(function(e){w.removeEventListener(e,go,o)});
+w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var j=d.createElement('script');j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id='+i;d.head.appendChild(j);}
+ev.forEach(function(e){w.addEventListener(e,go,o)});
+function idle(){(w.requestIdleCallback||function(f){setTimeout(f,1)})(go,{timeout:1500})}
+if(d.readyState==='complete')idle();else w.addEventListener('load',idle);
+})(window,document,'dataLayer','GTM-MPMCVHDW');</script>
+<!-- End Google Tag Manager --><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Fractura de Columna en Guadalajara | Dr. Francisco Cisneros</title>
 <meta content="Fractura de columna en Guadalajara: síntomas, diagnóstico y opciones de tratamiento. Valoración con el Dr. Francisco Cisneros y orientación sobre cuándo acudir a urgencias." name="description"/>
 <meta content="index, follow" name="robots"/><meta content="#004B87" name="theme-color"/>
@@ -41,10 +46,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="/Assets/css/pages/home.css?v=20261117z" rel="stylesheet"/>
 <link href="/Assets/css/pages/home-b.css?v=20261117z" rel="stylesheet"/>
 <link href="/Assets/css/animations.css?v=20261117" rel="stylesheet"/>
-<link href="/Assets/css/pages/ciatica-b.css?v=20261117z" rel="stylesheet"/><link href="/Assets/css/pages/fracture-b.css?v=20261117a" rel="stylesheet"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css" />
-<link rel="stylesheet" href="/Assets/css/cookieconsent-b.css?v=20261117c" />
-<script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js"></script>
-<script defer src="/cookieconsent-config.js?v=4"></script>
+<link href="/Assets/css/pages/ciatica-b.css?v=20261117z" rel="stylesheet"/><link href="/Assets/css/pages/fracture-b.css?v=20261117b" rel="stylesheet"/><link rel="stylesheet" href="/Assets/vendor/cookieconsent-3.0.1/cookieconsent.css" media="print" onload="this.media='all'" data-cc-css />
+<link rel="stylesheet" href="/Assets/css/cookieconsent-b.css?v=20261117d" media="print" onload="this.media='all'" data-cc-css />
+<script defer src="/Assets/vendor/cookieconsent-3.0.1/cookieconsent.umd.js"></script>
+<script defer src="/cookieconsent-config.js?v=5"></script>
 <script type="application/ld+json" id="site-structured-data">
 {
   "@context": "https://schema.org",
@@ -1522,7 +1527,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <script defer="" src="/Assets/js/loader.js?v=20261117"></script>
 <script defer="" src="/Assets/js/main.js?v=20261117z"></script>
-  <script defer src="/Assets/js/lead-widget-b.js?v=20261117e"></script>
+  <script defer src="/Assets/js/lead-widget-b.js?v=20261117f"></script>
 <script defer="" src="/Assets/js/reviews-b.js?v=20261117"></script>
 <script defer="" src="/Assets/js/contact-b.js?v=20261116"></script>
 <script defer="" src="/Assets/js/care-disclosures-b.js?v=20261116a"></script><script defer="" src="/Assets/js/reveal-b.js?v=3"></script></body></html>

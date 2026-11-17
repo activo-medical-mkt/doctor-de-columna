@@ -1,5 +1,5 @@
 /* Surgery B: reference-inspired unfolding photographs, existing option B palette. */
-.surgery-hub-b{--sh-ink:#004b87;--sh-muted:#587b98;--sh-green:#56fc80}
+.surgery-hub-b{--sh-ink:#004b87;--sh-muted:#4d6d89;--sh-green:#56fc80}
 .sh-hero{position:relative;isolation:isolate;padding:134px 0 58px;overflow:clip;background:radial-gradient(ellipse 42% 54% at 7% 32%,#a9cfe4 0,transparent 100%),radial-gradient(ellipse 35% 45% at 93% 65%,#b7d8e9 0,transparent 100%),radial-gradient(ellipse 42% 35% at 55% 0%,#c7e0ec 0,transparent 100%),linear-gradient(130deg,#e0edf5,#f0f6fb 65%,#d3e8f3)}
 .sh-hero:before,.sh-hero:after{content:"";position:absolute;z-index:-1;width:105px;top:280px;bottom:0;background:linear-gradient(#ffffff25,#ffffff00);pointer-events:none}
 .sh-hero:before{left:4%}.sh-hero:after{right:4%;top:440px}

@@ -157,9 +157,25 @@
     });
   }
 
+  // The banner stylesheets load without blocking the first paint (media="print" swapped to "all" on load).
+  // Wait for them before showing the banner so it never appears unstyled; give up waiting after 3 s.
+  function whenBannerCssReady(cb) {
+    var pending = [].slice.call(document.querySelectorAll('link[data-cc-css]')).filter(function (l) { return l.media !== 'all'; });
+    var left = pending.length, done = false;
+    function finish() { if (!done) { done = true; cb(); } }
+    if (!left) return finish();
+    pending.forEach(function (l) {
+      function one() { if (--left <= 0) finish(); }
+      l.addEventListener('load', one, { once: true });
+      l.addEventListener('error', one, { once: true });
+    });
+    setTimeout(finish, 3000);
+  }
+  function start() { whenBannerCssReady(initCookieConsent); }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCookieConsent);
+    document.addEventListener('DOMContentLoaded', start);
   } else {
-    initCookieConsent();
+    start();
   }
 })();

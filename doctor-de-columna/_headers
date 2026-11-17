@@ -5,7 +5,7 @@
   Cross-Origin-Opener-Policy: same-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://cdn.jsdelivr.net https://platform.docplanner.com https://static.cloudflareinsights.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.mx https://i.ytimg.com https://*.docplanner.com https://*.doctoralia.com.mx; font-src 'self'; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://ad.doubleclick.net https://stats.g.doubleclick.net https://www.google.com https://www.googletagmanager.com https://cloudflareinsights.com https://*.docplanner.com https://formspree.io; frame-src https://www.google.com https://maps.google.com https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://*.doctoralia.com.mx https://*.docplanner.com https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://platform.docplanner.com https://static.cloudflareinsights.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.mx https://i.ytimg.com https://*.docplanner.com https://*.doctoralia.com.mx; font-src 'self'; media-src 'self'; connect-src 'self' https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://ad.doubleclick.net https://stats.g.doubleclick.net https://www.google.com https://www.googletagmanager.com https://cloudflareinsights.com https://*.docplanner.com https://formspree.io; frame-src https://www.google.com https://maps.google.com https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://*.doctoralia.com.mx https://*.docplanner.com https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'
 
 # Long-lived cache for versioned assets (cache-busting via ?v= query strings in HTML)
 /Assets/css/*
@@ -18,6 +18,10 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /cookieconsent-config.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Self-hosted libraries: the version is in the folder name
+/Assets/vendor/*
   Cache-Control: public, max-age=31536000, immutable
 
 /Assets/Images/*

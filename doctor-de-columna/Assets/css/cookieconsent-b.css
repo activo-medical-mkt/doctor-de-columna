@@ -1,7 +1,7 @@
 /* CookieConsent v3 theme: white glass panel with #004b87 text and buttons.
    The consent box sits at the bottom on every screen size, over the WhatsApp button while it is open. */
 #cc-main {
-  --cc-font-family: 'Work Sans', 'WorkSans-fallback', system-ui, sans-serif;
+  --cc-font-family: 'Inter', 'Inter-fallback', system-ui, sans-serif;
   --cc-bg: #ffffff;
   --cc-primary-color: #004b87;
   --cc-secondary-color: #4e7391;
