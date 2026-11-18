@@ -41,6 +41,42 @@
 .lw-input::placeholder { color: #94a3b8; }
 .lw-input:focus { outline: none; border-color: #004b87; box-shadow: 0 0 0 3px rgba(0, 75, 135, .18); }
 .lw-input.is-invalid { border-color: #dc2626; }
+/* Phone field with the country flag inside it (the wrapper draws the box, the input is borderless). */
+.lw-phone-wrap {
+  display: flex;
+  align-items: stretch;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.lw-phone-wrap:focus-within { border-color: #004b87; box-shadow: 0 0 0 3px rgba(0, 75, 135, .18); }
+.lw-phone-wrap.is-invalid { border-color: #dc2626; }
+.lw-phone-wrap .lw-input { border: 0; box-shadow: none; padding-left: 8px; min-width: 0; flex: 1; background: transparent; }
+.lw-cc {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 8px 0 11px;
+  border-right: 1px solid #e2e8f0;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #1a2a3a;
+  flex-shrink: 0;
+}
+.lw-cc-flag { width: 21px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(15, 23, 42, .12); display: block; }
+.lw-cc-chevron { color: #64748b; }
+.lw-cc-select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+  font-size: 16px; /* no iOS zoom when it opens */
+  border: 0;
+}
+.lw-cc:focus-within { background: rgba(0, 75, 135, .06); border-radius: 8px 0 0 8px; }
 .lw-cities { border: 0; margin: 0; padding: 0; min-width: 0; }
 .lw-city-row { display: flex; gap: 6px; margin-top: 3px; }
 .lw-city { flex: 1; position: relative; cursor: pointer; }
@@ -114,10 +150,12 @@
 .lw-turnstile { display: flex; justify-content: center; max-height: 0; overflow: hidden; margin: 0 0 -9px; }
 .lw-turnstile.is-visible { max-height: 90px; margin: 0; }
 
-/* Phone keyboard open (lead-widget-b.js sets these from visualViewport): sit just above the keyboard,
-   hide the round button, and fit the panel in the visible area. */
+/* Typing on a phone (lead-widget-b.js sets these from visualViewport): only the header and the form
+   stay, pinned just above the keyboard; the welcome bubbles and the round button hide. */
 .wa-widget.lw-kb-open { bottom: calc(var(--lw-kb, 0px) + 8px); }
-.wa-widget.lw-kb-open .wa-fab { display: none; }
+.wa-widget.lw-kb-open .wa-fab,
+.wa-widget.lw-kb-open .lw-panel .wa-panel-body { display: none; }
+.wa-widget.lw-kb-open .lw-panel .wa-panel-header { padding-top: 10px; padding-bottom: 10px; }
 .wa-widget.lw-kb-open .wa-panel.lw-panel { max-height: calc(var(--lw-vvh, 100dvh) - 16px); }
 
 /* The widget box is as tall as the (hidden) panel + button, about 300x680px on a phone. Let touches

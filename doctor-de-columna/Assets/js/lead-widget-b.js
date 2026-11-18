@@ -16,7 +16,7 @@
   // Formspree form that emails the leads. Empty = no email is sent (WhatsApp still opens).
   var FORMSPREE_URL = 'https://formspree.io/f/mzerrvqd';
   var IS_LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-  var CSS_HREF = '/Assets/css/lead-widget-b.css?v=6';
+  var CSS_HREF = '/Assets/css/lead-widget-b.css?v=8';
   // Cloudflare Turnstile bot check: Cloudflare's always-pass test key on localhost, the real
   // site key (doctordecolumna.com) everywhere else. Runs invisibly; it only asks for a click
   // when Cloudflare is unsure about the visitor. The secret key is not used here.
@@ -41,6 +41,13 @@
     'bloqueos-epidurales': 'Bloqueos epidurales',
     'rehabilitacion': 'Rehabilitación de columna',
     'consulta-especialista': 'Consulta con especialista'
+  };
+  // Phone country picker. Flags: country-flag-icons (MIT), self-hosted because the CSP only allows
+  // images from this site. Both countries use 10-digit national numbers.
+  var FLAGS = '/Assets/vendor/country-flag-icons-1.6.20/';
+  var COUNTRIES = {
+    MX: { name: 'México', code: '+52', dial: '52', flag: FLAGS + 'mx.svg' },
+    US: { name: 'Estados Unidos', code: '+1', dial: '1', flag: FLAGS + 'us.svg', placeholder: '619 123 4567' }
   };
   var CITIES = {
     tijuana: { name: 'Tijuana', tz: 'America/Tijuana', placeholder: '664 123 4567' },
@@ -156,7 +163,20 @@
       '</div>',
       '<div class="lw-field">',
       '  <label class="lw-label" for="lw-phone">Teléfono de contacto</label>',
-      '  <input class="lw-input" id="lw-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required>',
+      '  <div class="lw-phone-wrap">',
+      '    <span class="lw-cc">',
+      '      <img class="lw-cc-flag" src="' + COUNTRIES.MX.flag + '" alt="" width="21" height="14">',
+      '      <span class="lw-cc-code">' + COUNTRIES.MX.code + '</span>',
+      '      <svg class="lw-cc-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 3.5 5 6.5 8 3.5"/></svg>',
+      // Transparent native select on top of the flag: phones open their own picker.
+      '      <select class="lw-cc-select" id="lw-country" name="country" aria-label="País del teléfono">',
+      Object.keys(COUNTRIES).map(function (k) {
+        return '<option value="' + k + '">' + COUNTRIES[k].name + ' (' + COUNTRIES[k].code + ')</option>';
+      }).join(''),
+      '      </select>',
+      '    </span>',
+      '    <input class="lw-input" id="lw-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" required>',
+      '  </div>',
       '  <span class="lw-error" id="lw-phone-error" aria-live="polite"></span>',
       '</div>',
       '<div class="lw-turnstile"></div>',
@@ -180,7 +200,23 @@
     var submitBtn = form.querySelector('.lw-submit');
     var doneLink = done.querySelector('.lw-done-link');
     doneLink.addEventListener('click', function () { trackWhatsapp(); });
-    phoneInput.placeholder = city ? city.placeholder : '664 123 4567';
+    var phoneWrap = form.querySelector('.lw-phone-wrap');
+    var countrySelect = form.querySelector('#lw-country');
+    var country = 'MX';
+    function mxPlaceholder() { return city ? city.placeholder : '664 123 4567'; }
+    function setCountry(k) {
+      country = k;
+      countrySelect.value = k;
+      form.querySelector('.lw-cc-flag').src = COUNTRIES[k].flag;
+      form.querySelector('.lw-cc-code').textContent = COUNTRIES[k].code;
+      phoneInput.placeholder = COUNTRIES[k].placeholder || mxPlaceholder();
+    }
+    countrySelect.addEventListener('change', function () {
+      setCountry(countrySelect.value);
+      updateSubmit();
+      phoneInput.focus();
+    });
+    phoneInput.placeholder = mxPlaceholder();
     var cityError = form.querySelector('#lw-city-error');
     var turnstileBox = form.querySelector('.lw-turnstile');
 
@@ -237,7 +273,7 @@
           var key = c.label.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
           city = CITIES[key] || pageCity(waNumber);
           cityName = city ? city.name : c.label;
-          if (city) phoneInput.placeholder = city.placeholder;
+          if (city && country === 'MX') phoneInput.placeholder = city.placeholder;
           cityError.textContent = '';
           updateSubmit();
         });
@@ -248,13 +284,32 @@
     function cleanName() { return nameInput.value.replace(/\s+/g, ' ').trim(); }
     function cityOk() { return !!waNumber; }
     function nameOk() { return cleanName().length >= 2; }
-    function phoneOk() { var d = phoneInput.value.replace(/\D/g, ''); return d.length >= 10 && d.length <= 15; }
+    // The 10-digit number without the country code (also accepts it typed or pasted with +52 / 521 / +1).
+    function nationalDigits() {
+      var d = phoneInput.value.replace(/\D/g, '');
+      if (country === 'MX' && d.length === 13 && d.indexOf('521') === 0) return d.slice(3);
+      if (country === 'MX' && d.length === 12 && d.indexOf('52') === 0) return d.slice(2);
+      if (country === 'US' && d.length === 11 && d.charAt(0) === '1') return d.slice(1);
+      return d;
+    }
+    function phoneOk() { return nationalDigits().length === 10; }
+    function fullPhone() {
+      var d = nationalDigits();
+      return COUNTRIES[country].code + ' ' + d.slice(0, 3) + ' ' + d.slice(3, 6) + ' ' + d.slice(6);
+    }
+    // Typing "+1" or "+52" at the start switches the flag.
+    phoneInput.addEventListener('input', function () {
+      var v = phoneInput.value.replace(/\s/g, '');
+      if (/^\+1/.test(v) && country !== 'US') setCountry('US');
+      else if (/^\+52/.test(v) && country !== 'MX') setCountry('MX');
+    });
     function updateSubmit() { submitBtn.setAttribute('aria-disabled', cityOk() && nameOk() && phoneOk() ? 'false' : 'true'); }
     function showErrors() {
       var c = cityOk(), n = nameOk(), p = phoneOk();
       if (cityError) cityError.textContent = c ? '' : 'Elige una ciudad.';
       nameInput.classList.toggle('is-invalid', !n);
       phoneInput.classList.toggle('is-invalid', !p);
+      phoneWrap.classList.toggle('is-invalid', !p);
       nameError.textContent = n ? '' : 'Escribe tu nombre.';
       phoneError.textContent = p ? '' : 'Escribe tu número a 10 dígitos.';
       if (!c) form.querySelector('input[name="lw-city"]').focus();
@@ -265,6 +320,7 @@
       input.addEventListener('input', function () {
         if (input.classList.contains('is-invalid') && (input === nameInput ? nameOk() : phoneOk())) {
           input.classList.remove('is-invalid');
+          if (input === phoneInput) phoneWrap.classList.remove('is-invalid');
           (input === nameInput ? nameError : phoneError).textContent = '';
         }
         updateSubmit();
@@ -328,11 +384,11 @@
       sending = true;
       submitBtn.textContent = SUBMIT_LABEL;
       var name = cleanName();
-      var phone = phoneInput.value.trim();
+      var phone = fullPhone();
       var url = whatsappUrl(name, phone);
 
       track('lead_form_submit_' + (clinicSuffix(waNumber) || 'general'), {
-        form_name: 'widget_whatsapp', lead_city: cityName || 'sin ciudad', lead_topic: topic,
+        form_name: 'widget_whatsapp', lead_city: cityName || 'sin ciudad', lead_topic: topic, phone_country: country,
         widget_source: lastOpen.widget_source, cta_text: lastOpen.cta_text, cta_location: lastOpen.cta_location
       });
 
@@ -378,28 +434,44 @@
         setTimeout(function () { nameInput.focus({ preventScroll: true }); }, 320);
       }
     }
-    // Phone keyboard: the fixed widget sits behind the keyboard unless we move it into the visible area.
+    // Typing on a phone (same as the Romario Perea infiltraciones widget): while the name or phone
+    // field has focus, only the panel header + form stay, pinned right above the keyboard. The welcome
+    // bubbles and the round button hide, so the two fields and the submit button fit without scrolling.
+    // position:fixed and 100dvh ignore the keyboard, so its height comes from visualViewport
+    // (0 on browsers that shrink the page for it instead).
     var vv = window.visualViewport;
-    function fitToKeyboard() {
-      var kb = (vv && panel.classList.contains('wa-panel--open'))
-        ? Math.max(0, window.innerHeight - vv.height - vv.offsetTop) : 0;
-      var open = kb > 80 && panel.contains(document.activeElement);
-      widget.classList.toggle('lw-kb-open', open);
-      widget.style.setProperty('--lw-kb', open ? Math.round(kb) + 'px' : '0px');
-      widget.style.setProperty('--lw-vvh', Math.round(vv ? vv.height : window.innerHeight) + 'px');
+    var mqPhone = window.matchMedia('(max-width: 768px)');
+    function typingField() {
+      var a = document.activeElement;
+      return a === nameInput || a === phoneInput || a === countrySelect;
     }
-    if (vv && !widget.hasAttribute('data-lw-kb')) {
+    function fitToKeyboard() {
+      var typing = mqPhone.matches && panel.classList.contains('wa-panel--open') && typingField();
+      var wasTyping = widget.classList.contains('lw-kb-open');
+      widget.classList.toggle('lw-kb-open', typing);
+      if (!typing) {
+        widget.style.removeProperty('--lw-kb');
+        widget.style.removeProperty('--lw-vvh');
+        return;
+      }
+      var kb = vv ? Math.max(0, window.innerHeight - vv.height - vv.offsetTop) : 0;
+      widget.style.setProperty('--lw-kb', Math.round(kb) + 'px');
+      widget.style.setProperty('--lw-vvh', Math.round(vv ? vv.height : window.innerHeight) + 'px');
+      if (!wasTyping) panel.scrollTop = 0; // show the form from its first field
+    }
+    if (!widget.hasAttribute('data-lw-kb')) {
       widget.setAttribute('data-lw-kb', '');
-      vv.addEventListener('resize', fitToKeyboard);
-      vv.addEventListener('scroll', fitToKeyboard);
-      panel.addEventListener('focusin', function (e) {
-        setTimeout(fitToKeyboard, 50);
-        setTimeout(function () { // keep the focused field in view once the keyboard has settled
-          fitToKeyboard();
-          if (e.target.scrollIntoView) e.target.scrollIntoView({ block: 'nearest' });
-        }, 350);
+      if (vv) {
+        vv.addEventListener('resize', fitToKeyboard);
+        vv.addEventListener('scroll', fitToKeyboard);
+      }
+      window.addEventListener('resize', fitToKeyboard);
+      [nameInput, phoneInput].forEach(function (input) {
+        input.addEventListener('focus', fitToKeyboard);
+        // Wait before undoing it: tapping the submit button blurs the field first, and moving
+        // the widget right away would shift the button out from under the finger.
+        input.addEventListener('blur', function () { setTimeout(fitToKeyboard, 300); });
       });
-      panel.addEventListener('focusout', function () { setTimeout(fitToKeyboard, 100); });
     }
 
     fab.addEventListener('click', function () {
