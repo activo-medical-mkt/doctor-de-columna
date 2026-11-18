@@ -33,6 +33,8 @@ El verde es un acento y no sustituye el azul principal en todos los botones. No 
 
 ## Header y contraste
 
+- Orden del menú de escritorio: Sobre mí / Endoscopia de columna / Especialidades / Ubicaciones / Opiniones. Sobre mí enlaza a `#doctor` en la homepage de la ciudad correspondiente; Opiniones enlaza a `/opiniones/`. El logo conserva el acceso al inicio. En móvil, Sobre mí va primero y Opiniones sustituye a Pacientes; conservar los grupos de condiciones y servicios.
+
 - Al inicio en desktop, el logo y el extremo derecho del CTA se alinean con los extremos del contenido del hero. Las homepages usan el contenedor de 1600 px y sus gutters fluidos; las páginas clínicas usan su `.cb-wrap`. El header permanece transparente, sin borde visible ni sombra.
 - Tras 12 px de scroll, el header se contrae a un contenedor flotante centrado de máximo 1280 px: logo y CTA se acercan al centro con una transición de 400 ms mientras la superficie aparece con un fade de 320 ms. La posición vertical se mantiene a 16 px y las esquinas son de 24 px. El hero no se desplaza. En tablet se compacta y se oculta el CTA duplicado. Respetar `prefers-reduced-motion`.
 - Sobre claro: marca y navegación azules. El header al hacer scroll usa una superficie de hielo translúcida.

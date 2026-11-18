@@ -122,17 +122,17 @@ if (desktopList&&locationItem){
 const homeItem=desktopList.querySelector(':scope > li:first-child');
 const home=homeItem&&homeItem.querySelector('a');
 if (home){
-home.href=base;
-const isHome=window.location.pathname===base;
-home.classList.toggle('active',isHome);
-if (isHome) home.setAttribute('aria-current','page');
-else home.removeAttribute('aria-current');
+home.href=base+'#doctor';
+home.textContent='Sobre mí';
+home.classList.remove('active');
+home.removeAttribute('aria-current');
 }
 desktopList.replaceChildren(homeItem);
-// Order: Inicio · Endoscopia de columna · Especialidades ▾ · Ubicaciones ▾ · El doctor (the two dropdowns side by side).
+// Order: Sobre mí · Endoscopia de columna · Especialidades ▾ · Ubicaciones ▾ · Opiniones.
 desktopList.insertAdjacentHTML('beforeend','<li><a href="'+endoscopyHref+'"'+endoscopyCityAttr+(onEndoscopy?' class="active" aria-current="page"':'')+'>Endoscopia de columna</a></li>'+specialtiesMenu());
 desktopList.appendChild(locationItem);
-desktopList.insertAdjacentHTML('beforeend','<li><a href="'+base+'#doctor">El doctor</a></li>');
+const onOpinions=window.location.pathname==='/opiniones/';
+desktopList.insertAdjacentHTML('beforeend','<li><a href="/opiniones/"'+(onOpinions?' class="active" aria-current="page"':'')+'>Opiniones</a></li>');
 if (!onEndoscopy&&/\/(condiciones|servicios)\//.test(window.location.pathname)) desktopList.querySelector('#nav-specialties-trigger').classList.add('is-current');
 const specialtyPanel=desktopList.querySelector('#nav-specialties-panel');
 const canMatchCityPage=city==='tijuana'||city==='guadalajara';
@@ -170,13 +170,26 @@ if (logo) logo.href=base;
 const mobileNav=document.querySelector('#mobile-menu nav');
 const mobileLocation=mobileNav&&mobileNav.querySelector('.mobile-nav-group');
 const mobileFirst=mobileNav&&mobileNav.querySelector(':scope > a:first-child');
+if (mobileFirst){
+mobileFirst.href=base+'#doctor';
+mobileFirst.textContent='Sobre mí';
+mobileFirst.classList.remove('active');
+mobileFirst.removeAttribute('aria-current');
+}
+const mobileOpinions=mobileNav&&mobileNav.querySelector(':scope > a[href="/opiniones/"]');
+if (mobileOpinions){
+const current=window.location.pathname==='/opiniones/';
+mobileOpinions.classList.toggle('active',current);
+if(current) mobileOpinions.setAttribute('aria-current','page');
+else mobileOpinions.removeAttribute('aria-current');
+}
 if (mobileFirst&&!mobileNav.querySelector('[data-nav-endoscopy]')) mobileFirst.insertAdjacentHTML('afterend','<a href="'+endoscopyHref+'" class="mobile-menu-link'+(onEndoscopy?' active':'')+'" data-nav-endoscopy'+endoscopyCityAttr+(onEndoscopy?' aria-current="page"':'')+'>Endoscopia de columna</a>');
 if (city&&mobileNav&&mobileLocation){
 Array.from(mobileNav.children).forEach(item=>{
 if (item.matches('a')&&['#doctor','#resenas'].includes(item.getAttribute('href'))) item.remove();
 });
 const mobileHome=mobileNav.querySelector(':scope > a:first-child');
-if (mobileHome) mobileHome.href=base;
+if (mobileHome) mobileHome.href=base+'#doctor';
 mobileLocation.insertAdjacentHTML('afterend',
 mobileDropdown('cond','Condiciones',conditions[contentCity],'/'+contentCity+'/condiciones/','Ver todas las condiciones')+
 mobileDropdown('srv','Servicios',services[contentCity],base+'#servicios','Ver todos los servicios'));
@@ -184,8 +197,6 @@ const mobileCurrent=mobileLocation.querySelector('a[href="'+base+'"]');
 if (mobileCurrent) mobileCurrent.textContent=labels[city]+' (Actual)';
 const mobileAll=mobileLocation.querySelector('.mobile-menu-link--all');
 if (mobileAll) mobileAll.href=base+'#ubicaciones';
-const mobileContact=Array.from(mobileNav.querySelectorAll(':scope > a')).find(link=>link.textContent.trim()==='Contacto');
-if (mobileContact) mobileContact.href=base+'#ubicaciones';
 }
 }
 function initCore(){

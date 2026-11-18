@@ -1,0 +1,32 @@
+/* Clearly label pages that are still in Spanish during the staged English launch. */
+(() => {
+  function labelSpanishLinks() {
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!/^\/(?:tijuana|guadalajara|rosarito|opiniones|blog|aviso-privacidad|mapa-del-sitio)(?:\/|$)/.test(href)) {
+        // The specialties city switch can turn a Spanish link back into an English one.
+        link.querySelectorAll('.link-language-badge').forEach(badge => badge.remove());
+        if (link.hreflang === 'es-MX') link.removeAttribute('hreflang');
+        return;
+      }
+      link.hreflang = 'es-MX';
+      if (link.closest('.language-switch') || link.querySelector('.link-language-badge') || link.textContent.includes('(Spanish)')) return;
+      if (!link.textContent.trim()) {
+        if (!link.getAttribute('aria-label')?.includes('(Spanish page)')) link.setAttribute('aria-label', (link.getAttribute('aria-label') || link.querySelector('img')?.alt || 'View page') + ' (Spanish page)');
+        return;
+      }
+      const badge = document.createElement('span');
+      badge.className = 'link-language-badge';
+      badge.textContent = 'ES';
+      badge.setAttribute('aria-label', 'Page in Spanish');
+      const label = link.querySelector('.condition-card-title, .specialties-feature-caption strong, h3, strong') || link;
+      label.append(badge);
+    });
+  }
+  document.addEventListener('DOMContentLoaded', labelSpanishLinks);
+  document.addEventListener('partials-ready', labelSpanishLinks);
+  document.addEventListener('click', event => {
+    if (event.target.closest('[data-specialty-city]')) labelSpanishLinks();
+  });
+  labelSpanishLinks();
+})();

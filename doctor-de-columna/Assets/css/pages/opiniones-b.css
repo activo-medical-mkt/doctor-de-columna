@@ -1,0 +1,86 @@
+/* Dedicated testimonials collection; shares the clinical-page shell and review components. */
+.opiniones-b .opinions-hero{padding-bottom:94px}
+.opiniones-b .opinions-hero h1{max-width:1000px}
+.opiniones-b .opinions-collection{background:var(--brand-ice,#f4f7ff);padding:0 48px 80px}
+.opinions-summary{position:relative;display:flex;align-items:center;justify-content:space-between;gap:30px;padding:30px 36px;margin-top:-38px;background:#fff;border:1px solid #e3edf4;border-radius:25px;box-shadow:0 12px 35px #004b8708}
+.opinions-summary>div>strong{display:flex;align-items:center;gap:15px;font:600 48px/1 var(--font-heading);letter-spacing:-.04em;color:var(--brand-blue)}
+.opinions-summary>div>strong>span{max-width:110px;font:400 13px/1.4 var(--font-body);letter-spacing:-.025em}
+.opinions-summary p{font-size:11px;color:#4d6d89;margin:9px 0 0}
+.opinions-summary .patient-stories-ratings{flex-wrap:wrap;gap:15px}
+.opinions-summary .patient-rating{background:#f4f7ff;min-width:185px}
+.opinions-summary-link{display:inline-flex;align-items:center;gap:13px;font-size:12px;white-space:nowrap}
+.opinions-summary-link svg,.opinions-empty svg,.cb-button svg{width:20px;height:20px}
+.opinions-videos,.opinions-written{padding-top:76px;scroll-margin-top:115px}
+.opinions-section-head{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:50px;margin-bottom:32px}
+.opinions-section-head h2{font-size:clamp(34px,3.6vw,50px);margin:15px 0 0;line-height:1.05}
+.opinions-section-head>p{font-size:14px;max-width:430px;color:#4d6d89;margin:0 0 3px;justify-self:end}
+.opiniones-b .patient-video-grid{gap:22px}
+.opiniones-b .patient-video-play{aspect-ratio:4/4.7;background:var(--brand-blue)}
+.opiniones-b .patient-video-play::after{background:linear-gradient(180deg,#004b8700 25%,#004b8740 53%,#003a6bf2)}
+.opiniones-b .patient-video-bottom>strong{font-size:clamp(27px,2.7vw,36px)}
+.opinions-video-note{font-size:11px;color:#4d6d89;margin:22px 0 0;max-width:770px}
+.opinions-written{margin-top:10px}
+.opinions-tools{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 0;border-block:1px solid #d8e5ef}
+.opinions-tools .patient-review-filters{gap:6px}
+.opinions-tools .patient-review-filters button{padding:12px 18px;font-size:13px}
+.opinions-search{display:flex;align-items:center;gap:12px;border:1px solid #d5e2ee;background:#fff;border-radius:99px;padding:12px 18px;width:min(350px,100%);color:#4d6d89}
+.opinions-search:focus-within{outline:2px solid var(--brand-blue);outline-offset:3px}
+.opinions-search>svg{width:19px;height:19px;flex-shrink:0}
+.opinions-search input{min-width:0;width:100%;border:0;outline:0;background:transparent;color:var(--brand-blue);font:400 13px var(--font-body);letter-spacing:-.025em}
+.opinions-search input::placeholder{color:#4d6d89;opacity:1}
+.opinions-tools{margin-bottom:25px}
+.opinions-review-results{position:relative}
+.opinions-collapse-bar{position:sticky;top:var(--opinions-toolbar-top,108px);z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 16px;margin-bottom:20px;border:1px solid var(--color-border-lt);border-radius:20px;background:rgb(255 255 255 / 96%);backdrop-filter:blur(12px);box-shadow:0 7px 24px rgb(var(--brand-blue-rgb) / 9%);color:var(--brand-blue)}
+.opinions-collapse-bar>span{font-size:12px}
+.opinions-collapse-bar button{display:inline-flex;align-items:center;justify-content:center;gap:10px;flex-shrink:0;min-height:44px;padding:9px 15px;border:0;border-radius:99px;background:var(--brand-green);color:var(--brand-blue);font-size:12px}
+.opinions-collapse-bar button:hover{background:#8affaa}
+.opinions-collapse-bar svg{width:17px;height:17px}
+@media(max-width:700px){.opinions-collapse-bar{padding:8px 12px;gap:8px;border-radius:18px}.opinions-collapse-bar>span{font-size:11px}.opinions-collapse-bar button{padding-inline:12px;gap:7px}}
+.opiniones-b .patient-review-card{min-height:306px;border:1px solid #e3edf4}
+.opiniones-b .patient-review-card blockquote{font-size:14px}
+.opiniones-b .patient-review-person strong{font-size:13px}
+.opiniones-b .patient-review-date{font-size:11px}
+.opinions-empty{text-align:center;background:white;border-radius:24px;padding:50px 24px}
+.opinions-empty h3{font-size:27px;margin:0 0 12px}
+.opinions-empty p{font-size:14px;color:#4d6d89}
+.opinions-empty button{display:inline-flex;align-items:center;gap:12px;border:0;border-radius:30px;background:var(--brand-green,#56fc80);padding:14px 21px;color:var(--brand-blue)}
+@media(min-width:701px) and (max-width:1100px){.opinions-summary{padding:25px;gap:20px}.opinions-summary-link{display:none}.opinions-summary .patient-rating{min-width:160px}.opinions-summary .patient-stories-ratings{gap:10px}.opiniones-b .patient-review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+ .opiniones-b .opinions-hero{padding-bottom:72px}
+ .opiniones-b .opinions-hero h1{font-size:40px;max-width:520px}
+ .opiniones-b .opinions-hero h1 br{display:block}
+ .opiniones-b .opinions-collection{padding:0 18px 50px}
+ .opinions-summary{padding:23px 20px;margin-top:-28px;display:grid;gap:20px;border-radius:22px}
+ .opinions-summary>div>strong{font-size:42px}
+ .opinions-summary>div>strong>span{max-width:none;font-size:13px}
+ .opinions-summary .patient-stories-ratings{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+ .opinions-summary .patient-rating{min-width:0;padding:12px 10px;gap:8px}
+ .opinions-summary .patient-rating small{font-size:9px}
+ .opinions-summary .patient-rating>svg:first-child,.opinions-summary .patient-rating>img{width:22px;height:22px}
+ .opinions-summary .patient-rating>svg:last-child{display:none}
+ .opinions-summary-link{font-size:12px}
+ .opinions-videos,.opinions-written{padding-top:48px}
+ .opinions-section-head{grid-template-columns:1fr;gap:18px;margin-bottom:25px}
+ .opinions-section-head h2{font-size:34px}
+ .opinions-section-head>p{font-size:13px;justify-self:start;max-width:490px}
+ .opiniones-b .patient-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0;padding:0;overflow:visible}
+ .opiniones-b .patient-video,.opiniones-b .patient-video:first-child{grid-column:auto;min-width:0}
+ .opiniones-b .patient-video-play,.opiniones-b .patient-video:first-child .patient-video-play{aspect-ratio:3/5;border-radius:20px}
+ .opiniones-b .patient-video-bottom{inset:auto 12px 15px}
+ .opiniones-b .patient-video-bottom>strong{font-size:23px}
+ .opiniones-b .patient-video-tag{top:12px;left:10px;padding:6px 9px;font-size:9px}
+ .opiniones-b .patient-video-kicker{font-size:8px}
+ .opiniones-b .patient-video-action{font-size:10px;gap:6px}
+ .opiniones-b .patient-video-action>span{width:29px;height:29px;flex-shrink:0}
+ .opiniones-b .patient-video-action svg{width:18px;height:18px}
+ .opinions-video-note{font-size:10px;line-height:1.6}
+ .opinions-tools{align-items:stretch;flex-direction:column;gap:15px}
+ .opinions-tools .patient-review-filters{gap:4px;justify-content:space-between}
+ .opinions-tools .patient-review-filters button{padding:11px 13px;font-size:12px}
+ .opinions-search{width:100%}
+ .opiniones-b .patient-review-grid{grid-template-columns:1fr}
+ .opiniones-b .patient-review-card{min-height:286px}
+ .opinions-empty h3{font-size:24px}
+}
+@media(max-width:359px){.opiniones-b .patient-video-grid{grid-template-columns:1fr}.opiniones-b .patient-video-play{aspect-ratio:4/5}.opinions-summary .patient-stories-ratings{grid-template-columns:1fr}}
+.patient-review-no-text{margin:0;color:#7d93a6;font-size:13px;font-style:italic;line-height:1.75}

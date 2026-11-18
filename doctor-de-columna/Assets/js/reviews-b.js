@@ -9,8 +9,21 @@
     const filters = [...section.querySelectorAll('[data-review-filter]')];
     const moreReviews = section.querySelector('#patient-reviews-more');
     const status = section.querySelector('#patient-reviews-status');
+    const search = section.querySelector('[data-review-search]');
+    const empty = section.querySelector('[data-review-empty]');
+    const reset = section.querySelector('[data-review-reset]');
+    const collapseBar = section.querySelector('[data-review-collapse-bar]');
+    const collapseStatus = section.querySelector('[data-review-collapse-status]');
+    const collapse = section.querySelector('[data-review-collapse]');
+    const showAll = section.dataset.reviewsView === 'all';
+    const pageSize = Number.parseInt(section.dataset.reviewPageSize, 10) || 3;
+    const initialLimit = showAll ? Infinity : pageSize;
+    // Topic pages show a curated selection; only /opiniones/ lists every review.
+    const noun = section.classList.contains('opinions-collection') ? 'reseñas' : 'opiniones destacadas';
+    const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const searchable = new Map(cards.map(card => [card, normalize(card.querySelector('.patient-review-person strong').textContent + ' ' + card.querySelector('blockquote').textContent)]));
     let source = 'all';
-    let limit = 3;
+    let limit = initialLimit;
 
     function updateExpansion() {
       cards.filter(card => !card.hidden).forEach(card => {
@@ -21,24 +34,60 @@
     }
 
     function renderReviews() {
-      const matching = cards.filter(card => source === 'all' || card.dataset.reviewSource === source);
+      const query = normalize(search?.value.trim() || '');
+      const matching = cards.filter(card => (source === 'all' || card.dataset.reviewSource === source) && searchable.get(card).includes(query));
       cards.forEach(card => { card.hidden = true; });
       matching.slice(0, limit).forEach(card => { card.hidden = false; });
-      status.textContent = `Mostrando ${Math.min(limit, matching.length)} de ${matching.length} reseñas`;
-      moreReviews.hidden = limit >= matching.length;
+      status.textContent = `Mostrando ${Math.min(limit, matching.length)} de ${matching.length} ${noun}`;
+      if (moreReviews) moreReviews.hidden = limit >= matching.length;
+      if (empty) empty.hidden = matching.length !== 0;
+      if (collapseBar) {
+        collapseBar.hidden = Math.min(limit, matching.length) <= initialLimit;
+        collapseStatus.textContent = status.textContent.replace('reseñas', 'opiniones');
+      }
       requestAnimationFrame(updateExpansion);
     }
 
     filters.forEach(button => button.addEventListener('click', () => {
       source = button.dataset.reviewFilter;
-      limit = 3;
+      limit = initialLimit;
       filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
       renderReviews();
     }));
-    moreReviews.addEventListener('click', () => {
-      limit += 3;
+    search?.addEventListener('input', () => {
+      limit = initialLimit;
       renderReviews();
     });
+    reset?.addEventListener('click', () => {
+      search.value = '';
+      source = 'all';
+      limit = initialLimit;
+      filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter.dataset.reviewFilter === 'all')));
+      renderReviews();
+      search.focus();
+    });
+    moreReviews?.addEventListener('click', () => {
+      limit += pageSize;
+      renderReviews();
+    });
+    collapse?.addEventListener('click', () => {
+      limit = initialLimit;
+      renderReviews();
+      const start = section.querySelector('#resenas');
+      start.querySelector('h2').focus({ preventScroll: true });
+      start.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+    });
+    if (collapseBar) {
+      const nav = document.querySelector('#navbar');
+      const syncOffset = () => {
+        collapseBar.style.setProperty('--opinions-toolbar-top', `${Math.ceil(nav.getBoundingClientRect().bottom) + 12}px`);
+      };
+      if (nav) {
+        syncOffset();
+        new ResizeObserver(syncOffset).observe(nav);
+        window.addEventListener('resize', syncOffset, { passive: true });
+      }
+    }
     cards.forEach(card => card.querySelector('.patient-review-expand').addEventListener('click', event => {
       const expanded = card.classList.toggle('is-expanded');
       event.currentTarget.setAttribute('aria-expanded', String(expanded));
@@ -50,7 +99,8 @@
 
     const videoCards = [...section.querySelectorAll('.patient-video')];
     const moreVideos = section.querySelector('#patient-videos-more');
-    moreVideos.addEventListener('click', () => {
+    if (section.dataset.videosView === 'all') videoCards.forEach(card => { card.hidden = false; });
+    moreVideos?.addEventListener('click', () => {
       const expanded = moreVideos.getAttribute('aria-expanded') !== 'true';
       videoCards.slice(3).forEach(card => { card.hidden = !expanded; });
       moreVideos.setAttribute('aria-expanded', String(expanded));

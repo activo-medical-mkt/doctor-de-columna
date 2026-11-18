@@ -1,0 +1,183 @@
+/* Generated English UI: edit the shared source/catalog, then run scripts/build_en_tijuana.py. */
+(function() {
+  function initCookieConsent() {
+    if (typeof CookieConsent === 'undefined') return;
+
+    function updateGoogleConsent(cookie) {
+      var analyticsGranted = false;
+      var adsGranted = false;
+
+      if (cookie && Array.isArray(cookie.categories)) {
+        analyticsGranted = cookie.categories.indexOf('analytics') !== -1;
+        adsGranted = cookie.categories.indexOf('ads') !== -1;
+      } else if (typeof CookieConsent.acceptedCategory === 'function') {
+        analyticsGranted = CookieConsent.acceptedCategory('analytics');
+        adsGranted = CookieConsent.acceptedCategory('ads');
+      }
+      // Global Privacy Control is an opt-out of sale/sharing (CCPA/CPRA), even after a previous "accept all".
+      if (navigator.globalPrivacyControl) adsGranted = false;
+
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          'analytics_storage': analyticsGranted ? 'granted' : 'denied',
+          'ad_storage': adsGranted ? 'granted' : 'denied',
+          'ad_user_data': adsGranted ? 'granted' : 'denied',
+          'ad_personalization': 'denied'
+        });
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'cookie_consent_update',
+        consent_analytics: analyticsGranted,
+        consent_ads: adsGranted
+      });
+    }
+
+    function showFloatingButton() {
+      var btn = document.getElementById('cc-floating-btn');
+      if (btn) btn.classList.add('is-visible');
+    }
+
+    // Helper para pruebas: ?reset o #reset borra la cookie para que el aviso vuelva a salir
+    if (window.location.search.indexOf('reset') !== -1 || window.location.hash.indexOf('reset') !== -1) {
+      // CookieConsent sets the cookie with domain=<hostname>, so clear it with and without a domain.
+      var host = window.location.hostname;
+      ['', '; domain=' + host, '; domain=.' + host.replace(/^www\./, '')].forEach(function (d) {
+        document.cookie = 'cc_cookie=; Max-Age=0; path=/' + d;
+      });
+    }
+
+    CookieConsent.run({
+      disablePageInteraction: false,
+      guiOptions: {
+        consentModal: { layout: 'box', position: 'bottom center', flipButtons: false },
+        preferencesModal: { layout: 'box' }
+      },
+      categories: {
+        necessary: { enabled: true, readOnly: true },
+        analytics: {
+          enabled: true,
+          readOnly: false,
+          autoClear: { cookies: [{ name: /^_ga/ }, { name: /^_gid$/ }, { name: /^_gat/ }] }
+        },
+        ads: {
+          enabled: !navigator.globalPrivacyControl,
+          readOnly: false,
+          autoClear: { cookies: [{ name: /^_gcl_/ }, { name: /^_gac_/ }, { name: /^IDE$/ }, { name: /^test_cookie$/ }] }
+        }
+      },
+      language: {
+        default: 'en',
+        translations: {
+          en: {
+            consentModal: {
+              title: 'Your privacy',
+              description: 'We use cookies to operate this site, measure visits and measure advertising results. You can disable optional cookies in Settings. Learn more in our <a href="/en/privacy-notice/" class="cc-privacy-link">Privacy Notice</a>.',
+              acceptAllBtn: 'Accept',
+              showPreferencesBtn: 'Settings'
+            },
+            preferencesModal: {
+              closeIconLabel: 'Close privacy preferences',
+              title: 'Privacy preferences',
+              acceptAllBtn: 'Accept all',
+              acceptNecessaryBtn: 'Reject optional cookies',
+              savePreferencesBtn: 'Save preferences',
+              sections: [
+                {
+                  title: 'Strictly necessary cookies',
+                  description: 'These cookies are essential for basic site functions and secure navigation. They cannot be disabled.',
+                  linkedCategory: 'necessary'
+                },
+                {
+                  title: 'Analytics cookies',
+                  description: 'These cookies help us understand how visitors use the site through anonymous, aggregated metrics.',
+                  linkedCategory: 'analytics'
+                },
+                {
+                  title: 'Marketing and advertising cookies',
+                  description: 'These cookies measure advertising results, such as whether an ad led to an inquiry. We do not use them to show personalized ads.',
+                  linkedCategory: 'ads'
+                }
+              ]
+            }
+          }
+        }
+      },
+      onConsent: function(param) {
+        updateGoogleConsent(param ? param.cookie : null);
+        showFloatingButton();
+      },
+      onChange: function(param) {
+        updateGoogleConsent(param ? param.cookie : null);
+        showFloatingButton();
+      },
+      // X para cerrar el aviso: guarda analítica + medición de anuncios (solo analítica si el navegador envía GPC).
+      onModalReady: function(param) {
+        if (!param || param.modalName !== 'consentModal' || param.modal.querySelector('.cc-close-x')) return;
+        var x = document.createElement('button');
+        x.type = 'button';
+        x.className = 'cc-close-x';
+        x.setAttribute('aria-label', 'Close');
+        x.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+        x.addEventListener('click', function() {
+          CookieConsent.acceptCategory(navigator.globalPrivacyControl ? ['analytics'] : ['analytics', 'ads']);
+          CookieConsent.hide();
+        });
+        param.modal.appendChild(x);
+      }
+    });
+
+    if (navigator.globalPrivacyControl && CookieConsent.validConsent() && CookieConsent.acceptedCategory('ads')) {
+      CookieConsent.acceptCategory(CookieConsent.getUserPreferences().acceptedCategories.filter(function(c) { return c !== 'ads'; }));
+    }
+
+    // Icono flotante de galleta para reabrir preferencias
+    if (!document.getElementById('cc-floating-btn')) {
+      var btn = document.createElement('button');
+      btn.id = 'cc-floating-btn';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Cookie preferences');
+      btn.title = 'Cookie preferences';
+      btn.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><circle cx="8.5" cy="8.5" r="1.2" fill="currentColor"></circle><circle cx="15.5" cy="15.5" r="1.2" fill="currentColor"></circle><circle cx="8.5" cy="15.5" r="1.2" fill="currentColor"></circle><circle cx="12" cy="12" r="1.2" fill="currentColor"></circle></svg>';
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        CookieConsent.showPreferences();
+      });
+      document.body.appendChild(btn);
+      setTimeout(function() {
+        if (typeof CookieConsent.validConsent === 'function' && CookieConsent.validConsent()) showFloatingButton();
+      }, 300);
+    }
+
+    // Footer links ("Preferencias de cookies") can be injected later by partials; handle them via delegation.
+    document.addEventListener('click', function(e) {
+      var trigger = e.target.closest && e.target.closest('[data-cc="show-preferencesModal"]');
+      if (!trigger || trigger.id === 'cc-floating-btn') return;
+      e.preventDefault();
+      CookieConsent.showPreferences();
+    });
+  }
+
+  // The banner stylesheets load without blocking the first paint (media="print" swapped to "all" on load).
+  // Wait for them before showing the banner so it never appears unstyled; give up waiting after 3 s.
+  function whenBannerCssReady(cb) {
+    var pending = [].slice.call(document.querySelectorAll('link[data-cc-css]')).filter(function (l) { return l.media !== 'all'; });
+    var left = pending.length, done = false;
+    function finish() { if (!done) { done = true; cb(); } }
+    if (!left) return finish();
+    pending.forEach(function (l) {
+      function one() { if (--left <= 0) finish(); }
+      l.addEventListener('load', one, { once: true });
+      l.addEventListener('error', one, { once: true });
+    });
+    setTimeout(finish, 3000);
+  }
+  function start() { whenBannerCssReady(initCookieConsent); }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
