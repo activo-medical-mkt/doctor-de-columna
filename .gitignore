@@ -128,9 +128,8 @@ __pycache__/
 _not-commited/
 .wrangler/
 
-# Site tooling is versioned even though other *.py files are ignored
-!tools/
-!tools/*.py
+# Site tooling (build scripts) stays local, like scripts/
+tools/
 
 # Previous site kept locally for reference only (history: commit 6e86d07)
 first-version/
