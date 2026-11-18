@@ -12,3 +12,13 @@
 - Desktop navigation is Inicio / Endoscopia de columna / Especialidades / Ubicaciones / El doctor (the two dropdowns side by side). Endoscopia links to the current city's page; outside a city folder it carries `data-gdl-href` so the homepage city chooser asks Tijuana or Guadalajara. The mobile menu lists Endoscopia de columna right after Inicio. Especialidades combines spine conditions and treatments in one light mega-menu, using Romario's grouped structure with image cards at the far right and city-specific links. Keep mobile Condiciones and Servicios groups separate.
 - Group mega-menu conditions into lumbar, cervical and general spine conditions where the existing content supports it. Its Tijuana / Guadalajara selector changes every menu destination while keeping the panel open, with a direct link to the equivalent page in the chosen city; default to the current page's city.
 - When changing CSS or JavaScript, update the corresponding `?v=` references in the active HTML pages.
+
+# Editing text safely (Spanish accents)
+
+The site is Spanish and every file is UTF-8. Text has been corrupted repeatedly (accented letters replaced by a question mark, or "í" turned into two odd characters) by sending it through Windows PowerShell 5.1, which pipes ASCII/cp1252 to other programs. To avoid it:
+
+- Never put non-ASCII text (á é í ó ú ñ ¿ ¡ « » — →) inside a PowerShell command, here-string or `| python -` pipe. PowerShell must only carry ASCII.
+- Edit files with the editor/file tools, which write UTF-8. For scripted or bulk edits, save the script as a `.py` file with those tools and run `python path\to\script.py`; read and write with `encoding='utf-8'`.
+- If PowerShell must write a file, use `[IO.File]::WriteAllText($path, $text, (New-Object Text.UTF8Encoding $false))`, never `Set-Content`/`Out-File`/`>` without an explicit UTF-8 encoding, and only with ASCII content.
+- Garbled accents printed in the console are often a display issue only; verify the file itself (read it as UTF-8 or check the browser) before "fixing" anything.
+- Before committing, run `python scripts/check-mojibake.py --all`. The pre-commit hook runs it on staged files and blocks commits with corrupted text.
