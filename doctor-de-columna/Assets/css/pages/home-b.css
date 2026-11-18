@@ -2047,8 +2047,8 @@ body .wa-action-btn { color: #004b87; }
   mask-position: center;
 }
 .cx3d-sheen {
-  -webkit-mask-image: url(/Assets/Images/conditions-b/ciatica-3d-base.webp);
-  mask-image: url(/Assets/Images/conditions-b/ciatica-3d-base.webp);
+  -webkit-mask-image: url(/Assets/Images/conditions-b/ciatica-3d-base-360.webp);
+  mask-image: url(/Assets/Images/conditions-b/ciatica-3d-base-360.webp);
   mix-blend-mode: soft-light;
 }
 .cx3d-sheen::before {
@@ -2060,8 +2060,8 @@ body .wa-action-btn { color: #004b87; }
   transition: transform 500ms cubic-bezier(.22, 1, .36, 1);
 }
 .cx3d-pulse {
-  -webkit-mask-image: url(/Assets/Images/conditions-b/ciatica-3d-nerves.webp);
-  mask-image: url(/Assets/Images/conditions-b/ciatica-3d-nerves.webp);
+  -webkit-mask-image: url(/Assets/Images/conditions-b/ciatica-3d-nerves-360.webp);
+  mask-image: url(/Assets/Images/conditions-b/ciatica-3d-nerves-360.webp);
   mix-blend-mode: screen;
 }
 .cx3d-pulse > span {
