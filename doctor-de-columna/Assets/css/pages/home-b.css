@@ -965,7 +965,7 @@ body {
 .patient-review-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 20px; }
 .patient-review-card { display: flex; flex-direction: column; min-height: 304px; padding: 25px; border-radius: 23px; background: #fff; }
 .patient-review-card header { display: flex; align-items: center; gap: 11px; min-height: 39px; }
-.patient-review-avatar { display: grid; place-items: center; width: 39px; height: 39px; flex-shrink: 0; border-radius: 50%; background: #e2edf7; color: #39739d; font-size: 12px; }
+.patient-review-avatar { display: grid; place-items: center; width: 39px; height: 39px; flex-shrink: 0; border-radius: 50%; background: #e2edf7; color: #2c6590; font-size: 12px; }
 .patient-review-person { min-width: 0; }
 .patient-review-person strong { display: block; font-size: 12px; font-weight: 500; line-height: 1.35; }
 .patient-review-person a { display: block; margin-top: 3px; font-size: 10px; color: #4d6d89; }
@@ -1321,7 +1321,7 @@ body {
 .footer-b a:hover { color: #78f59d; }
 .footer-b a:focus-visible { outline: 3px solid #56fc80; outline-offset: 5px; border-radius: 4px; }
 .footer-b-top { display: grid; grid-template-columns: 1.6fr 1fr; gap: 50px; align-items: center; padding-bottom: 39px; border-bottom: 1px solid rgb(220 238 250 / 20%); }
-.footer-b-eyebrow { display: block; margin-bottom: 15px; color: #9cc2da; font-size: 10px; text-transform: uppercase; letter-spacing: .07em; }
+.footer-b-eyebrow { display: block; margin-bottom: 15px; color: #b3ccdf; font-size: 10px; text-transform: uppercase; letter-spacing: .07em; }
 .footer-b-top h2 { margin: 0; color: #fff; font: 600 clamp(32px, 3.5vw, 48px)/1.06 var(--font-heading); letter-spacing: -.035em; }
 .footer-b-top-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
 .footer-b-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 25px; padding: 7px 7px 7px 23px; border-radius: 999px; background: #56fc80; color: #004b87 !important; font-size: 13px; font-weight: 500; }
@@ -1345,7 +1345,7 @@ body {
 .footer-b-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 40px; padding-top: 23px; border-top: 1px solid rgb(220 238 250 / 20%); font-size: 10px; color: #a9c4d9; }
 .footer-b-bottom p { margin: 0; }
 .footer-b-bottom > div { display: flex; flex-wrap: wrap; gap: 23px; }
-.footer-b-bottom small { flex-basis: 100%; margin-top: 1px; font-size: 9px; color: #89acc7; }
+.footer-b-bottom small { flex-basis: 100%; margin-top: 1px; font-size: 9px; color: #a9c4d9; }
 @media (max-width: 1000px) {
   .faq-b-layout { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 28px; }
   .faq-b-help { padding: 22px; }
