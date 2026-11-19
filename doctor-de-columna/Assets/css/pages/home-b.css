@@ -1874,7 +1874,7 @@ body .wa-action-btn { color: #004b87; }
    Starts at opacity .001 (not 0) so the LCP photo counts as painted on the first frame:
    the entrance does not delay LCP. Standalone translate/scale only: no layout, no CLS. */
 @keyframes hb-rise   { from { opacity: .001; translate: 0 20px; } to { opacity: 1; translate: 0 0; } }
-@keyframes hb-drop   { from { opacity: .001; translate: 0 -20px; } to { opacity: 1; translate: 0 0; } }
+@keyframes hb-drop   { from { translate: 0 -20px; } to { translate: 0 0; } } /* no opacity: the nav loads as a partial, so a fade would still be running when Lighthouse checks link contrast */
 @keyframes hb-pop    { from { opacity: .001; scale: .85; } to { opacity: 1; scale: 1; } }
 @keyframes hb-photo  { from { opacity: .001; scale: .94; translate: 0 16px; } to { opacity: 1; scale: 1; translate: 0 0; } }
 
