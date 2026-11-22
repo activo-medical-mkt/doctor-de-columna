@@ -1,23 +1,13 @@
-/* The language control shares the existing header and menu geometry. */
-.language-switch{display:inline-flex;align-items:center;gap:3px;padding:3px;border:1px solid var(--color-border-lt);border-radius:999px;background:rgb(255 255 255 / 75%);color:var(--brand-blue);white-space:nowrap}
-.language-switch :is(a,span){display:grid;place-items:center;min-width:28px;min-height:28px;padding:4px 6px!important;border-radius:999px;font:500 11px/1 var(--font-body)!important;letter-spacing:0!important;text-decoration:none!important;color:var(--brand-blue)!important}
-.language-switch [aria-current]{background:var(--brand-blue);color:white!important}
-.language-switch a:hover{background:var(--color-bg-soft)}
-.language-switch a::after{display:none!important}
-.nav-language{margin-left:4px;align-self:center}
-.mobile-language-row{display:flex;align-items:center;justify-content:space-between;padding:13px 14px 3px;gap:15px;font-size:12px;color:var(--brand-blue)}
-.mobile-menu nav.language-switch{flex-direction:row;width:max-content;flex-shrink:0;padding:3px;gap:3px}
-.site-header .nav-links .language-switch{margin-inline:2px}
-html[lang=en] .site-header .nav-links>li>a{white-space:nowrap}
-.link-language-badge{display:inline-block;flex-shrink:0;vertical-align:middle;margin-left:5px;padding:2px 4px;border-radius:4px;border:1px solid currentColor;font:500 8px/1.2 var(--font-body);letter-spacing:.02em;opacity:.7}
-.condition-hub-title .link-language-badge,.procedure-flip-title .link-language-badge{font-size:8px}
-html[lang=en] .patient-review-translation{font-size:10px;color:var(--color-text-body);margin-top:13px}
-html[lang=en] .patient-review-expand{margin-top:auto}
-html[lang=en] .patient-video-tag{max-width:calc(100% - 38px)}
-html[lang=en] .footer-b-logo .footer-b-wordmark{white-space:nowrap}
-@media(min-width:769px) and (max-width:1100px){.nav-language .language-switch [aria-current]{display:none}.nav-language .language-switch{padding:1px}.site-header .navbar-inner .nav-links{gap:0}}
-@media(min-width:769px) and (max-width:1100px){html[lang=en] .site-header .navbar-inner{grid-template-columns:auto minmax(0,1fr)}html[lang=en] .site-header .navbar-inner .navbar-cta{display:none}}
-@media(min-width:769px) and (max-width:1350px){html[lang=en] .site-header .navbar-inner .nav-links{gap:0}html[lang=en] .site-header .nav-links>li>a,html[lang=en] .site-header .nav-drop-trigger{font-size:13px;padding-inline:8px}}
-/* The English site covers the Tijuana clinic only: no location picker or clinic switch in the menu. */
-html[lang=en] #nav-drop-loc,html[lang=en] .specialties-toolbar,html[lang=en] #mobile-menu .mobile-nav-group:has([aria-controls="mob-loc-sub"]){display:none!important}
-@media(prefers-reduced-motion:reduce){.language-switch *{transition:none}}
+.language-switch{display:inline-flex;align-items:center;gap:3px;padding:3px;border:1px solid var(--color-border-lt);border-radius:999px;background:#ffffffbf;color:var(--brand-blue);white-space:nowrap}
+.language-switch :is(a,span){display:grid;place-items:center;min-width:28px;min-height:28px;padding:4px 6px!important;border-radius:999px;font:500 11px/1 var(--font-body)!important;letter-spacing:0!important;
+text-decoration:none!important;color:var(--brand-blue)!important}.language-switch [aria-current]{background:var(--brand-blue);color:#fff!important}.language-switch a:hover{background:var(--color-bg-soft)}
+.language-switch a:after{display:none!important}.nav-language{margin-left:4px;align-self:center}.mobile-language-row{display:flex;align-items:center;justify-content:space-between;padding:13px 14px 3px;
+gap:15px;font-size:12px;color:var(--brand-blue)}.mobile-menu nav.language-switch{flex-direction:row;width:max-content;flex-shrink:0;padding:3px;gap:3px}.site-header .nav-links .language-switch{margin-inline:2px}
+html[lang=en] .site-header .nav-links>li>a{white-space:nowrap}.link-language-badge{display:inline-block;flex-shrink:0;vertical-align:middle;margin-left:5px;padding:2px 4px;border-radius:4px;border:1px
+solid currentColor;font:500 8px/1.2 var(--font-body);letter-spacing:.02em;opacity:.7}.condition-hub-title .link-language-badge,.procedure-flip-title .link-language-badge{font-size:8px}html[lang=en] .patient-review-translation{
+font-size:10px;color:var(--color-text-body);margin-top:13px}html[lang=en] .patient-review-expand{margin-top:auto}html[lang=en] .patient-video-tag{max-width:calc(100% - 38px)}html[lang=en] .footer-b-logo
+.footer-b-wordmark{white-space:nowrap}@media(min-width:769px)and (max-width:1100px){.nav-language .language-switch [aria-current]{display:none}.nav-language .language-switch{padding:1px}.site-header .navbar-inner
+.nav-links{gap:0}}@media(min-width:769px)and (max-width:1100px){html[lang=en] .site-header .navbar-inner{grid-template-columns:auto minmax(0,1fr)}html[lang=en] .site-header .navbar-inner .navbar-cta{display:none}}
+@media(min-width:769px)and (max-width:1350px){html[lang=en] .site-header .navbar-inner .nav-links{gap:0}html[lang=en] .site-header .nav-links>li>a,html[lang=en] .site-header .nav-drop-trigger{font-size:13px;
+padding-inline:8px}}html[lang=en] #nav-drop-loc,html[lang=en] .specialties-toolbar,html[lang=en] #mobile-menu .mobile-nav-group:has([aria-controls=mob-loc-sub]){display:none!important}@media(prefers-reduced-motion:reduce){
+.language-switch *{transition:none}}

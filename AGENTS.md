@@ -14,6 +14,7 @@
 - Do not include a Contacto link in the mobile menu; retain the booking CTA and Ubicaciones group.
 - English Tijuana homepage: `/en/tijuana/`, built with `python scripts/build_en_tijuana.py` from the Spanish layout and reviewed catalogs in `scripts/locales/`. Rebuild after changes to the Tijuana homepage or shared interaction scripts, then run `python tools/build-seo-files.py`. Keep reciprocal ES/EN links on the two homepages. Do not create links to untranslated English detail pages; label existing Spanish destinations. Generic Spanish generators must skip `/en/`.
 - When changing CSS or JavaScript, update the corresponding `?v=` references in the active HTML pages.
+- CSS and JS under `doctor-de-columna/Assets/` (and `cookieconsent-config.js`) are minified in place: CSS fully, JS whitespace only (identifiers and strings unchanged). Edit the minified file directly, or print a readable copy with `python tools/minify_assets.py --pretty FILE`; after editing, run `python tools/minify_assets.py`. Readable originals: git tag `backup-pre-minify-2026-11-21`.
 
 # Editing text safely (Spanish accents)
 

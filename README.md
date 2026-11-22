@@ -41,4 +41,6 @@ npx.cmd wrangler deploy
 
 Al cambiar CSS o JS, actualiza su `?v=` en el HTML: `Assets/css` y `Assets/js` se sirven con caché de un año.
 
+El CSS y el JS están minificados en el mismo archivo (`python tools/minify_assets.py`; `--pretty ARCHIVO` imprime una versión legible). Los originales legibles están en el tag `backup-pre-minify-2026-11-21`.
+
 La versión anterior del sitio está en el historial de git (commit `6e86d07`).

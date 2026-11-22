@@ -1,15 +1,2 @@
-/* Typography trial for the Tijuana and Guadalajara option B homepages. */
-.city-home-b :is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  text-transform: none;
-}
-
-/* Keep the existing white hero gradient; use the same softer heading weight. */
-.city-home-b .hero .hero-headline {
-  font-weight: 600;
-}
-
-.city-home-b .hero .hero-headline :is(.line-accent, .hero-headline-sub) {
-  font-weight: 600;
-}
+.city-home-b :is(h1,h2,h3,h4,h5,h6){font-family:var(--font-heading);font-weight:600;text-transform:none}.city-home-b .hero .hero-headline{font-weight:600}.city-home-b .hero .hero-headline :is(.line-accent,
+.hero-headline-sub){font-weight:600}
